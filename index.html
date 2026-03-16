@@ -1545,8 +1545,7 @@ tr:hover td{background:#F8F9FF}
         • <strong>공임 (CM)</strong>: Cut &amp; Make — 재단·봉제·마감 공임비. 스타일 복잡도·소재에 따라 상이 &nbsp;|&nbsp;
         • <strong>마진 (Margin)</strong>: BOSIDENG 적용 마진 8% (소재비+공임 합계 기준)<br>
         • <strong>관세 (Tariff)</strong>: 중국 생산 기준 <strong style="color:#C8102E">평균 1.5% 적용</strong> — 발주 물량에 따라 0.5%~2.0% 변동 가능 &nbsp;|&nbsp;
-        • <strong>패킹/운임</strong>: 2% 적용<br>
-        • ※ BOSIDENG M/U는 공임·관세·마진·패킹 전체 포함된 <strong>최종 원가 기준</strong> 산출
+        • ※ BOSIDENG M/U는 공임·관세·마진 전체 포함된 <strong>최종 원가 기준</strong> 산출
       </span>
     </div>
     <div class="tbl-wrap">
@@ -1643,35 +1642,85 @@ tr:hover td{background:#F8F9FF}
 <div class="section" id="s-sample">
   <div class="stitle"><div class="stitle-icon">🔬</div>실물 샘플 품질 평가 — BOSIDENG vs TESSELLATION</div>
 
-  <!-- 상태 배너 -->
-  <div style="background:#FFF8E1;border:1.5px solid #F9A825;border-radius:8px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:12px">
-    <span style="font-size:22px">🔬</span>
+  <!-- 상태 배너 — 평가 완료 -->
+  <div style="background:#E8F5E9;border:1.5px solid #2E7D32;border-radius:8px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:12px">
+    <span style="font-size:22px">✅</span>
     <div>
-      <div style="font-size:14px;font-weight:700;color:#E65100">QC팀 체크 진행 중 — 추후 업데이트 예정</div>
-      <div style="font-size:12px;color:#777;margin-top:3px">BOSIDENG / TESSELLATION 각 샘플 수신 완료 · QC팀 실물 품질 체점 진행 중 · 평가 항목·가중치 확정 후 점수 반영 예정</div>
+      <div style="font-size:14px;font-weight:700;color:#1B5E20">QC팀 샘플 평가 완료 — 2026.03.16 기준</div>
+      <div style="font-size:12px;color:#555;margin-top:3px">Lucy · Julia 2인 평가 완료 · 5점 척도 (7개 항목, A–G) · DJ/DV 21문항 · WJ 22문항 · JP 20문항</div>
     </div>
-    <span class="st st-pend" style="margin-left:auto;white-space:nowrap">평가 진행 중</span>
+    <span class="st st-ok" style="margin-left:auto;white-space:nowrap">평가 완료</span>
+  </div>
+
+  <!-- KPI 요약 카드 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px">
+    <div class="card" style="padding:14px 16px">
+      <div style="font-size:11px;font-weight:700;color:#777;letter-spacing:.5px;margin-bottom:10px">DJ · DV 종합</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:12px;color:#555">MLB 기준</span>
+        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">2.4 / 5</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:12px;color:var(--bosideng);font-weight:700">BOSIDENG</span>
+        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">2.1 / 5</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;color:var(--tess);font-weight:700">TESSELLATION</span>
+        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">2.1 / 5</span>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:#777;border-top:1px solid #eee;padding-top:8px">양사 동점 — 품목별 세부 비교 필요</div>
+    </div>
+    <div class="card" style="padding:14px 16px">
+      <div style="font-size:11px;font-weight:700;color:#777;letter-spacing:.5px;margin-bottom:10px">WJ 종합</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:12px;color:#555">MLB 기준</span>
+        <span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">3.6 / 5</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:12px;color:var(--bosideng);font-weight:700">BOSIDENG</span>
+        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">1.9 / 5</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;color:var(--tess);font-weight:700">TESSELLATION</span>
+        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">1.5 / 5</span>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:#E65100;border-top:1px solid #eee;padding-top:8px;font-weight:700">⚠ 양사 모두 MLB 기준 대비 품질 미흡</div>
+    </div>
+    <div class="card" style="padding:14px 16px">
+      <div style="font-size:11px;font-weight:700;color:#777;letter-spacing:.5px;margin-bottom:10px">JP 종합</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:12px;color:#555">MLB 기준</span>
+        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">2.3 / 5</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:12px;color:var(--bosideng);font-weight:700">BOSIDENG</span>
+        <span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">3.2 / 5</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;color:var(--tess);font-weight:700">TESSELLATION</span>
+        <span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">1.4 / 5</span>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:#1B5E20;border-top:1px solid #eee;padding-top:8px;font-weight:700">★ BOSIDENG, MLB 기준 상회 유일 품목</div>
+    </div>
   </div>
 
   <!-- DJ / DV 카테고리 -->
   <div class="card mb16">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
       <span class="item-tag item-dj" style="font-size:13px;padding:3px 12px">DJ · DV</span>
-      <span style="font-size:14px;font-weight:700;color:var(--navy)">다운재킷 · 다운베스트 — 샘플 비교 평가</span>
-      <span class="st st-pend" style="margin-left:auto">QC 체크 중</span>
+      <span style="font-size:14px;font-weight:700;color:var(--navy)">다운재킷 · 다운베스트 — 평가 결과</span>
+      <span class="st st-ok" style="margin-left:auto">평가 완료</span>
     </div>
-    <div class="tbl-wrap">
+    <div class="tbl-wrap" style="margin-bottom:16px">
       <table>
         <thead>
           <tr>
             <th style="width:110px">구분</th>
-            <th style="width:120px">샘플 코드</th>
+            <th style="width:130px">샘플 코드</th>
             <th style="min-width:180px">품명</th>
             <th style="text-align:center;width:70px">샘플 접수</th>
             <th style="text-align:center;width:80px">QC 체크</th>
-            <th style="text-align:center;width:120px">MLB 브랜드 이해도</th>
-            <th style="text-align:center;width:110px">평가 점수 (TBD)</th>
-            <th style="text-align:center;width:90px">상태</th>
+            <th style="text-align:center;width:90px">종합 점수</th>
           </tr>
         </thead>
         <tbody>
@@ -1681,32 +1730,100 @@ tr:hover td{background:#F8F9FF}
             <td><small>바시티 후드 구스 롱패딩<br>메가로고 립스탑 숏패딩</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
             <td style="text-align:center"><span style="font-size:11px;color:#777">기준 샘플</span></td>
-            <td style="text-align:center"><span style="font-size:11px;color:#777">기준</span></td>
-            <td style="text-align:center"><span style="font-size:11px;color:#777">기준</span></td>
-            <td style="text-align:center"><span class="st st-ok">기준 샘플</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">2.4 / 5</span></td>
           </tr>
           <tr>
             <td><strong style="color:var(--bosideng)">BOSIDENG</strong></td>
             <td><small>NF0A832J<br>NF0A831F</small></td>
             <td><small>바시티 후드 구스 롱패딩 대응<br>메가로고 립스탑 숏패딩 대응</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
-            <td style="text-align:center"><span class="st st-pend">진행 중</span></td>
-            <td style="text-align:center">—</td>
-            <td style="text-align:center">— / 100점</td>
-            <td style="text-align:center"><span class="st st-pend">QC 체크 중</span></td>
+            <td style="text-align:center"><span class="st st-ok">완료</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">2.1 / 5</span></td>
           </tr>
           <tr>
             <td><strong style="color:var(--tess)">TESSELLATION</strong></td>
             <td><small>—</small></td>
             <td><small>DJ 비교 스타일</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
-            <td style="text-align:center"><span class="st st-pend">진행 중</span></td>
-            <td style="text-align:center">—</td>
-            <td style="text-align:center">— / 100점</td>
-            <td style="text-align:center"><span class="st st-pend">QC 체크 중</span></td>
+            <td style="text-align:center"><span class="st st-ok">완료</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">2.1 / 5</span></td>
           </tr>
         </tbody>
       </table>
+    </div>
+    <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px">▼ 항목별 평가 세부 점수 (Lucy + Julia 평균, 5점 척도)</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr style="background:#E8EDF4">
+            <th style="width:50px">항목</th>
+            <th>평가 섹션</th>
+            <th style="text-align:center;width:90px">MLB 기준</th>
+            <th style="text-align:center;width:100px">BOSIDENG</th>
+            <th style="text-align:center;width:110px">TESSELLATION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">A</td>
+            <td>MLB 브랜드 이해도</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.7</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.0</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">B</td>
+            <td>소재·원단 품질</td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.3</span></td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.7</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.5</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">C</td>
+            <td>봉제 품질</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.4</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.1</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.6</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">D</td>
+            <td>부자재·하드웨어</td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.6</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.1</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.9</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">E</td>
+            <td>구성·패턴·핏감</td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.8</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">F</td>
+            <td>마감·처리</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.3</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.5</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">G</td>
+            <td>전체 완성도</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.8</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+          </tr>
+          <tr style="background:#E8EDF4;font-weight:700">
+            <td colspan="2" style="text-align:right;font-size:12.5px;padding-right:12px">종합 평균</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.4</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.1</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.1</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:11.5px;color:#555;margin-top:10px;line-height:1.8">
+      💡 <strong>DJ/DV 인사이트:</strong> B항목(소재·원단) BOSIDENG 3.7 — MLB 기준 상회 · D항목(부자재) 양사 비슷한 수준 · E항목(패턴·핏감) BOSIDENG 1.0 미흡 vs TESSELLATION 3.5 우위 · 양사 종합 동점(2.1), MLB 브랜드 이해도(A) 전반 낮아 추가 피드백 필요
     </div>
   </div>
 
@@ -1714,21 +1831,19 @@ tr:hover td{background:#F8F9FF}
   <div class="card mb16">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
       <span class="item-tag item-wj" style="font-size:13px;padding:3px 12px">WJ</span>
-      <span style="font-size:14px;font-weight:700;color:var(--navy)">우븐재킷 — 샘플 비교 평가</span>
-      <span class="st st-pend" style="margin-left:auto">QC 체크 중</span>
+      <span style="font-size:14px;font-weight:700;color:var(--navy)">우븐재킷 — 평가 결과</span>
+      <span class="st st-ok" style="margin-left:auto">평가 완료</span>
     </div>
-    <div class="tbl-wrap">
+    <div class="tbl-wrap" style="margin-bottom:16px">
       <table>
         <thead>
           <tr>
             <th style="width:110px">구분</th>
-            <th style="width:120px">샘플 코드</th>
+            <th style="width:130px">샘플 코드</th>
             <th style="min-width:180px">품명</th>
             <th style="text-align:center;width:70px">샘플 접수</th>
             <th style="text-align:center;width:80px">QC 체크</th>
-            <th style="text-align:center;width:120px">MLB 브랜드 이해도</th>
-            <th style="text-align:center;width:110px">평가 점수 (TBD)</th>
-            <th style="text-align:center;width:90px">상태</th>
+            <th style="text-align:center;width:90px">종합 점수</th>
           </tr>
         </thead>
         <tbody>
@@ -1738,32 +1853,101 @@ tr:hover td{background:#F8F9FF}
             <td><small>고프코어 3L 지퍼포인트 바람막이<br>WJ 비교모델</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
             <td style="text-align:center"><span style="font-size:11px;color:#777">기준 샘플</span></td>
-            <td style="text-align:center"><span style="font-size:11px;color:#777">기준</span></td>
-            <td style="text-align:center"><span style="font-size:11px;color:#777">기준</span></td>
-            <td style="text-align:center"><span class="st st-ok">기준 샘플</span></td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">3.6 / 5</span></td>
           </tr>
           <tr>
             <td><strong style="color:var(--bosideng)">BOSIDENG</strong></td>
             <td><small>NF0A8DMD<br>NF0A8BWD</small></td>
             <td><small>GORE-TEX 3L 지퍼포인트 대응<br>WJ 비교모델 대응</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
-            <td style="text-align:center"><span class="st st-pend">진행 중</span></td>
-            <td style="text-align:center">—</td>
-            <td style="text-align:center">— / 100점</td>
-            <td style="text-align:center"><span class="st st-pend">QC 체크 중</span></td>
+            <td style="text-align:center"><span class="st st-ok">완료</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">1.9 / 5</span></td>
           </tr>
           <tr>
             <td><strong style="color:var(--tess)">TESSELLATION</strong></td>
             <td><small>—</small></td>
             <td><small>WJ 비교 스타일</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
-            <td style="text-align:center"><span class="st st-pend">진행 중</span></td>
-            <td style="text-align:center">—</td>
-            <td style="text-align:center">— / 100점</td>
-            <td style="text-align:center"><span class="st st-pend">QC 체크 중</span></td>
+            <td style="text-align:center"><span class="st st-ok">완료</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">1.5 / 5</span></td>
           </tr>
         </tbody>
       </table>
+    </div>
+    <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px">▼ 항목별 평가 세부 점수 (Lucy + Julia 평균, 5점 척도)</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr style="background:#E8EDF4">
+            <th style="width:50px">항목</th>
+            <th>평가 섹션</th>
+            <th style="text-align:center;width:90px">MLB 기준</th>
+            <th style="text-align:center;width:100px">BOSIDENG</th>
+            <th style="text-align:center;width:110px">TESSELLATION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">A</td>
+            <td>MLB 브랜드 이해도</td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.5</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">B</td>
+            <td>소재·원단 품질</td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.0</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">C</td>
+            <td>봉제 품질 (심실링 포함)</td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.2</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.7</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.5 *</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">D</td>
+            <td>부자재·하드웨어</td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.8</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.3</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.9</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">E</td>
+            <td>구성·패턴·핏감</td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.5</span></td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.8</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">F</td>
+            <td>마감·처리</td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.0</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.5</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">G</td>
+            <td>전체 완성도</td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.8</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
+          </tr>
+          <tr style="background:#E8EDF4;font-weight:700">
+            <td colspan="2" style="text-align:right;font-size:12.5px;padding-right:12px">종합 평균</td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">3.6</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">1.9</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">1.5</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:11px;color:#777;margin-top:6px">* TESSELLATION C항목: 심실링(Seam Sealing) 문항 판단불가 처리 → 해당 문항 제외 후 평균 산출</div>
+    <div style="font-size:11.5px;color:#555;margin-top:10px;line-height:1.8">
+      💡 <strong>WJ 인사이트:</strong> E항목(패턴·핏감) BOSIDENG 3.5 — MLB 기준(4.5) 근접으로 가장 양호 · 그러나 전반적으로 양사 MLB 기준 미달, 특히 G항목(완성도) 양사 1.0 최저 · TESSELLATION 심실링 공정 미적용 — 기술 역량 부족 확인, 대응 불가 리스크 존재
     </div>
   </div>
 
@@ -1771,21 +1955,22 @@ tr:hover td{background:#F8F9FF}
   <div class="card mb16">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
       <span class="item-tag" style="font-size:13px;padding:3px 12px;background:#EDE7F6;color:#4A148C">JP</span>
-      <span style="font-size:14px;font-weight:700;color:var(--navy)">재킷 파카 — 샘플 비교 평가</span>
-      <span class="st st-pend" style="margin-left:auto">QC 체크 중</span>
+      <span style="font-size:14px;font-weight:700;color:var(--navy)">재킷 파카 — 평가 결과</span>
+      <span class="st st-ok" style="margin-left:auto">평가 완료</span>
     </div>
-    <div class="tbl-wrap">
+    <div style="background:#E8F5E9;border-left:4px solid #2E7D32;padding:8px 14px;font-size:12px;color:#1B5E20;margin-bottom:14px;border-radius:0 4px 4px 0;font-weight:700">
+      ★ BOSIDENG JP 샘플 — 3개 카테고리 중 유일하게 MLB 기준 상회 (3.2 vs 기준 2.3)
+    </div>
+    <div class="tbl-wrap" style="margin-bottom:16px">
       <table>
         <thead>
           <tr>
             <th style="width:110px">구분</th>
-            <th style="width:120px">샘플 코드</th>
+            <th style="width:130px">샘플 코드</th>
             <th style="min-width:180px">품명</th>
             <th style="text-align:center;width:70px">샘플 접수</th>
             <th style="text-align:center;width:80px">QC 체크</th>
-            <th style="text-align:center;width:120px">MLB 브랜드 이해도</th>
-            <th style="text-align:center;width:110px">평가 점수 (TBD)</th>
-            <th style="text-align:center;width:90px">상태</th>
+            <th style="text-align:center;width:90px">종합 점수</th>
           </tr>
         </thead>
         <tbody>
@@ -1795,65 +1980,139 @@ tr:hover td{background:#F8F9FF}
             <td><small>JP 비교모델</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
             <td style="text-align:center"><span style="font-size:11px;color:#777">기준 샘플</span></td>
-            <td style="text-align:center"><span style="font-size:11px;color:#777">기준</span></td>
-            <td style="text-align:center"><span style="font-size:11px;color:#777">기준</span></td>
-            <td style="text-align:center"><span class="st st-ok">기준 샘플</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">2.3 / 5</span></td>
           </tr>
           <tr>
             <td><strong style="color:var(--bosideng)">BOSIDENG</strong></td>
             <td><small>U5DPD8U003</small></td>
             <td><small>JP 비교모델 대응</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
-            <td style="text-align:center"><span class="st st-pend">진행 중</span></td>
-            <td style="text-align:center">—</td>
-            <td style="text-align:center">— / 100점</td>
-            <td style="text-align:center"><span class="st st-pend">QC 체크 중</span></td>
+            <td style="text-align:center"><span class="st st-ok">완료</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">3.2 / 5</span></td>
           </tr>
           <tr>
             <td><strong style="color:var(--tess)">TESSELLATION</strong></td>
             <td><small>—</small></td>
             <td><small>JP 비교 스타일</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
-            <td style="text-align:center"><span class="st st-pend">진행 중</span></td>
-            <td style="text-align:center">—</td>
-            <td style="text-align:center">— / 100점</td>
-            <td style="text-align:center"><span class="st st-pend">QC 체크 중</span></td>
+            <td style="text-align:center"><span class="st st-ok">완료</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">1.4 / 5</span></td>
           </tr>
         </tbody>
       </table>
     </div>
+    <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px">▼ 항목별 평가 세부 점수 (Lucy + Julia 평균, 5점 척도)</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr style="background:#E8EDF4">
+            <th style="width:50px">항목</th>
+            <th>평가 섹션</th>
+            <th style="text-align:center;width:90px">MLB 기준</th>
+            <th style="text-align:center;width:100px">BOSIDENG</th>
+            <th style="text-align:center;width:110px">TESSELLATION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">A</td>
+            <td>MLB 브랜드 이해도</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.3</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.8</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">B</td>
+            <td>소재·원단 품질</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.0</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.0</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">C</td>
+            <td>봉제 품질</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.8</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.1</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">D</td>
+            <td>부자재·하드웨어</td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.4</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.3</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.8</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">E</td>
+            <td>구성·패턴·핏감</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.5</span></td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.0</span></td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">F</td>
+            <td>마감·처리</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.0</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.5</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center">G</td>
+            <td>전체 완성도</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.3</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.0</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+          </tr>
+          <tr style="background:#E8EDF4;font-weight:700">
+            <td colspan="2" style="text-align:right;font-size:12.5px;padding-right:12px">종합 평균</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.3</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">3.2</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">1.4</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:11.5px;color:#555;margin-top:10px;line-height:1.8">
+      💡 <strong>JP 인사이트:</strong> BOSIDENG A–G 전 항목에서 MLB 기준 상회 또는 근접 — E항목(패턴·핏감) 4.0 최고점 · TESSELLATION은 E항목(3.5) 제외한 전 항목 1점대로 전반적 품질 미흡 · JP 품목에서 BOSIDENG 협력사 역량 가장 뚜렷하게 확인됨
+    </div>
   </div>
 
   <div style="background:#FFF8E1;border-left:4px solid #F9A825;padding:10px 14px;font-size:12px;color:#555;margin-bottom:16px">
-    ※ MLB 기준 샘플: 현행 협력사 제작 실물 기준 &nbsp;|&nbsp; 평가 항목·가중치 확정 후 체점 결과 반영 예정 &nbsp;|&nbsp; MLB 브랜드 이해도 항목은 최우선 평가 기준으로 가중 반영 예정
+    ※ MLB 기준 샘플: 현행 협력사 제작 실물 기준 &nbsp;|&nbsp; 평가: Lucy · Julia 2인, 5점 척도 7개 항목 (A–G) &nbsp;|&nbsp; WJ C항목 TESSELLATION 심실링 1문항 판단불가 제외 처리
   </div>
 
-  <!-- 샘플 평가 인사이트 (플레이스홀더) -->
+  <!-- 샘플 평가 종합 인사이트 -->
   <div class="card" style="background:linear-gradient(135deg,#0A1931 0%,#1a2f52 100%);color:#fff">
     <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.15)">
-      🔍 샘플 평가 종합 인사이트 — 체점 완료 후 업데이트 예정
+      🔍 샘플 평가 종합 인사이트
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
       <div style="padding:16px 20px;border-right:1px solid rgba(255,255,255,.1)">
         <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px">
           <span style="background:var(--bosideng);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px">BOSIDENG</span>
-          <span style="font-size:12.5px;font-weight:700;color:#fff">샘플 평가 결과</span>
+          <span style="font-size:12.5px;font-weight:700;color:#fff">종합 평가</span>
         </div>
         <p style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.85">
-          QC팀 체점 진행 중 — 결과 업데이트 예정.<br>
-          <strong style="color:#FFD700">MLB 브랜드에 대한 이해도가 샘플에서 확인됨</strong> (1차 수신 소견).
+          DJ/DV 2.1 · WJ 1.9 · <strong style="color:#FFD700">JP 3.2 (MLB 기준 2.3 상회)</strong><br>
+          소재·원단(B) 전반적으로 양호 · JP 품목 전 항목 MLB 기준 근접 또는 초과<br>
+          WJ 심실링·완성도 개선 필요 · DJ/DV 봉제·패턴 피드백 후 재샘플 권고
         </p>
       </div>
       <div style="padding:16px 20px">
         <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px">
           <span style="background:var(--tess);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px">TESSELLATION</span>
-          <span style="font-size:12.5px;font-weight:700;color:#fff">샘플 평가 결과</span>
+          <span style="font-size:12.5px;font-weight:700;color:#fff">종합 평가</span>
         </div>
         <p style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.85">
-          QC팀 체점 진행 중 — 결과 업데이트 예정.<br>
-          <strong style="color:#FFD700">MLB 브랜드에 대한 이해도가 샘플에서 확인됨</strong> (1차 수신 소견).
+          DJ/DV 2.1 · WJ 1.5 · JP 1.4<br>
+          DJ/DV E항목(패턴·핏감) 3.5 — 해당 품목 강점 확인<br>
+          <strong style="color:#FF6B6B">WJ 심실링 미적용 (판단불가) · JP 전반 1점대 — 심각한 품질 미흡</strong><br>
+          WJ·JP 품목 협력 가능성 재검토 필요
         </p>
       </div>
+    </div>
+    <div style="margin-top:16px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;color:rgba(255,255,255,.6);text-align:center">
+      평가일: 2026.03.16 · 평가자: Lucy · Julia · 기준: 5점 척도, 7개 항목 (A–G)
     </div>
   </div>
 
