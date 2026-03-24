@@ -195,6 +195,15 @@ tr:hover td{background:#F8F9FF}
   .step-flow{flex-direction:column}
   .step-arrow{display:none}
 }
+
+/* BRAND TOGGLE */
+.brand-toggle{display:flex;align-items:center;gap:0;margin-left:auto;flex-shrink:0;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;overflow:hidden}
+.brand-btn{padding:8px 18px;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.5px;color:rgba(255,255,255,.55);transition:all .2s;user-select:none;white-space:nowrap}
+.brand-btn.on{background:var(--red);color:#fff}
+.brand-btn:not(.on):hover{background:rgba(255,255,255,.12);color:#fff}
+.brand-sep{width:1px;background:rgba(255,255,255,.25);align-self:stretch}
+.brand-content{display:none}
+.brand-content.on{display:block}
 </style>
 </head>
 <body>
@@ -203,7 +212,7 @@ tr:hover td{background:#F8F9FF}
 <div class="hdr">
   <div>
     <h1 style="font-size:18px;font-weight:700;letter-spacing:-.2px">WOVEN 카테고리 신규 협력사 선정 심사 보고서</h1>
-    <p style="font-size:11.5px;color:rgba(255,255,255,.55);margin-top:2px">MLB F&F Global Sourcing &nbsp;|&nbsp; 작성기준일: 2026.03.11 &nbsp;|&nbsp; CONFIDENTIAL</p>
+    <p style="font-size:11.5px;color:rgba(255,255,255,.55);margin-top:2px">MLB F&F Global Sourcing &nbsp;|&nbsp; 작성기준일: 2026.03.24 &nbsp;|&nbsp; CONFIDENTIAL</p>
   </div>
   <div class="badges">
     <span class="badge badge-glass">26SS/26FW Back Data 기반 분석</span>
@@ -221,10 +230,19 @@ tr:hover td{background:#F8F9FF}
   <div class="nav-btn" data-sec="evaluation">05 역량 평가 &amp; 선정 권고</div>
   <div class="nav-btn" data-sec="backdata">06 Back Data 분석</div>
   <div class="nav-btn" data-sec="sample">07 샘플 평가</div>
+  <!-- BRAND TOGGLE -->
+  <div class="brand-toggle">
+    <div id="brand-btn-woven" class="brand-btn on" onclick="switchBrand('woven')">🧵 WOVEN</div>
+    <div class="brand-sep"></div>
+    <div id="brand-btn-kint" class="brand-btn" onclick="switchBrand('kint')">🧶 KINT</div>
+  </div>
 </div>
 
 <!-- MAIN -->
 <div class="main">
+
+<!-- ===== WOVEN BRAND CONTENT ===== -->
+<div id="brand-woven-content" class="brand-content on">
 
 <!-- ========================= 01. 개요 ========================= -->
 <div class="section on" id="s-overview">
@@ -315,6 +333,13 @@ tr:hover td{background:#F8F9FF}
 <!-- ========================= 02. ITEM 현황 ========================= -->
 <div class="section" id="s-item">
   <div class="stitle"><div class="stitle-icon">📦</div>WOVEN 카테고리 협력사 현황 분석 (26SS/26FW 기준)</div>
+
+  <!-- 섹션 인사이트 -->
+  <div style="background:linear-gradient(135deg,#0A1931 0%,#1a3060 100%);border-radius:8px;padding:13px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px">
+    <span style="font-size:18px">⚠️</span>
+    <span style="font-size:13px;font-weight:700;color:#FF6B6B">핵심 문제: <span style="color:#fff">기존 협력사 DJ·WJ 봉제불량 반복</span></span>
+    <span style="font-size:12px;color:rgba(255,255,255,.75);border-left:1px solid rgba(255,255,255,.2);padding-left:12px">기도 DJ 13.4%·포마트 DJ 12.4%·원전교역 WJ 11.4% 등 Wavy Zipper·Puckering·이세몰림이 공정 관리 부족으로 다수 협력사에 구조적으로 반복 — 신규 거점 없이는 품질 리스크 해소 불가</span>
+  </div>
 
   <div class="g4 mb24">
     <div class="kpi" style="border-left-color:#C8102E">
@@ -445,6 +470,13 @@ tr:hover td{background:#F8F9FF}
 <!-- ========================= 03. 협력사 비교 ========================= -->
 <div class="section" id="s-comparison">
   <div class="stitle"><div class="stitle-icon">⚖️</div>신규 협력사 Q&A 심층 비교 분석</div>
+
+  <!-- 섹션 인사이트 -->
+  <div style="background:linear-gradient(135deg,#0A1931 0%,#1a3060 100%);border-radius:8px;padding:13px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px">
+    <span style="font-size:18px">🏆</span>
+    <span style="font-size:13px;font-weight:700;color:#FFD700">적합 업체: <span style="color:#fff">BOSIDENG</span></span>
+    <span style="font-size:12px;color:rgba(255,255,255,.75);border-left:1px solid rgba(255,255,255,.2);padding-left:12px">GORE-TEX 인증·자체 Lab·Adidas/TNF 레퍼런스 등 MLB 기준 기능성 아우터 전 항목 대응 가능 vs TESSELLATION은 심실링 미적용·Open Costing 거부·WOVEN 아우터 전문성 부재로 핵심 역량 미달</span>
+  </div>
 
   <!-- ══════════════════════════════════════════
        Factory Information 인사이트 — BOSIDENG
@@ -930,6 +962,52 @@ tr:hover td{background:#F8F9FF}
 <div class="section" id="s-evaluation">
   <div class="stitle"><div class="stitle-icon">🏆</div>협력사 역량 평가 &amp; 선정 권고</div>
 
+  <!-- ── 선정 권고 (최상단) ── -->
+  <div style="margin-bottom:28px">
+    <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:18px;display:flex;align-items:center;gap:8px"><span>🎯</span> 27SS 신규 협력사 선정 권고</div>
+
+  <div class="g2 mb24">
+    <div class="rec-card">
+      <div class="rec-t">🏆 27SS 신규 협력사 선정 — 두 업체 비교 평가 요약</div>
+      <div class="rec-b">
+        26SS/26FW Back Data 및 Factory Q&A 분석 결과, <strong>BOSIDENG</strong>은 생산 규모 · GORE-TEX 인증 · Open Costing 측면에서 MLB 기준 우위이며,
+        <strong>TESSELLATION</strong>은 낮은 MOQ · 한국 브랜드 경험이 강점이나 WOVEN 아우터 전문성 및 기능성 인증이 부족합니다.<br>M/U는 높을수록 브랜드에 유리하며, <strong style="color:var(--bosideng)">포마트 WJ M/U 5.147</strong>을 27SS 선정 최소 기준으로 적용합니다.
+      </div>
+      <ul class="rec-ul">
+        <li>DJ · DV · WJ 전 품목 생산 역량 보유 확인</li>
+        <li>GORE-TEX 인증 → 고기능 아우터 라인 대응 가능</li>
+        <li>Open Costing + 우븐 소싱 역량 → 원가 투명성 확보</li>
+        <li>Adidas · TNF 레퍼런스 → 품질 수준 글로벌 검증됨</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="g3" style="gap:16px;margin-bottom:0">
+        <div style="grid-column:1/-1;border-left:4px solid var(--red);padding-left:12px;margin-bottom:8px">
+          <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px">⚠️ 주요 리스크</div>
+          <ul style="font-size:12px;padding-left:16px;line-height:2.0;margin:0">
+            <li>BOSIDENG MOQ 3K~5K → 소량 스타일 비용 부담</li>
+            <li>다운 L/T 120~145일 → 시즌 납기 압박 가능</li>
+            <li>MLB 신규 협력사 → 브랜드 온보딩 기간 필요</li>
+          </ul>
+        </div>
+        <div style="grid-column:1/-1;border-left:4px solid var(--green);padding-left:12px">
+          <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px">✅ 기대 효과</div>
+          <ul style="font-size:12px;padding-left:16px;line-height:2.0;margin:0">
+            <li>MLB WOVEN 신규 소싱 경로 확보 (27SS 적용)</li>
+            <li>기존 협력사 역량 공백 해소 · 글로벌 품질 인증 확보</li>
+            <li>ODM 역량으로 개발 효율 향상 · 베트남 거점 다변화</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /선정권고 -->
+
+  <!-- ── 역량 평가 (하단) ── -->
+  <div style="border-top:2px solid #E8EDF4;padding-top:24px">
+    <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:18px;display:flex;align-items:center;gap:8px"><span>📊</span> 협력사 역량 평가</div>
   <div class="g2 mb24">
     <!-- Radar Chart -->
     <div class="card">
@@ -1061,74 +1139,7 @@ tr:hover td{background:#F8F9FF}
     </div>
   </div>
 
-  <!-- 선정 권고 (구 Section 06) -->
-  <div style="border-top:2px solid #E8EDF4;margin-top:28px;padding-top:24px">
-    <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:18px;display:flex;align-items:center;gap:8px"><span>🎯</span> 27SS 신규 협력사 선정 권고</div>
-
-  <div class="g2 mb24">
-    <div class="rec-card">
-      <div class="rec-t">🏆 27SS 신규 협력사 선정 — 두 업체 비교 평가 요약</div>
-      <div class="rec-b">
-        26SS/26FW Back Data 및 Factory Q&A 분석 결과, <strong>BOSIDENG</strong>은 생산 규모 · GORE-TEX 인증 · Open Costing 측면에서 MLB 기준 우위이며,
-        <strong>TESSELLATION</strong>은 낮은 MOQ · 한국 브랜드 경험이 강점이나 WOVEN 아우터 전문성 및 기능성 인증이 부족합니다.<br>M/U는 높을수록 브랜드에 유리하며, <strong style="color:var(--bosideng)">포마트 WJ M/U 5.147</strong>을 27SS 선정 최소 기준으로 적용합니다.
-      </div>
-      <ul class="rec-ul">
-        <li>DJ · DV · WJ 전 품목 생산 역량 보유 확인</li>
-        <li>GORE-TEX 인증 → 고기능 아우터 라인 대응 가능</li>
-        <li>Open Costing + 우븐 소싱 역량 → 원가 투명성 확보</li>
-        <li>Adidas · TNF 레퍼런스 → 품질 수준 글로벌 검증됨</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="card-t">Next Steps — 27SS 협력사 선정 진행 계획</div>
-      <table>
-        <thead><tr><th>#</th><th>액션 항목</th><th>담당</th><th>상태</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td>TESSELLATION Q&A 데이터 수집 완료</td><td>소싱팀</td><td><span class="st st-ok">✅ 완료 (03.11)</span></td></tr>
-          <tr><td>2</td><td>BOSIDENG/TESSELLATION 비교 심사 보고서 완성</td><td>소싱팀</td><td><span class="st st-ok">✅ 완료 (03.11)</span></td></tr>
-          <tr><td>3</td><td>BOSIDENG 원가견적 접수 및 M/U 분석 완료</td><td>소싱팀</td><td><span class="st st-ok">✅ 완료 (03.10)</span></td></tr>
-          <tr><td>4</td><td>TESSELLATION 원가견적서 수령 및 M/U 비교</td><td>소싱팀</td><td><span class="st st-warn">진행 중</span></td></tr>
-          <tr><td>5</td><td>실물 샘플 수령 및 품질 평가 (양사 동시 진행)</td><td>QC팀</td><td><span class="st st-warn">진행 중</span></td></tr>
-          <tr><td>6</td><td>M/U · 품질 · 역량 종합 평가 — 최종 1개사 선정</td><td>팀장/임원</td><td><span class="st st-na">대기</span></td></tr>
-          <tr><td>7</td><td>선정 협력사 공장 실사 (Factory Audit)</td><td>QC팀</td><td><span class="st st-na">대기</span></td></tr>
-          <tr><td>8</td><td>파트너십 계약 및 27SS PROTO 오더 개시</td><td>소싱팀</td><td><span class="st st-na">대기</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="g3">
-    <div class="card" style="border-left:4px solid var(--red)">
-      <div class="card-t">⚠️ 주요 리스크</div>
-      <ul style="font-size:12.5px;padding-left:18px;line-height:2.1">
-        <li>TESSELLATION Target Costing 방식 선호 → Open Costing 기반 M/U 사전 검증 협의 필요</li>
-        <li>BOSIDENG MOQ 3K~5K → 소량 스타일 비용 부담</li>
-        <li>다운 L/T 120~145일 → 시즌 납기 압박 가능</li>
-        <li>MLB 신규 협력사 → 브랜드 온보딩 기간 필요</li>
-      </ul>
-    </div>
-    <div class="card" style="border-left:4px solid var(--green)">
-      <div class="card-t">✅ 기대 효과</div>
-      <ul style="font-size:12.5px;padding-left:18px;line-height:2.1">
-        <li>MLB WOVEN 신규 소싱 경로 확보 (27SS 적용)</li>
-        <li>기존 협력사 역량 공백 해소</li>
-        <li>글로벌 수준 품질 인증 확보</li>
-        <li>ODM 역량으로 개발 효율 향상</li>
-        <li>베트남 생산 거점 다변화</li>
-      </ul>
-    </div>
-    <div class="card" style="border-left:4px solid var(--bosideng)">
-      <div class="card-t">📄 참고 자료</div>
-      <ul style="font-size:12.5px;padding-left:4px;list-style:none;line-height:2.3">
-        <li>📄 MLB Factory Information Sharing_26.03.xlsx</li>
-        <li>📄 MLB Factory Information Sharing_BOSIDENG_26.03.05.xlsx</li>
-        <li>📄 신규 WOVEN 공장 선정 BACK DATA_2026.03.04.xlsx</li>
-        <li>📄 MLB COST SHEET_FORM_26.03.04.xlsx</li>
-      </ul>
-    </div>
-  </div>
-  </div><!-- /선정권고 -->
+  </div><!-- /역량평가 -->
 </div><!-- /s-evaluation -->
 
 
@@ -1661,61 +1672,110 @@ tr:hover td{background:#F8F9FF}
   <div style="background:#E8F5E9;border:1.5px solid #2E7D32;border-radius:8px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:12px">
     <span style="font-size:22px">✅</span>
     <div>
-      <div style="font-size:14px;font-weight:700;color:#1B5E20">QC팀 샘플 평가 완료 — 2026.03.16 기준</div>
-      <div style="font-size:12px;color:#555;margin-top:3px">Lucy · Julia 2인 평가 완료 · 5점 척도 (7개 항목, A–G) · DJ/DV 21문항 · WJ 22문항 · JP 20문항</div>
+      <div style="font-size:14px;font-weight:700;color:#1B5E20">QM &amp; SC 샘플 평가 완료 — 2026.03.24 기준</div>
+      <div style="font-size:12px;color:#555;margin-top:3px">QM · SC 2인 평가 완료 · 5점 척도 7개 항목(A–G) · ★핵심: C봉제·F디자인·G개발역량 / △차순위: D패턴·핏 · DJ/DV 23문항 · WJ 23문항(TESS 22항목) · JP 22문항</div>
     </div>
     <span class="st st-ok" style="margin-left:auto;white-space:nowrap">평가 완료</span>
+  </div>
+
+  <!-- 샘플 평가 종합 인사이트 -->
+  <div class="card mb16" style="background:linear-gradient(135deg,#0A1931 0%,#1a2f52 100%);color:#fff">
+    <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.15)">
+      🔍 샘플 평가 종합 인사이트
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+      <div style="padding:16px 20px;border-right:1px solid rgba(255,255,255,.1)">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px">
+          <span style="background:var(--bosideng);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px">BOSIDENG</span>
+          <span style="font-size:12.5px;font-weight:700;color:#fff">종합 평가</span>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.85">
+          DJ/DV <strong style="color:#FFD700">2.9</strong> · WJ <strong style="color:#FFD700">3.5</strong> · JP <strong style="color:#FFD700">3.0</strong><br>
+          WJ 봉제★(C) 5.0 — MLB 기준 대비 우위 확인 · JP 안감·스냅 안정적 수준<br>
+          DJ/DV 양산 적합성 4점 달성 · BOSIDENG 전 품목 TESSELLATION 대비 우위
+        </p>
+      </div>
+      <div style="padding:16px 20px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px">
+          <span style="background:var(--tess);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px">TESSELLATION</span>
+          <span style="font-size:12.5px;font-weight:700;color:#fff">종합 평가</span>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.85">
+          DJ/DV <strong style="color:#FFD700">2.0</strong> · WJ <strong style="color:#FFD700">1.5</strong> · JP <strong style="color:#FFD700">1.7</strong><br>
+          DJ/DV E항목(트림 품질) 5.0 강점 · JP E항목(스냅·버튼) 4.0 — 기능부자재 우위<br>
+          <strong style="color:#FF6B6B">WJ 심실링 미적용(전 항목) · WJ·JP 봉제★·디자인★ 1~2점대 — 핵심 품질 미흡</strong><br>
+          WJ 전 항목 MLB 기준 대비 현저히 낮아 협력 범위 재검토 필요
+        </p>
+      </div>
+    </div>
+    <div style="margin-top:14px;padding:12px 20px;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.35);border-radius:8px;display:flex;align-items:center;gap:10px">
+      <span style="font-size:16px">🏆</span>
+      <span style="font-size:13px;font-weight:700;color:#FFD700">최종 권고: <span style="color:#fff">BOSIDENG</span> — WJ·JP 핵심 봉제★·개발역량★ 항목에서 MLB 기준에 근접하거나 상회하며, 전 품목 종합점수 기준 TESSELLATION 대비 일관된 우위를 보여 신규 협력사로 적합</span>
+    </div>
+    <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;color:rgba(255,255,255,.6);text-align:center">
+      평가일: 2026.03.24 · 평가자: QM · SC · 기준: 5점 척도 7개 항목 (A–G) · ★핵심: C·F·G / △차순위: D
+    </div>
+  </div>
+
+  <!-- 평가 우선순위 안내 -->
+  <div style="background:#F8F9FF;border:1px solid #C5CAE9;border-radius:8px;padding:12px 18px;margin-bottom:16px;display:flex;gap:20px;flex-wrap:wrap">
+    <div style="font-size:12px;font-weight:700;color:#3949AB">★ 핵심 평가 항목</div>
+    <div style="font-size:12px;color:#333">C. Construction &amp; Workmanship (봉제 품질)</div>
+    <div style="font-size:12px;color:#333">F. Design &amp; Aesthetic Execution (디자인 완성도)</div>
+    <div style="font-size:12px;color:#333">G. Development Capability (개발 역량)</div>
+    <div style="font-size:12px;font-weight:700;color:#E65100;margin-left:8px">△ 차순위</div>
+    <div style="font-size:12px;color:#333">D. Fit &amp; Pattern (MLB block 기준 조정 예정)</div>
   </div>
 
   <!-- KPI 요약 카드 -->
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px">
     <div class="card" style="padding:14px 16px">
-      <div style="font-size:11px;font-weight:700;color:#777;letter-spacing:.5px;margin-bottom:10px">DJ · DV 종합</div>
+      <div style="font-size:11px;font-weight:700;color:#777;letter-spacing:.5px;margin-bottom:10px">DJ · DV 종합 (23문항)</div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
         <span style="font-size:12px;color:#555">MLB 기준</span>
-        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">2.4 / 5</span>
+        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">2.7 / 5</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
         <span style="font-size:12px;color:var(--bosideng);font-weight:700">BOSIDENG</span>
-        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">2.1 / 5</span>
+        <span style="background:#E3F2FD;color:#1565C0;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">2.9 / 5</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center">
         <span style="font-size:12px;color:var(--tess);font-weight:700">TESSELLATION</span>
-        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">2.1 / 5</span>
+        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">2.0 / 5</span>
       </div>
-      <div style="margin-top:10px;font-size:11px;color:#777;border-top:1px solid #eee;padding-top:8px">양사 동점 — 품목별 세부 비교 필요</div>
+      <div style="margin-top:10px;font-size:11px;color:#1565C0;border-top:1px solid #eee;padding-top:8px;font-weight:700">📈 BOSIDENG 우위 — 양산 적합성·소재 개선 확인</div>
     </div>
     <div class="card" style="padding:14px 16px">
-      <div style="font-size:11px;font-weight:700;color:#777;letter-spacing:.5px;margin-bottom:10px">WJ 종합</div>
+      <div style="font-size:11px;font-weight:700;color:#777;letter-spacing:.5px;margin-bottom:10px">WJ 종합 (BOSI 23 / TESS 22문항)</div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
         <span style="font-size:12px;color:#555">MLB 기준</span>
         <span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">3.6 / 5</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
         <span style="font-size:12px;color:var(--bosideng);font-weight:700">BOSIDENG</span>
-        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">1.9 / 5</span>
+        <span style="background:#E3F2FD;color:#1565C0;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">3.5 / 5</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center">
         <span style="font-size:12px;color:var(--tess);font-weight:700">TESSELLATION</span>
-        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">1.5 / 5</span>
+        <span style="background:#FFEBEE;color:#C62828;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">1.5 / 5</span>
       </div>
-      <div style="margin-top:10px;font-size:11px;color:#E65100;border-top:1px solid #eee;padding-top:8px;font-weight:700">⚠ 양사 모두 MLB 기준 대비 품질 미흡</div>
+      <div style="margin-top:10px;font-size:11px;color:#1565C0;border-top:1px solid #eee;padding-top:8px;font-weight:700">✅ BOSIDENG MLB 기준 근접 · TESS 심실링 미적용</div>
     </div>
     <div class="card" style="padding:14px 16px">
-      <div style="font-size:11px;font-weight:700;color:#777;letter-spacing:.5px;margin-bottom:10px">JP 종합</div>
+      <div style="font-size:11px;font-weight:700;color:#777;letter-spacing:.5px;margin-bottom:10px">JP 종합 (22문항)</div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
         <span style="font-size:12px;color:#555">MLB 기준</span>
-        <span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">3.8 / 5</span>
+        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">2.6 / 5</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
         <span style="font-size:12px;color:var(--bosideng);font-weight:700">BOSIDENG</span>
-        <span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">3.1 / 5</span>
+        <span style="background:#E3F2FD;color:#1565C0;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">3.0 / 5</span>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center">
         <span style="font-size:12px;color:var(--tess);font-weight:700">TESSELLATION</span>
-        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">1.6 / 5</span>
+        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 10px;border-radius:10px;font-size:13px">1.7 / 5</span>
       </div>
-      <div style="margin-top:10px;font-size:11px;color:#0277BD;border-top:1px solid #eee;padding-top:8px;font-weight:700">📝 동일 모직 소재 확인 — MLB 기준 재평가 반영</div>
+      <div style="margin-top:10px;font-size:11px;color:#1565C0;border-top:1px solid #eee;padding-top:8px;font-weight:700">📈 BOSIDENG MLB 기준 상회 · 안감·스냅 개선 확인</div>
     </div>
   </div>
 
@@ -1739,42 +1799,7 @@ tr:hover td{background:#F8F9FF}
         <div class="chart-wrap" style="height:220px;cursor:zoom-in" onclick="openRadarModal('radarJp','JP')" title="클릭하여 확대"><canvas id="radarJp"></canvas></div>
       </div>
     </div>
-    <div style="margin-top:10px;font-size:11px;color:#777;text-align:center">A: 브랜드이해도 · B: 소재·원단 · C: 봉제 · D: 부자재 · E: 패턴·핏감 · F: 마감 · G: 완성도</div>
-  </div>
-
-  <!-- 샘플 평가 종합 인사이트 -->
-  <div class="card mb16" style="background:linear-gradient(135deg,#0A1931 0%,#1a2f52 100%);color:#fff">
-    <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.15)">
-      🔍 샘플 평가 종합 인사이트
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-      <div style="padding:16px 20px;border-right:1px solid rgba(255,255,255,.1)">
-        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px">
-          <span style="background:var(--bosideng);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px">BOSIDENG</span>
-          <span style="font-size:12.5px;font-weight:700;color:#fff">종합 평가</span>
-        </div>
-        <p style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.85">
-          DJ/DV 2.1 · WJ 1.9 · <strong style="color:#FFD700">JP 3.1 (MLB 기준 재평가 3.8 반영)</strong><br>
-          소재·원단(B) 전반적으로 양호 · JP 품목 전 항목 MLB 기준 근접 또는 초과<br>
-          WJ 심실링·완성도 개선 필요 · DJ/DV 봉제·패턴 피드백 후 재샘플 권고
-        </p>
-      </div>
-      <div style="padding:16px 20px">
-        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px">
-          <span style="background:var(--tess);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px">TESSELLATION</span>
-          <span style="font-size:12.5px;font-weight:700;color:#fff">종합 평가</span>
-        </div>
-        <p style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.85">
-          DJ/DV 2.1 · WJ 1.5 · JP 1.6<br>
-          DJ/DV E항목(패턴·핏감) 3.5 — 해당 품목 강점 확인<br>
-          <strong style="color:#FF6B6B">WJ 심실링 미적용 (판단불가) · JP 전반 1~2점대 — 전반적 품질 미흡</strong><br>
-          WJ·JP 품목 협력 가능성 재검토 필요
-        </p>
-      </div>
-    </div>
-    <div style="margin-top:16px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;color:rgba(255,255,255,.6);text-align:center">
-      평가일: 2026.03.16 · 평가자: Lucy · Julia · 기준: 5점 척도, 7개 항목 (A–G)
-    </div>
+    <div style="margin-top:10px;font-size:11px;color:#777;text-align:center">A: 전반적인상 · B: 소재·원단 · <strong style="color:#1565C0">C★: 봉제품질</strong> · △D: 패턴·핏 · E: 기능부자재 · <strong style="color:#1565C0">F★: 디자인완성도</strong> · <strong style="color:#1565C0">G★: 개발역량</strong></div>
   </div>
 
   <!-- DJ / DV 카테고리 -->
@@ -1785,12 +1810,14 @@ tr:hover td{background:#F8F9FF}
       <span class="st st-ok" style="margin-left:auto">평가 완료</span>
     </div>
     <div style="background:#F8FAFF;border-left:3px solid #90A4AE;padding:10px 14px;border-radius:0 4px 4px 0;margin-bottom:12px">
-      <div style="font-size:12px;font-weight:700;color:#0A1931;margin-bottom:8px">💡 DJ/DV 인사이트</div>
+      <div style="font-size:12px;font-weight:700;color:#0A1931;margin-bottom:8px">💡 DJ/DV 평가 인사이트</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px 14px;font-size:11.5px;color:#444;line-height:1.75">
-        <div>✅ <strong>B항목(소재·원단)</strong>: BOSIDENG 3.7 — MLB 기준 상회</div>
-        <div>➡️ <strong>D항목(부자재)</strong>: 양사 비슷한 수준</div>
-        <div>⚠️ <strong>E항목(패턴·핏감)</strong>: BOSIDENG 1.0 미흡 vs TESSELLATION 3.5 우위</div>
-        <div>📋 <strong>종합</strong>: 양사 동점(2.1) · 브랜드 이해도(A) 전반 낮아 추가 피드백 필요</div>
+        <div>✅ <strong>BOSIDENG B(소재)</strong>: 3.3 / <strong>A(양산적합성)</strong>: 4.0 — 안정적 수준 확인</div>
+        <div>✅ <strong>BOSIDENG G(개발역량)</strong>: 3.8 — MLB 기준 근접</div>
+        <div>⚠️ <strong>BOSIDENG C(봉제)</strong>: 2.7 · <strong>E(트림)</strong>: 2.5 — 추가 개선 필요</div>
+        <div>⚠️ <strong>TESSELLATION E(트림)</strong>: 5.0 강점 · 그 외 전반 MLB 기준 미달</div>
+        <div>📋 <strong>BOSIDENG 2.93 vs TESS 1.98</strong> — BOSIDENG 전체 우위 확인</div>
+        <div>🔄 <strong>C봉제★·F디자인★ 항목</strong> 추가 피드백 후 재샘플 권고</div>
       </div>
     </div>
     <div class="tbl-wrap" style="margin-bottom:16px">
@@ -1812,7 +1839,7 @@ tr:hover td{background:#F8F9FF}
             <td><small>바시티 후드 구스 롱패딩<br>메가로고 립스탑 숏패딩</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
             <td style="text-align:center"><span style="font-size:11px;color:#777">기준 샘플</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">2.4 / 5</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">2.7 / 5</span></td>
           </tr>
           <tr>
             <td><strong style="color:var(--bosideng)">BOSIDENG</strong></td>
@@ -1820,7 +1847,7 @@ tr:hover td{background:#F8F9FF}
             <td><small>바시티 후드 구스 롱패딩 대응<br>메가로고 립스탑 숏패딩 대응</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
             <td style="text-align:center"><span class="st st-ok">완료</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">2.1 / 5</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#1565C0;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">2.9 / 5</span></td>
           </tr>
           <tr>
             <td><strong style="color:var(--tess)">TESSELLATION</strong></td>
@@ -1828,12 +1855,12 @@ tr:hover td{background:#F8F9FF}
             <td><small>DJ 비교 스타일</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
             <td style="text-align:center"><span class="st st-ok">완료</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">2.1 / 5</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">2.0 / 5</span></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px;cursor:pointer;user-select:none" onclick="var t=this.nextElementSibling;var o=t.style.display!=='none';t.style.display=o?'none':'';this.innerHTML=(o?'▶':'▼')+' 항목별 평가 세부 점수 (Lucy + Julia 평균, 5점 척도)'" title="클릭하여 펼치기/접기">▶ 항목별 평가 세부 점수 (Lucy + Julia 평균, 5점 척도)</div>
+    <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px;cursor:pointer;user-select:none" onclick="var t=this.nextElementSibling;var o=t.style.display!=='none';t.style.display=o?'none':'';this.innerHTML=(o?'▶':'▼')+' 항목별 평가 세부 점수 (QM + SC 평균, 5점 척도)'" title="클릭하여 펼치기/접기">▶ 항목별 평가 세부 점수 (QM + SC 평균, 5점 척도)</div>
     <div class="tbl-wrap" style="display:none">
       <table>
         <thead>
@@ -1847,59 +1874,59 @@ tr:hover td{background:#F8F9FF}
         </thead>
         <tbody>
           <tr>
-            <td style="font-weight:700;color:#666;text-align:center">A</td>
-            <td>MLB 브랜드 이해도</td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.7</span></td>
-            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+            <td style="font-weight:700;color:#666;text-align:center;font-size:11px">A<br><span style="color:#aaa;font-weight:400">기본</span></td>
+            <td>전반적인상 (Overall Impression) <small style="color:#888">— 3문항</small></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.0</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.8</span></td>
             <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.0</span></td>
           </tr>
           <tr>
-            <td style="font-weight:700;color:#666;text-align:center">B</td>
-            <td>소재·원단 품질</td>
+            <td style="font-weight:700;color:#666;text-align:center;font-size:11px">B<br><span style="color:#aaa;font-weight:400">중요</span></td>
+            <td>소재·원단 품질 (Fabric &amp; Material) <small style="color:#888">— 3문항</small></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.0</span></td>
             <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.3</span></td>
-            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.7</span></td>
-            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.5</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.0</span></td>
+          </tr>
+          <tr style="background:#FFF8F8">
+            <td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px">C★<br><span style="color:#aaa;font-weight:400">핵심</span></td>
+            <td><strong style="color:#1565C0">봉제 품질★ (Construction &amp; Workmanship)</strong> <small style="color:#888">— 6문항 (안감·충전재 신규)</small></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.8</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.7</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.5</span></td>
           </tr>
           <tr>
-            <td style="font-weight:700;color:#666;text-align:center">C</td>
-            <td>봉제 품질</td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.4</span></td>
-            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.1</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.6</span></td>
-          </tr>
-          <tr>
-            <td style="font-weight:700;color:#666;text-align:center">D</td>
-            <td>부자재·하드웨어</td>
-            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.6</span></td>
+            <td style="font-weight:700;color:#E65100;text-align:center;font-size:11px">D△<br><span style="color:#aaa;font-weight:400">차순위</span></td>
+            <td>패턴·핏감△ (Fit &amp; Pattern) <small style="color:#888">— 4문항 · MLB block 조정 예정</small></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.3</span></td>
             <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.1</span></td>
-            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.9</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.0</span></td>
           </tr>
           <tr>
-            <td style="font-weight:700;color:#666;text-align:center">E</td>
-            <td>구성·패턴·핏감</td>
-            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.8</span></td>
-            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
+            <td style="font-weight:700;color:#666;text-align:center;font-size:11px">E<br><span style="color:#aaa;font-weight:400">중요</span></td>
+            <td>기능부자재 (Functional Details) <small style="color:#888">— 2문항 (지퍼·트림)</small></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.8</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.3</span></td>
             <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
           </tr>
-          <tr>
-            <td style="font-weight:700;color:#666;text-align:center">F</td>
-            <td>마감·처리</td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.3</span></td>
-            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.5</span></td>
+          <tr style="background:#FFF8F8">
+            <td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px">F★<br><span style="color:#aaa;font-weight:400">핵심</span></td>
+            <td><strong style="color:#1565C0">디자인 완성도★ (Design &amp; Aesthetic)</strong> <small style="color:#888">— 2문항</small></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.0</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.0</span></td>
             <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
           </tr>
-          <tr>
-            <td style="font-weight:700;color:#666;text-align:center">G</td>
-            <td>전체 완성도</td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.8</span></td>
-            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
-            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+          <tr style="background:#FFF8F8">
+            <td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px">G★<br><span style="color:#aaa;font-weight:400">핵심</span></td>
+            <td><strong style="color:#1565C0">개발역량★ (Development Capability)</strong> <small style="color:#888">— 3문항</small></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.2</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.3</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.5</span></td>
           </tr>
           <tr style="background:#E8EDF4;font-weight:700">
-            <td colspan="2" style="text-align:right;font-size:12.5px;padding-right:12px">종합 평균</td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.4</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.1</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.1</span></td>
+            <td colspan="2" style="text-align:right;font-size:12.5px;padding-right:12px">종합 평균 (23문항)</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.7</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#1565C0;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.9</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.0</span></td>
           </tr>
         </tbody>
       </table>
@@ -1916,9 +1943,11 @@ tr:hover td{background:#F8F9FF}
     <div style="background:#F8FAFF;border-left:3px solid #90A4AE;padding:10px 14px;border-radius:0 4px 4px 0;margin-bottom:12px">
       <div style="font-size:12px;font-weight:700;color:#0A1931;margin-bottom:8px">💡 WJ 인사이트</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px 14px;font-size:11.5px;color:#444;line-height:1.75">
-        <div>✅ <strong>E항목(패턴·핏감)</strong>: BOSIDENG 3.5 — MLB 기준(4.5) 근접, 가장 양호</div>
-        <div>⚠️ <strong>G항목(완성도)</strong>: 양사 1.0 최저 — 전반적 MLB 기준 미달</div>
-        <div style="grid-column:1/-1">🚫 <strong>TESSELLATION</strong>: 심실링(Seam Sealing) 공정 미적용 — 기술 역량 부족 확인, 대응 불가 리스크</div>
+        <div>✅ <strong>BOSIDENG C★(봉제)</strong>: 3.9 — MLB 기준(3.7) 초과, WJ 최강점</div>
+        <div>✅ <strong>BOSIDENG G★(개발역량)</strong>: 3.7 — MLB 기준(3.5) 상회</div>
+        <div>⚠️ <strong>BOSIDENG D△(패턴·핏)</strong>: 3.0 — MLB 기준(3.75) 대비 미흡, MLB block 조정 예정</div>
+        <div>⚠️ <strong>BOSIDENG E(기능부자재)</strong>: 3.75 — MLB 기준(4.5) 대비 개선 여지</div>
+        <div style="grid-column:1/-1">🚫 <strong>TESSELLATION WJ 전 항목</strong>: 1~2점대 + 심실링 미적용 전항목 — WJ 품목 기술 역량 부재 확인</div>
       </div>
     </div>
     <div class="tbl-wrap" style="margin-bottom:16px">
@@ -1948,7 +1977,7 @@ tr:hover td{background:#F8F9FF}
             <td><small>GORE-TEX 3L 지퍼포인트 대응<br>WJ 비교모델 대응</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
             <td style="text-align:center"><span class="st st-ok">완료</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">1.9 / 5</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#1565C0;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">3.5 / 5</span></td>
           </tr>
           <tr>
             <td><strong style="color:var(--tess)">TESSELLATION</strong></td>
@@ -1956,12 +1985,12 @@ tr:hover td{background:#F8F9FF}
             <td><small>WJ 비교 스타일</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
             <td style="text-align:center"><span class="st st-ok">완료</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">1.5 / 5</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#C62828;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">1.5 / 5</span></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px;cursor:pointer;user-select:none" onclick="var t=this.nextElementSibling;var o=t.style.display!=='none';t.style.display=o?'none':'';this.innerHTML=(o?'▶':'▼')+' 항목별 평가 세부 점수 (Lucy + Julia 평균, 5점 척도)'" title="클릭하여 펼치기/접기">▶ 항목별 평가 세부 점수 (Lucy + Julia 평균, 5점 척도)</div>
+    <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px;cursor:pointer;user-select:none" onclick="var t=this.nextElementSibling;var o=t.style.display!=='none';t.style.display=o?'none':'';this.innerHTML=(o?'▶':'▼')+' 항목별 평가 세부 점수 (QM + SC 평균, 5점 척도)'" title="클릭하여 펼치기/접기">▶ 항목별 평가 세부 점수 (QM + SC 평균, 5점 척도)</div>
     <div class="tbl-wrap" style="display:none">
       <table>
         <thead>
@@ -1975,64 +2004,64 @@ tr:hover td{background:#F8F9FF}
         </thead>
         <tbody>
           <tr>
-            <td style="font-weight:700;color:#666;text-align:center">A</td>
-            <td>MLB 브랜드 이해도</td>
+            <td style="font-weight:700;color:#666;text-align:center;font-size:11px">A<br><span style="color:#aaa;font-weight:400">기본</span></td>
+            <td>전반적인상 (Overall Impression) <small style="color:#888">— 3문항</small></td>
             <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.5</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.3</span></td>
             <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
           </tr>
           <tr>
-            <td style="font-weight:700;color:#666;text-align:center">B</td>
-            <td>소재·원단 품질</td>
-            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.0</span></td>
-            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
-          </tr>
-          <tr>
-            <td style="font-weight:700;color:#666;text-align:center">C</td>
-            <td>봉제 품질 (심실링 포함)</td>
+            <td style="font-weight:700;color:#666;text-align:center;font-size:11px">B<br><span style="color:#aaa;font-weight:400">중요</span></td>
+            <td>소재·원단 품질 (Fabric &amp; Material) <small style="color:#888">— 3문항</small></td>
             <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.2</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.7</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.5 *</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.2</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+          </tr>
+          <tr style="background:#FFF8F8">
+            <td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px">C★<br><span style="color:#aaa;font-weight:400">핵심</span></td>
+            <td><strong style="color:#1565C0">봉제 품질★ (Construction &amp; Workmanship)</strong> <small style="color:#888">— 6문항 (안감·심실링 포함) · TESS 심실링 제외 5문항</small></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.7</span></td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.9</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.4 *</span></td>
           </tr>
           <tr>
-            <td style="font-weight:700;color:#666;text-align:center">D</td>
-            <td>부자재·하드웨어</td>
+            <td style="font-weight:700;color:#E65100;text-align:center;font-size:11px">D△<br><span style="color:#aaa;font-weight:400">차순위</span></td>
+            <td>패턴·핏감△ (Fit &amp; Pattern) <small style="color:#888">— 4문항 · MLB block 조정 예정</small></td>
             <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.8</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.3</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.9</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.0</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
           </tr>
           <tr>
-            <td style="font-weight:700;color:#666;text-align:center">E</td>
-            <td>구성·패턴·핏감</td>
+            <td style="font-weight:700;color:#666;text-align:center;font-size:11px">E<br><span style="color:#aaa;font-weight:400">중요</span></td>
+            <td>기능부자재 (Functional Details) <small style="color:#888">— 2문항 (지퍼·트림)</small></td>
             <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.5</span></td>
-            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.8</span></td>
             <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.8</span></td>
           </tr>
-          <tr>
-            <td style="font-weight:700;color:#666;text-align:center">F</td>
-            <td>마감·처리</td>
+          <tr style="background:#FFF8F8">
+            <td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px">F★<br><span style="color:#aaa;font-weight:400">핵심</span></td>
+            <td><strong style="color:#1565C0">디자인 완성도★ (Design &amp; Aesthetic)</strong> <small style="color:#888">— 2문항</small></td>
             <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.0</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.5</span></td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
             <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
           </tr>
-          <tr>
-            <td style="font-weight:700;color:#666;text-align:center">G</td>
-            <td>전체 완성도</td>
-            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.8</span></td>
-            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
-            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
+          <tr style="background:#FFF8F8">
+            <td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px">G★<br><span style="color:#aaa;font-weight:400">핵심</span></td>
+            <td><strong style="color:#1565C0">개발역량★ (Development Capability)</strong> <small style="color:#888">— 3문항</small></td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.7</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.3</span></td>
           </tr>
           <tr style="background:#E8EDF4;font-weight:700">
-            <td colspan="2" style="text-align:right;font-size:12.5px;padding-right:12px">종합 평균</td>
+            <td colspan="2" style="text-align:right;font-size:12.5px;padding-right:12px">종합 평균 (BOSI 23 / TESS 22문항)</td>
             <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">3.6</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">1.9</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">1.5</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#1565C0;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">3.5</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#C62828;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">1.5</span></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div style="font-size:11px;color:#777;margin-top:6px">* TESSELLATION C항목: 심실링(Seam Sealing) 문항 판단불가 처리 → 해당 문항 제외 후 평균 산출</div>
+    <div style="font-size:11px;color:#777;margin-top:6px">* TESSELLATION C항목 WJ: 심실링(Seam Sealing) 전 항목 미적용 — 해당 문항 전체 제외 후 5문항 평균 산출</div>
   </div>
 
   <!-- JP 카테고리 -->
@@ -2045,11 +2074,12 @@ tr:hover td{background:#F8F9FF}
     <div style="background:#F8FAFF;border-left:3px solid #90A4AE;padding:10px 14px;border-radius:0 4px 4px 0;margin-bottom:12px">
       <div style="font-size:12px;font-weight:700;color:#0A1931;margin-bottom:8px">💡 JP 인사이트</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px 14px;font-size:11.5px;color:#444;line-height:1.75">
-        <div>🔄 <strong>MLB 기준 재평가</strong>: 동일 모직 소재 확인 → MLB 3.8 상향 조정</div>
-        <div>✅ <strong>BOSIDENG 강점</strong>: 소재·봉제(B:3.0, C:3.1) 안정적, E항목(패턴·핏감) 4.0 최고점</div>
-        <div>⚠️ <strong>이슈 사항</strong>: 소매 방향 오류(재샘플 권고) · MLB·BOSI 공통 무게감 이슈</div>
-        <div>🔔 <strong>MLB 주의</strong>: 링타입 스냅 탈락 위험 확인 → 부자재 검토 필요</div>
-        <div style="grid-column:1/-1">❌ <strong>TESSELLATION</strong>: JP 전반 품질 미흡 (E항목 패턴·핏감 3.5 제외), 협력 적합성 재검토</div>
+        <div>✅ <strong>BOSIDENG C★(봉제)</strong>: 3.1 — 내부 안감 품질 안정적 수준 확인</div>
+        <div>✅ <strong>BOSIDENG E(기능부자재)</strong>: 4.0 — 스냅·버튼 신뢰성 개선 반영</div>
+        <div>✅ <strong>BOSIDENG G★(개발역량)</strong>: 3.7 — MLB 기준(3.3) 상회</div>
+        <div>⚠️ <strong>BOSIDENG D△(패턴·핏)</strong>: 2.3 — 칼라·후드 형태 MLB 1.0 vs BOSI 1.0, 맞춤 필요</div>
+        <div>✅ <strong>TESSELLATION E</strong>: 3.25 — 스냅·버튼 강점 (4.0), 트림 품질 2.5</div>
+        <div style="grid-column:1/-1">❌ <strong>TESSELLATION C★·F★(봉제·디자인)</strong>: 1.8 / 1.0 — 핵심 항목 MLB 기준 현저히 미달, JP 협력 재검토 필요</div>
       </div>
     </div>
     <div style="background:#E3F2FD;border-left:4px solid #0277BD;padding:8px 14px;font-size:12px;color:#0277BD;margin-bottom:14px;border-radius:0 4px 4px 0;font-weight:700">
@@ -2074,7 +2104,7 @@ tr:hover td{background:#F8F9FF}
             <td><small>JP 베스볼자켓</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
             <td style="text-align:center"><span style="font-size:11px;color:#777">기준 샘플</span></td>
-            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">3.8 / 5</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">2.6 / 5</span></td>
           </tr>
           <tr>
             <td><strong style="color:var(--bosideng)">BOSIDENG</strong></td>
@@ -2082,7 +2112,7 @@ tr:hover td{background:#F8F9FF}
             <td><small>JP 베스볼자켓 대응</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
             <td style="text-align:center"><span class="st st-ok">완료</span></td>
-            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">3.1 / 5</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#1565C0;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">3.0 / 5</span></td>
           </tr>
           <tr>
             <td><strong style="color:var(--tess)">TESSELLATION</strong></td>
@@ -2090,12 +2120,12 @@ tr:hover td{background:#F8F9FF}
             <td><small>JP 비교 스타일</small></td>
             <td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td>
             <td style="text-align:center"><span class="st st-ok">완료</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">1.6 / 5</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">1.7 / 5</span></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px;cursor:pointer;user-select:none" onclick="var t=this.nextElementSibling;var o=t.style.display!=='none';t.style.display=o?'none':'';this.innerHTML=(o?'▶':'▼')+' 항목별 평가 세부 점수 (Lucy + Julia 평균, 5점 척도)'" title="클릭하여 펼치기/접기">▶ 항목별 평가 세부 점수 (Lucy + Julia 평균, 5점 척도)</div>
+    <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px;cursor:pointer;user-select:none" onclick="var t=this.nextElementSibling;var o=t.style.display!=='none';t.style.display=o?'none':'';this.innerHTML=(o?'▶':'▼')+' 항목별 평가 세부 점수 (QM + SC 평균, 5점 척도)'" title="클릭하여 펼치기/접기">▶ 항목별 평가 세부 점수 (QM + SC 평균, 5점 척도)</div>
     <div class="tbl-wrap" style="display:none">
       <table>
         <thead>
@@ -2109,59 +2139,59 @@ tr:hover td{background:#F8F9FF}
         </thead>
         <tbody>
           <tr>
-            <td style="font-weight:700;color:#666;text-align:center">A</td>
-            <td>MLB 브랜드 이해도</td>
-            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.0</span></td>
-            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.8</span></td>
-            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
-          </tr>
-          <tr>
-            <td style="font-weight:700;color:#666;text-align:center">B</td>
-            <td>소재·원단 품질 <small style="color:#0277BD">※동일 모직 소재 확인</small></td>
-            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.3</span></td>
+            <td style="font-weight:700;color:#666;text-align:center;font-size:11px">A<br><span style="color:#aaa;font-weight:400">기본</span></td>
+            <td>전반적인상 (Overall Impression) <small style="color:#888">— 3문항</small></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.7</span></td>
             <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.0</span></td>
-            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
-          </tr>
-          <tr>
-            <td style="font-weight:700;color:#666;text-align:center">C</td>
-            <td>봉제 품질</td>
-            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.8</span></td>
-            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.1</span></td>
             <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
           </tr>
           <tr>
-            <td style="font-weight:700;color:#666;text-align:center">D</td>
-            <td>부자재·하드웨어 <small style="color:#E65100">※MLB 링스냅 탈락 주의</small></td>
-            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.8</span></td>
-            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.3</span></td>
+            <td style="font-weight:700;color:#666;text-align:center;font-size:11px">B<br><span style="color:#aaa;font-weight:400">중요</span></td>
+            <td>소재·원단 품질 (Fabric &amp; Material) <small style="color:#888">— 3문항</small></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.0</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.5</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+          </tr>
+          <tr style="background:#FFF8F8">
+            <td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px">C★<br><span style="color:#aaa;font-weight:400">핵심</span></td>
+            <td><strong style="color:#1565C0">봉제 품질★ (Construction &amp; Workmanship)</strong> <small style="color:#888">— 5문항 (안감·스냅링 신규)</small></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.1</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.1</span></td>
             <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.8</span></td>
           </tr>
           <tr>
-            <td style="font-weight:700;color:#666;text-align:center">E</td>
-            <td>구성·패턴·핏감 <small style="color:#E65100">※Bosi 소매 방향 이슈</small></td>
-            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.5</span></td>
+            <td style="font-weight:700;color:#E65100;text-align:center;font-size:11px">D△<br><span style="color:#aaa;font-weight:400">차순위</span></td>
+            <td>패턴·핏감△ (Fit &amp; Pattern) <small style="color:#888">— 4문항 · MLB block 조정 예정</small></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.3</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.3</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:#666;text-align:center;font-size:11px">E<br><span style="color:#aaa;font-weight:400">중요</span></td>
+            <td>기능부자재 (Functional Details) <small style="color:#888">— 2문항 (스냅·트림)</small></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.5</span></td>
             <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.0</span></td>
-            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.3</span></td>
           </tr>
-          <tr>
-            <td style="font-weight:700;color:#666;text-align:center">F</td>
-            <td>마감·처리</td>
-            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
-            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.5</span></td>
-            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
-          </tr>
-          <tr>
-            <td style="font-weight:700;color:#666;text-align:center">G</td>
-            <td>전체 완성도</td>
-            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
+          <tr style="background:#FFF8F8">
+            <td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px">F★<br><span style="color:#aaa;font-weight:400">핵심</span></td>
+            <td><strong style="color:#1565C0">디자인 완성도★ (Design &amp; Aesthetic)</strong> <small style="color:#888">— 2문항</small></td>
             <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.0</span></td>
-            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.3</span></td>
+            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.5</span></td>
+            <td style="text-align:center"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.0</span></td>
+          </tr>
+          <tr style="background:#FFF8F8">
+            <td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px">G★<br><span style="color:#aaa;font-weight:400">핵심</span></td>
+            <td><strong style="color:#1565C0">개발역량★ (Development Capability)</strong> <small style="color:#888">— 3문항</small></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.3</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.7</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.3</span></td>
           </tr>
           <tr style="background:#E8EDF4;font-weight:700">
-            <td colspan="2" style="text-align:right;font-size:12.5px;padding-right:12px">종합 평균</td>
-            <td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">3.8</span></td>
-            <td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">3.1</span></td>
-            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">1.6</span></td>
+            <td colspan="2" style="text-align:right;font-size:12.5px;padding-right:12px">종합 평균 (22문항)</td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.6</span></td>
+            <td style="text-align:center"><span style="background:#E3F2FD;color:#1565C0;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">3.0</span></td>
+            <td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">1.7</span></td>
           </tr>
         </tbody>
       </table>
@@ -2169,15 +2199,1168 @@ tr:hover td{background:#F8F9FF}
   </div>
 
   <div style="background:#FFF8E1;border-left:4px solid #F9A825;padding:10px 14px;font-size:12px;color:#555;margin-bottom:16px">
-    ※ MLB 기준 샘플: 현행 협력사 제작 실물 기준 &nbsp;|&nbsp; 평가: Lucy · Julia 2인, 5점 척도 7개 항목 (A–G) &nbsp;|&nbsp; WJ C항목 TESSELLATION 심실링 1문항 판단불가 제외 처리
+    ※ 평가 기준일: 2026.03.24 · 평가자: QM · SC 2인 · 5점 척도 7개 항목(A–G) · ★핵심: C봉제·F디자인·G개발역량 / △차순위: D패턴핏 &nbsp;|&nbsp; WJ TESSELLATION: 심실링 전 항목 미적용 → 5문항 기준 산출 &nbsp;|&nbsp; MLB 기준 샘플: 현행 협력사 실물
   </div>
 
 </div><!-- /s-sample -->
 
+</div><!-- /brand-woven-content -->
+
+<!-- ===== KINT BRAND CONTENT ===== -->
+<div id="brand-kint-content" class="brand-content">
+
+<!-- KINT 01 -->
+<div class="section on" id="ks-overview">
+  <div class="stitle"><div class="stitle-icon">📋</div>KINT 카테고리 신규 협력사 선정 심사 배경</div>
+
+  <div class="g4 mb24">
+    <div class="kpi" style="border-left-color:var(--red)">
+      <div class="kpi-v" style="color:var(--red)">27SS</div>
+      <div class="kpi-l">신규 협력사 적용 목표 시즌</div>
+      <div class="kpi-s">TS · HD · SP 3품목 신규 배정 목표</div>
+    </div>
+    <div class="kpi" style="border-left-color:var(--bosideng)">
+      <div class="kpi-v" style="color:var(--bosideng)">200K</div>
+      <div class="kpi-l">SUNRISE MLB 월 가용 (pcs)</div>
+      <div class="kpi-s">총 2.5M/월 · 니트 전용 배정 200K</div>
+    </div>
+    <div class="kpi" style="border-left-color:#7B1FA2">
+      <div class="kpi-v" style="color:#7B1FA2">100K</div>
+      <div class="kpi-l">TIMES MLB 월 가용 (pcs)</div>
+      <div class="kpi-s">장쑤+루안 42라인 · 납기준수율 98%+</div>
+    </div>
+    <div class="kpi" style="border-left-color:var(--warn)">
+      <div class="kpi-v" style="color:var(--warn)">17%</div>
+      <div class="kpi-l">기존 협력사 최고 불량률</div>
+      <div class="kpi-s">노브랜드 PT Torquing 25FW — 교체 트리거</div>
+    </div>
+  </div>
+
+  <div class="g2 mb24">
+    <div class="card">
+      <div class="card-t">선정 배경</div>
+      <p style="font-size:13px;line-height:1.95">
+        26SS/26FW 매장실사 Back Data 분석 결과, 기존 KINT 협력사의 구조적 품질 문제가 반복 확인되었습니다.<br><br>
+        <strong style="color:var(--red)">노브랜드 PT Torquing 17.0%</strong>, <strong style="color:var(--red)">팬코 TR 지퍼 13.5%</strong>, <strong style="color:var(--warn)">노브랜드 MT 씸 꿀렁임 9.3%</strong> 등 봉제불량·Torquing·Wavy Zipper 이슈가 핵심 품목(PT·TR·MT)에 집중되어 있습니다.<br><br>
+        27SS 신규 배정 품목 <strong>TS · HD · SP</strong> 3품목에 대해 품질 안정성이 검증된 신규 파트너 선정을 추진합니다. <strong>SUNRISE</strong>(19개 공장 4개국 / UQ Premium Supplier 2025)와 <strong>TIMES</strong>(1992년 설립 / 납기준수율 98%+) 2개사를 심층 심사합니다.
+      </p>
+    </div>
+    <div class="card">
+      <div class="card-t">심사 개요</div>
+      <table>
+        <tr><th>구분</th><th>내용</th></tr>
+        <tr><td>분석 기준일</td><td>2026.03.23 (Back Data 기준)</td></tr>
+        <tr><td>선정 목적</td><td>27SS+ MLB KINT 신규 협력사 (TS·HD·SP 배정)</td></tr>
+        <tr><td>평가 방법</td><td>26SS/26FW Back Data 511건 + Factory Q&A 26항목 + M/U 원가심사</td></tr>
+        <tr><td>후보 업체</td><td><strong>SUNRISE</strong> · <strong>TIMES</strong> 2개사</td></tr>
+        <tr><td>신규 배정 품목</td><td>TS(T-SHIRT) · HD(후드) · SP(스포츠팬츠) <span style="color:var(--warn)">※ KC·KP(스웨터) 제외</span></td></tr>
+        <tr><td>주요 결함 유형</td><td>Torquing · 봉제불량 · Wavy Zipper · 씸 꿀렁임</td></tr>
+        <tr><td>작성 기준일</td><td>2026.03.24</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 신규 배정 품목 요약 -->
+  <div class="card mb24" style="border-left:4px solid var(--bosideng)">
+    <div class="card-t">27SS 신규 협력사 배정 품목 — 확정 3품목 + Back Data 추가 제안</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>품목</th><th>아이템코드</th><th>26SS/FW 발주 QTY</th><th>M/U 평균</th><th>기존 불량 현황</th><th>신규 배정 여부</th></tr></thead>
+        <tbody>
+          <tr style="background:#E3F2FD;font-weight:600"><td>T-SHIRT</td><td>TS</td><td>3,905,587 pcs (68%)</td><td>5.72</td><td>0.15% (양호)</td><td><span class="st st-new">✅ 확정 신규 배정</span></td></tr>
+          <tr style="background:#E3F2FD;font-weight:600"><td>후드</td><td>HD</td><td>151,595 pcs</td><td>5.28</td><td>1.95% (노브랜드 삼봉 Uneven)</td><td><span class="st st-new">✅ 확정 신규 배정</span></td></tr>
+          <tr style="background:#E3F2FD;font-weight:600"><td>스포츠팬츠</td><td>SP</td><td>175,308 pcs</td><td>5.38</td><td>기존 불량 낮음</td><td><span class="st st-new">✅ 확정 신규 배정</span></td></tr>
+          <tr style="background:#FFF8E1"><td>목폴라/Mock-neck</td><td>MT</td><td>583,965 pcs (2위)</td><td>5.57</td><td><span style="color:var(--red);font-weight:700">9.3% 씸 꿀렁임 (노브랜드)</span></td><td><span class="st st-warn">⭐ 추가 제안 검토</span></td></tr>
+          <tr style="background:#FFF8E1"><td>트랙탑/집업</td><td>TR</td><td>195,379 pcs</td><td>5.47</td><td><span style="color:var(--red);font-weight:700">13.5% 지퍼 이새 (팬코)</span></td><td><span class="st st-warn">⭐ 추가 제안 검토</span></td></tr>
+          <tr style="background:#FFEBEE"><td>스웨터 (KC·KP)</td><td>KC/KP</td><td>—</td><td>—</td><td>—</td><td><span class="st" style="background:#FFCDD2;color:#B71C1C">❌ 제외</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card" style="border-top:4px solid var(--bosideng)">
+      <div class="card-t" style="color:var(--bosideng)">SUNRISE — 후보 프로필</div>
+      <div class="vc-row"><span class="vc-l">규모</span><span class="vc-r">19개 공장 / 4개국 (CN·VN·KH·Morocco) / 총 2.5M pcs/월</span></div>
+      <div class="vc-row"><span class="vc-l">주요 레퍼런스</span><span class="vc-r">UNIQLO · Lacoste · BOSS · Tommy · CK · POLO RL · FILA · Descente</span></div>
+      <div class="vc-row"><span class="vc-l">수상</span><span class="vc-r" style="color:var(--bosideng);font-weight:700">UQ Premium Supplier 2025 (550개사 중 Top 5)</span></div>
+      <div class="vc-row"><span class="vc-l">AI 역량</span><span class="vc-r">Auto Cutting + AI Vision 검사 + Smart Inspection 도입</span></div>
+      <div class="vc-row"><span class="vc-l">MLB 가용</span><span class="vc-r">니트 200K pcs/월 / 생산 L/T 60~90일</span></div>
+      <div class="vc-row"><span class="vc-l">MLB 내부 평가</span><span class="vc-r"><span class="st st-ok" style="background:#1B5E20;color:#fff">⭐ Strong</span></span></div>
+    </div>
+    <div class="card" style="border-top:4px solid #7B1FA2">
+      <div class="card-t" style="color:#7B1FA2">TIMES — 후보 프로필</div>
+      <div class="vc-row"><span class="vc-l">설립/규모</span><span class="vc-r">1992년 설립 · 장쑤(12라인) + 루안(30라인) = 42라인</span></div>
+      <div class="vc-row"><span class="vc-l">주요 레퍼런스</span><span class="vc-r">Decathlon · Semir · Anta · Giordano · Quiksilver · BananaIn</span></div>
+      <div class="vc-row"><span class="vc-l">생산 전문성</span><span class="vc-r">연 2,500만장 / 니트원단 10,000톤 자체생산</span></div>
+      <div class="vc-row"><span class="vc-l">납기</span><span class="vc-r" style="color:var(--green);font-weight:700">납기준수율 98%+ / PROTO L/T 7일</span></div>
+      <div class="vc-row"><span class="vc-l">MLB 가용</span><span class="vc-r">100K pcs/월 / 생산 L/T 60~70일</span></div>
+      <div class="vc-row"><span class="vc-l">MLB 내부 평가</span><span class="vc-r"><span class="st st-warn" style="background:#FF8F00;color:#fff">📋 Solid</span></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- KINT 02 -->
+<div class="section" id="ks-item">
+  <div class="stitle"><div class="stitle-icon">📦</div>KINT 카테고리 협력사 현황 분석</div>
+
+  <!-- 인사이트 배너 -->
+  <div style="background:linear-gradient(135deg,#0A1931 0%,#1a3060 100%);border-radius:8px;padding:13px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px">
+    <span style="font-size:18px">⚠️</span>
+    <span style="font-size:13px;font-weight:700;color:#FF6B6B">핵심 문제: <span style="color:#fff">기존 협력사 불량 반복 구조</span></span>
+    <span style="font-size:12px;color:rgba(255,255,255,.75);border-left:1px solid rgba(255,255,255,.2);padding-left:12px">노브랜드 PT Torquing 17.0%·팬코 TR 지퍼이새 13.5% 등 AI 재단 미도입 협력사의 구조적 불량이 반복 — 현 체제 유지 시 품질 관리 비용 및 클레임 리스크 증가 불가피</span>
+  </div>
+
+  <!-- KPI -->
+  <div class="g4 mb20">
+    <div class="kpi" style="border-left-color:var(--red)">
+      <div class="kpi-v" style="color:var(--red)">17.0%</div>
+      <div class="kpi-l">기존 협력사 최고 불량률</div>
+      <div class="kpi-s">노브랜드 PT Torquing (25FW) — 교체 트리거</div>
+    </div>
+    <div class="kpi" style="border-left-color:var(--warn)">
+      <div class="kpi-v" style="color:var(--warn)">511건</div>
+      <div class="kpi-l">26SS/26FW Back Data</div>
+      <div class="kpi-s">총 5,742,948 pcs · 5개 협력사</div>
+    </div>
+    <div class="kpi" style="border-left-color:var(--bosideng)">
+      <div class="kpi-v" style="color:var(--bosideng)">3.6%</div>
+      <div class="kpi-l">전체 KNIT 불량률</div>
+      <div class="kpi-s">검사 4,863pcs 중 174pcs 불량</div>
+    </div>
+    <div class="kpi" style="border-left-color:var(--green)">
+      <div class="kpi-v" style="color:var(--green)">TS 68%</div>
+      <div class="kpi-l">주력 품목 TS 물량 비중</div>
+      <div class="kpi-s">3,905,587 pcs · 208 styles</div>
+    </div>
+  </div>
+
+  <!-- 아이템별 현황 -->
+  <div class="card mb20">
+    <div class="card-t">26SS/26FW KINT 아이템별 발주 현황 — Back Data 511건 (KC·KP 스웨터 제외)</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>품목</th><th>코드</th><th>Style 수</th><th>총 QTY (pcs)</th><th>비중</th><th>M/U 평균</th><th>주요 불량</th><th>신규 배정</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background:#E3F2FD;font-weight:600">
+            <td>T-SHIRT</td><td>TS</td><td>208</td><td>3,905,587</td><td><strong>68.0%</strong></td><td>5.72</td><td><span class="st st-ok">0.15% (양호)</span></td><td><span class="st st-new">✅ 확정</span></td>
+          </tr>
+          <tr style="background:#E3F2FD;font-weight:600">
+            <td>후드</td><td>HD</td><td>33</td><td>151,595</td><td>2.6%</td><td>5.28</td><td><span class="st st-warn">1.95% 삼봉 Uneven</span></td><td><span class="st st-new">✅ 확정</span></td>
+          </tr>
+          <tr style="background:#E3F2FD;font-weight:600">
+            <td>스포츠팬츠</td><td>SP</td><td>25</td><td>175,308</td><td>3.1%</td><td>5.38</td><td><span class="st st-ok">양호</span></td><td><span class="st st-new">✅ 확정</span></td>
+          </tr>
+          <tr style="background:#FFF8E1">
+            <td>목폴라/Mock-neck</td><td>MT</td><td>76</td><td>583,965</td><td>10.2%</td><td>5.57</td><td><span style="color:var(--red);font-weight:700">9.3% 씸 꿀렁임</span></td><td><span class="st st-warn">⭐ 추가 제안</span></td>
+          </tr>
+          <tr style="background:#FFF8E1">
+            <td>트랙탑/집업</td><td>TR</td><td>39</td><td>195,379</td><td>3.4%</td><td>5.47</td><td><span style="color:var(--red);font-weight:700">13.5% 지퍼 이새</span></td><td><span class="st st-warn">⭐ 추가 제안</span></td>
+          </tr>
+          <tr>
+            <td>바지/하의</td><td>PT</td><td>67</td><td>371,749</td><td>6.5%</td><td>5.41</td><td><span style="color:var(--red);font-weight:700">17.0% Torquing</span></td><td><span class="st st-na">기존 협력사 개선</span></td>
+          </tr>
+          <tr>
+            <td>폴로</td><td>PQ</td><td>21</td><td>152,771</td><td>2.7%</td><td><strong style="color:var(--bosideng)">6.04</strong></td><td><span class="st st-ok">불량 낮음</span></td><td><span class="st st-na">유지</span></td>
+          </tr>
+          <tr>
+            <td>오픈카라</td><td>OP</td><td>15</td><td>98,007</td><td>1.7%</td><td><strong style="color:var(--bosideng)">6.51</strong></td><td><span class="st st-ok">불량 낮음</span></td><td><span class="st st-na">유지</span></td>
+          </tr>
+          <tr style="background:#FFEBEE">
+            <td>스웨터 (제외)</td><td>KC/KP</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="st" style="background:#FFCDD2;color:#B71C1C">❌ 제외</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 기존 협력사 현황 -->
+  <div class="card mb20">
+    <div class="card-t">기존 KINT 협력사 Back Data 현황 — 26SS/26FW 주요 아이템</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>협력사</th><th>총 QTY</th><th>주요 품목</th><th>주요 COO</th><th>핵심 불량 (매장실사)</th><th>방향</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>㈜노브랜드</strong></td><td>1,996,492+ pcs</td><td>TS·MT·PT·TR·SP·HD</td><td>VN (DHA·NBVO·PUKU)</td>
+            <td><span style="color:var(--red);font-weight:700">PT 17.0% Torquing · MT 9.3% · HD 1.95%</span></td>
+            <td><span class="st st-warn">PT·MT 교체 검토</span></td>
+          </tr>
+          <tr>
+            <td><strong>㈜팬코</strong></td><td>1,269,756 pcs</td><td>TS·MT·PT·TR·SP·HD</td><td>VN (꽝남)</td>
+            <td><span style="color:var(--red);font-weight:700">TR 13.5% 지퍼 이새 · MT 4.0% 배색찐빠</span></td>
+            <td><span class="st st-warn">TR 교체 검토</span></td>
+          </tr>
+          <tr>
+            <td><strong>ESQUEL</strong></td><td>1,368,917 pcs</td><td>TS·MT·PT·PQ·OP·HD</td><td>CN (ESQUEL)</td>
+            <td>TS 0.95% 삼봉꼬임 · PT 0.9% 밑단꼬임</td>
+            <td><span class="st st-na">유지</span></td>
+          </tr>
+          <tr>
+            <td><strong>㈜약진통상</strong></td><td>577,140 pcs</td><td>TS·TR·SP·MT·PT</td><td>CN/VN</td>
+            <td>불량 낮음</td>
+            <td><span class="st st-na">유지</span></td>
+          </tr>
+          <tr>
+            <td><strong>한솔섬유㈜</strong></td><td>160,274 pcs</td><td>TS·MT·TR·PT·SP</td><td>인도네시아 (HANDSOME)</td>
+            <td>MT 밑단 이새 · TR Wavy Zipper</td>
+            <td><span class="st st-na">유지</span></td>
+          </tr>
+          <tr style="background:#E3F2FD;font-weight:600">
+            <td colspan="4">→ 노브랜드 PT·MT·TR 물량, 팬코 TR 물량 신규 이관 검토</td>
+            <td colspan="2"><span class="st st-new">SUNRISE 신규 배정 검토</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 신규 후보 -->
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th colspan="6" style="background:#1A3C7A;color:#fff;text-align:left;padding:8px 12px">27SS 신규 KINT 협력사 후보 — 아이템별 심사 대상</th></tr>
+        <tr><th>협력사</th><th>TS (T-SHIRT)</th><th>HD (후드)</th><th>SP (스포츠팬츠)</th><th>MT (추가제안)</th><th>MLB 평가</th></tr>
+      </thead>
+      <tbody>
+        <tr style="background:#E3F2FD;font-weight:600">
+          <td>✦ SUNRISE (신규 검토)</td>
+          <td><span class="st st-new">✓ 주력 (Henan)</span></td>
+          <td><span class="st st-new">✓ 검토 중</span></td>
+          <td><span class="st st-new">✓ 검토 중</span></td>
+          <td><span class="st st-new">✓ 검토 중</span></td>
+          <td><span class="st st-ok" style="background:#1B5E20;color:#fff">⭐ Strong</span></td>
+        </tr>
+        <tr style="background:#F3E5F5;font-weight:600">
+          <td>✦ TIMES (신규 검토)</td>
+          <td><span class="st st-pend">확인 중</span></td>
+          <td><span class="st st-pend">확인 중</span></td>
+          <td><span class="st st-pend">확인 중</span></td>
+          <td><span class="st st-pend">확인 중</span></td>
+          <td><span class="st st-warn" style="background:#FF8F00;color:#fff">📋 Solid</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="background:#FFF8E1;border-left:4px solid #F9A825;padding:10px 14px;font-size:12px;color:#555;margin-top:8px">
+    ※ Back Data 출처: 신규 KNIT 공장 선정 BACK DATA_2026.03.23.xlsx (511건) · MLB_KNIT 매장 실사 불량 BACK DATA_2026.03.23.xlsx &nbsp;|&nbsp; KC·KP(스웨터) 제외 기준 적용 &nbsp;|&nbsp; M/U 평균은 26SS+26FW 합산 기준
+  </div>
+</div>
+
+<!-- KINT 03 -->
+<div class="section" id="ks-comparison">
+  <div class="stitle"><div class="stitle-icon">⚖️</div>KINT 신규 협력사 Q&A 심층 비교 분석</div>
+
+  <!-- 인사이트 배너 -->
+  <div style="background:linear-gradient(135deg,#0A1931 0%,#1a3060 100%);border-radius:8px;padding:13px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px">
+    <span style="font-size:18px">🏆</span>
+    <span style="font-size:13px;font-weight:700;color:#FFD700">적합 업체: <span style="color:#fff">SUNRISE</span></span>
+    <span style="font-size:12px;color:rgba(255,255,255,.75);border-left:1px solid rgba(255,255,255,.2);padding-left:12px">UQ/Lacoste/BOSS/Tommy/CK 레퍼런스·AI재단+비전검사·4개국 COO 분산·Open+Target Costing 모두 가능·Strong 평가 vs TIMES는 납기준수율 98%·PROTO 7일 강점이나 China 단일거점·MOQ 3,000 상위로 대형 프리미엄 레퍼런스 부재</span>
+  </div>
+
+  <!-- SUNRISE KPI -->
+  <div class="g4 mb16">
+    <div class="kpi" style="border-left-color:var(--bosideng)">
+      <div class="kpi-v" style="color:var(--bosideng)">200K</div>
+      <div class="kpi-l">SUNRISE MLB 니트 월 가용</div>
+      <div class="kpi-s">총 2.5M pcs/월 중 니트 MLB 배정</div>
+    </div>
+    <div class="kpi" style="border-left-color:var(--green)">
+      <div class="kpi-v" style="color:var(--green)">2,000</div>
+      <div class="kpi-l">SUNRISE Style MOQ (pcs)</div>
+      <div class="kpi-s">TIMES 3,000 대비 소량 대응 유리</div>
+    </div>
+    <div class="kpi" style="border-left-color:#7B1FA2">
+      <div class="kpi-v" style="color:#7B1FA2">98%+</div>
+      <div class="kpi-l">TIMES 납기준수율</div>
+      <div class="kpi-s">PROTO 7일 · 생산 L/T 60~70일</div>
+    </div>
+    <div class="kpi" style="border-left-color:var(--warn)">
+      <div class="kpi-v" style="color:var(--warn)">60일</div>
+      <div class="kpi-l">양사 생산 L/T (최단)</div>
+      <div class="kpi-s">SUNRISE 60~90일 / TIMES 60~70일</div>
+    </div>
+  </div>
+
+  <!-- SUNRISE 인사이트 카드 -->
+  <div class="card mb16" style="padding:0;overflow:hidden;border:1px solid var(--bosideng)">
+    <div style="background:var(--bosideng);color:#fff;padding:14px 22px;display:flex;align-items:center;gap:10px">
+      <span style="font-size:15px">🏭</span>
+      <span style="font-size:14px;font-weight:700">SUNRISE — Factory Information Q&A 인사이트</span>
+      <span style="margin-left:auto;font-size:11px;opacity:.7">신규 KNIT 공장 선정 BACK DATA_2026.03.23 / MLB Factory Information Q&A 26개항목</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+      <div style="padding:20px 22px;border-right:1px solid var(--border)">
+        <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.6px;margin-bottom:14px">✅ 핵심 강점 — MLB 협력 적합성</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+
+          <div style="background:#F1F8E9;border-left:3px solid var(--green);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#1B5E20;margin-bottom:4px">① UQ Premium Supplier 2025 — 550개사 중 Top 5</div>
+            <div style="font-size:12px;color:#444;line-height:1.7">UNIQLO·MUJI·Lacoste·BOSS·Tommy Hilfiger·Calvin Klein·POLO Ralph Lauren 공급망 동시 참여.<br>SPA 최고 수준 품질기준(ISO 9001:2015 기반 100% 검사) — MLB 기준 즉시 대응 가능.</div>
+          </div>
+
+          <div style="background:#F1F8E9;border-left:3px solid var(--green);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#1B5E20;margin-bottom:4px">② AI Cutting + Smart Inspection 이중 도입</div>
+            <div style="font-size:12px;color:#444;line-height:1.7">Auto Cutting Machine 구축 (연속 생산라인 운영) → 원단 로스 최소화·원가경쟁력.<br>AI Vision Real-time Action Correction System → 봉제불량·Torquing 즉시 감지 수정.</div>
+          </div>
+
+          <div style="background:#F1F8E9;border-left:3px solid var(--green);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#1B5E20;margin-bottom:4px">③ 4개국 19공장 — COO 유연 전환</div>
+            <div style="font-size:12px;color:#444;line-height:1.7">허난·후난·안후이(CN) + VN 8공장 + KH 3공장 + Morocco 4공장(건설 중).<br>중국/베트남/캄보디아 간 생산 배분 즉시 조정 가능 → 대중 관세 리스크 대응.</div>
+          </div>
+
+          <div style="background:#F1F8E9;border-left:3px solid var(--green);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#1B5E20;margin-bottom:4px">④ Open Costing + Target Costing 모두 가능</div>
+            <div style="font-size:12px;color:#444;line-height:1.7">바이어 요청 방식 모두 수용 — M/U 투명성 직접 확인 가능.<br>Style MOQ 2,000 pcs / Fabric 1,500m (TIMES MOQ 3,000 대비 소량 대응 우위).</div>
+          </div>
+
+          <div style="background:#F1F8E9;border-left:3px solid var(--green);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#1B5E20;margin-bottom:4px">⑤ 수직 공급망 + 자체 R&D (Liquid Cotton·EBB+)</div>
+            <div style="font-size:12px;color:#444;line-height:1.7">면화 재배~봉제 Full 수직 통합 공급망. 자체 소재 특허(Liquid Cotton/EBB+) 보유 → ODM 소재 제안 가능.<br>2035 탄소중립 목표, GRS 4.0·ISO14001 인증.</div>
+          </div>
+
+        </div>
+      </div>
+      <div style="padding:20px 22px">
+        <div style="font-size:12px;font-weight:700;color:var(--warn);text-transform:uppercase;letter-spacing:.6px;margin-bottom:14px">⚠️ 검토·협의 필요 사항</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+
+          <div style="background:#FFF3E0;border-left:3px solid var(--warn);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#BF360C;margin-bottom:3px">① PROTO L/T 20~30일 — TIMES(7일) 대비 긴 편</div>
+            <div style="font-size:12px;color:#555;line-height:1.7">원사 조달 시간 포함 20~30일 (TIMES 7일 대비 장기).<br>SMS L/T은 1주일로 단축 가능 — 개발 초기 일정 협의 필요.</div>
+          </div>
+
+          <div style="background:#FFF3E0;border-left:3px solid var(--warn);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#BF360C;margin-bottom:3px">② VN·KH 공장 AI 시스템 구축 진행 중</div>
+            <div style="font-size:12px;color:#555;line-height:1.7">허난·후난 AI 자동재단·비전검사는 구축 완료. VN·KH 공장은 단계적 도입 중 (약 3년 완료 목표) — 초도 물량은 CN 공장 배정 권고.</div>
+          </div>
+
+          <div style="background:#FFF3E0;border-left:3px solid var(--warn);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#BF360C;margin-bottom:3px">③ 샘플룸 월 생산 400 pcs — 다품종 동시 개발 시 조율 필요</div>
+            <div style="font-size:12px;color:#555;line-height:1.7">CN 샘플룸 월 400 pcs 제한 — TS·HD·SP·MT 동시 개발 시 우선순위 사전 협의.</div>
+          </div>
+
+        </div>
+
+        <div style="background:#E3F2FD;border:1px solid #90CAF9;border-radius:8px;padding:12px 14px;margin-top:16px">
+          <div style="font-size:11.5px;font-weight:700;color:var(--bosideng);margin-bottom:8px">📋 SUNRISE 핵심 사양 요약</div>
+          <div style="display:grid;grid-template-columns:130px 1fr;gap:4px 8px;font-size:11.5px">
+            <div style="font-weight:600;color:#555">생산 거점</div><div>CN 허난30·후난10·안후이10 / VN 8공장300L / KH 3공장</div>
+            <div style="font-weight:600;color:#555">MLB 가용</div><div>니트 200K pcs/월 · 총 2.5M/월</div>
+            <div style="font-weight:600;color:#555">PROTO / SMS L/T</div><div>20~30일 / 1주일</div>
+            <div style="font-weight:600;color:#555">생산 L/T</div><div>60~90일 (원사 포함)</div>
+            <div style="font-weight:600;color:#555">MOQ</div><div>Style 2,000 pcs / Fabric 1,500m</div>
+            <div style="font-weight:600;color:#555">주요 레퍼런스</div><div>UQ·MUJI·Lacoste·BOSS·Tommy·CK·FILA·Descente</div>
+            <div style="font-weight:600;color:#555">MLB 평가</div><div><strong style="color:#1B5E20">⭐ Strong</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMES 인사이트 카드 -->
+  <div class="card mb16" style="padding:0;overflow:hidden;border:1px solid #7B1FA2">
+    <div style="background:#7B1FA2;color:#fff;padding:14px 22px;display:flex;align-items:center;gap:10px">
+      <span style="font-size:15px">🏭</span>
+      <span style="font-size:14px;font-weight:700">TIMES — Factory Information Q&A 인사이트</span>
+      <span style="margin-left:auto;font-size:11px;opacity:.7">신규 KNIT 공장 선정 BACK DATA_2026.03.23 / MLB Factory Information Q&A 26개항목</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+      <div style="padding:20px 22px;border-right:1px solid var(--border)">
+        <div style="font-size:12px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.6px;margin-bottom:14px">✅ 핵심 강점 — MLB 협력 적합성</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+
+          <div style="background:#F1F8E9;border-left:3px solid var(--green);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#1B5E20;margin-bottom:4px">① PROTO L/T 7일 · 납기준수율 98%+</div>
+            <div style="font-size:12px;color:#444;line-height:1.7">전 인하우스 샘플룸 — PROTO·SMS 모두 약 7일.<br>수주 확정 후 납기 연장 요청 없음, 납기준수율 98%+ 실적 보유 — 개발·납기 안정성 최고 수준.</div>
+          </div>
+
+          <div style="background:#F1F8E9;border-left:3px solid var(--green);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#1B5E20;margin-bottom:4px">② 연 2,500만장 · 원단 10,000톤 자체 생산</div>
+            <div style="font-size:12px;color:#444;line-height:1.7">1992년 설립 30년+ 전문 니트 메이커. 편직~봉제 수직 통합.<br>원단 80% 자체 생산 → 소재 안정성·품질 일관성 높음.</div>
+          </div>
+
+          <div style="background:#F1F8E9;border-left:3px solid var(--green);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#1B5E20;margin-bottom:4px">③ 생산 L/T 60~70일 — 양사 중 최단</div>
+            <div style="font-size:12px;color:#444;line-height:1.7">SUNRISE 60~90일 대비 최단 60~70일 가능.<br>27SS ETD 역산 시 TIMES가 납기 리스크 최소.</div>
+          </div>
+
+          <div style="background:#F1F8E9;border-left:3px solid var(--green);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#1B5E20;margin-bottom:4px">④ 내부 R&D 센터 + HiggVFEM·ISO 풀셋</div>
+            <div style="font-size:12px;color:#444;line-height:1.7">R&D 센터 보유 · 공동 소재 개발 가능 · 독자 원단 개발 역량.<br>HiggVFEM·ISO9001·ISO50001·ISO45001·Decathlon 인증 풀셋.</div>
+          </div>
+
+        </div>
+      </div>
+      <div style="padding:20px 22px">
+        <div style="font-size:12px;font-weight:700;color:var(--warn);text-transform:uppercase;letter-spacing:.6px;margin-bottom:14px">⚠️ 검토·협의 필요 사항</div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px">
+
+          <div style="background:#FFF3E0;border-left:3px solid var(--warn);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#BF360C;margin-bottom:3px">① 중국 단일 거점 — COO·관세 리스크 노출</div>
+            <div style="font-size:12px;color:#555;line-height:1.7">장쑤/루안 China 단일 — 미중 무역 분쟁 심화 시 COO 전환 불가.<br>SUNRISE 4개국 분산 대비 지정학 리스크 구조적 높음.</div>
+          </div>
+
+          <div style="background:#FFF3E0;border-left:3px solid var(--warn);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#BF360C;margin-bottom:3px">② MOQ Style 3,000 pcs — SUNRISE 2,000 대비 높음</div>
+            <div style="font-size:12px;color:#555;line-height:1.7">MLB 소량 스타일(HD·SP 각 500~1,000 pcs) 대응 시 추가 비용 발생 우려 — MOQ 조건 협의 필요.</div>
+          </div>
+
+          <div style="background:#FFF3E0;border-left:3px solid var(--warn);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#BF360C;margin-bottom:3px">③ 볼륨 브랜드 위주 — MLB 패션 복잡도 검증 필요</div>
+            <div style="font-size:12px;color:#555;line-height:1.7">Decathlon(30%)·Semir(35%) 위주 대량 범용 아이템. MLB 복잡 그래픽·디테일 아이템 대응 수준 별도 샘플 확인 권고.</div>
+          </div>
+
+          <div style="background:#FFF3E0;border-left:3px solid var(--warn);padding:10px 14px;border-radius:0 8px 8px 0">
+            <div style="font-size:12.5px;font-weight:700;color:#BF360C;margin-bottom:3px">④ AI 자동재단 미도입 — 원가 경쟁력 격차</div>
+            <div style="font-size:12px;color:#555;line-height:1.7">AI 비전검사만 운영, 자동재단 없음. 원단 이용률 열위 → M/U 경쟁력 SUNRISE 대비 불리 가능.</div>
+          </div>
+
+        </div>
+
+        <div style="background:#F3E5F5;border:1px solid #CE93D8;border-radius:8px;padding:12px 14px">
+          <div style="font-size:11.5px;font-weight:700;color:#7B1FA2;margin-bottom:8px">📋 TIMES 핵심 사양 요약</div>
+          <div style="display:grid;grid-template-columns:130px 1fr;gap:4px 8px;font-size:11.5px">
+            <div style="font-weight:600;color:#555">생산 거점</div><div>중국 장쑤(12L) + 루안/안후이(30L) 단일</div>
+            <div style="font-weight:600;color:#555">MLB 가용</div><div>100K pcs/월</div>
+            <div style="font-weight:600;color:#555">PROTO / SMS L/T</div><div><strong style="color:var(--green)">~7일 / ~7일 ✅ (양사 최단)</strong></div>
+            <div style="font-weight:600;color:#555">생산 L/T</div><div>60~70일 (양사 최단)</div>
+            <div style="font-weight:600;color:#555">MOQ</div><div>Style 3,000 pcs / Fabric 200kg/color</div>
+            <div style="font-weight:600;color:#555">주요 레퍼런스</div><div>Decathlon·Semir·Anta·Giordano·Quiksilver</div>
+            <div style="font-weight:600;color:#555">MLB 평가</div><div><strong style="color:#FF8F00">📋 Solid</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 체크포인트 비교표 -->
+  <div class="card mb16">
+    <div class="card-t">MLB KINT 협력사 선정 핵심 체크포인트 — SUNRISE vs TIMES (실제 Q&A 26개항목 기준)</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:40px">No.</th>
+            <th>체크포인트</th>
+            <th style="width:200px;text-align:center;background:#1A3C7A">SUNRISE</th>
+            <th style="width:200px;text-align:center;background:#6A1B9A">TIMES</th>
+            <th style="width:90px">중요도</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td><td><strong>다거점 COO 분산</strong> — 관세·지정학 대응</td>
+            <td style="text-align:center"><span class="st st-ok">✅ 4개국 즉시 전환</span></td>
+            <td style="text-align:center"><span style="background:#FFCDD2;color:#B71C1C;padding:2px 6px;border-radius:4px;font-size:11px">❌ 중국 단일</span></td>
+            <td style="text-align:center"><span class="st st-warn">필수</span></td>
+          </tr>
+          <tr>
+            <td>2</td><td><strong>AI 자동재단</strong> — 원가·원단 이용률</td>
+            <td style="text-align:center"><span class="st st-ok">✅ 구축 운영 (CN)</span></td>
+            <td style="text-align:center"><span class="st st-warn">⚠ 미도입</span></td>
+            <td style="text-align:center"><span class="st st-warn">중요</span></td>
+          </tr>
+          <tr>
+            <td>3</td><td><strong>AI 비전 품질검사</strong> — 불량 구조적 방어</td>
+            <td style="text-align:center"><span class="st st-ok">✅ CN 운영 (VN 도입 중)</span></td>
+            <td style="text-align:center"><span class="st st-ok">✅ 운영 중</span></td>
+            <td style="text-align:center"><span class="st st-warn">필수</span></td>
+          </tr>
+          <tr>
+            <td>4</td><td><strong>글로벌 프리미엄 레퍼런스</strong></td>
+            <td style="text-align:center"><span class="st st-ok">✅ UQ·Lacoste·BOSS·Tommy</span></td>
+            <td style="text-align:center"><span class="st st-warn">⚠ Decathlon·Semir 위주</span></td>
+            <td style="text-align:center"><span class="st st-na">권장</span></td>
+          </tr>
+          <tr>
+            <td>5</td><td><strong>MLB 월 가용 ≥ 100K pcs</strong></td>
+            <td style="text-align:center"><span class="st st-ok">✅ 니트 200K/월</span></td>
+            <td style="text-align:center"><span class="st st-ok">✅ 100K/월</span></td>
+            <td style="text-align:center"><span class="st st-warn">필수</span></td>
+          </tr>
+          <tr>
+            <td>6</td><td><strong>PROTO L/T</strong> — 개발 속도</td>
+            <td style="text-align:center"><span class="st st-warn">⚠ 20~30일 (원사 포함)</span></td>
+            <td style="text-align:center"><span class="st st-ok" style="color:var(--green)">✅ ~7일 (최단)</span></td>
+            <td style="text-align:center"><span class="st st-warn">중요</span></td>
+          </tr>
+          <tr>
+            <td>7</td><td><strong>생산 L/T</strong> — 27SS ETD 역산</td>
+            <td style="text-align:center"><span class="st st-warn">⚠ 60~90일</span></td>
+            <td style="text-align:center"><span class="st st-ok">✅ 60~70일 (최단)</span></td>
+            <td style="text-align:center"><span class="st st-warn">중요</span></td>
+          </tr>
+          <tr>
+            <td>8</td><td><strong>Style MOQ</strong> — 소량 대응</td>
+            <td style="text-align:center"><span class="st st-ok">✅ 2,000 pcs</span></td>
+            <td style="text-align:center"><span class="st st-warn">⚠ 3,000 pcs</span></td>
+            <td style="text-align:center"><span class="st st-na">권장</span></td>
+          </tr>
+          <tr>
+            <td>9</td><td><strong>납기준수율</strong></td>
+            <td style="text-align:center"><span class="st st-ok">✅ 지연 대응 프로세스 완비</span></td>
+            <td style="text-align:center"><span class="st st-ok" style="color:var(--green)">✅ 98%+ 실적</span></td>
+            <td style="text-align:center"><span class="st st-warn">중요</span></td>
+          </tr>
+          <tr>
+            <td>10</td><td><strong>MLB 내부 종합 평가</strong></td>
+            <td style="text-align:center"><span class="st st-ok" style="background:#1B5E20;color:#fff">⭐ Strong</span></td>
+            <td style="text-align:center"><span class="st st-warn" style="background:#FF8F00;color:#fff">📋 Solid</span></td>
+            <td style="text-align:center"><span class="st st-warn">중요</span></td>
+          </tr>
+          <tr style="background:#E3F2FD;font-weight:700">
+            <td colspan="2"><strong>종합 적합성</strong></td>
+            <td style="text-align:center;font-size:13px;color:var(--bosideng)">7 / 10 우위 ✅<br><small style="font-weight:400;font-size:11px">COO·AI재단·레퍼런스·MOQ·평가 우위 / PROTO L/T·생산L/T 협의 필요</small></td>
+            <td style="text-align:center;font-size:13px;color:#7B1FA2">5 / 10 ✅<br><small style="font-weight:400;font-size:11px">납기준수·PROTO속도·생산L/T 우위 / COO·AI재단·MOQ 열위</small></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Q&A 원문 비교표 -->
+  <div class="card mb8" style="background:#F0F3F7;border:none;padding:10px 18px">
+    <span style="font-size:12px;font-weight:700;color:var(--muted)">▼ Factory Information Q&A 원문 비교표 (26개 항목)</span>
+  </div>
+  <div class="card">
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:100px">섹션</th>
+            <th>질문 항목</th>
+            <th style="width:240px;background:#1A3C7A">SUNRISE</th>
+            <th style="width:240px;background:#6A1B9A">TIMES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="comp-head"><td colspan="4">■ FACTORY CAPABILITY — 공장 역량</td></tr>
+          <tr><td>생산 구조</td><td>주력 품목 비율</td><td>T-shirt·Polo·Bottom·Woven — 니트 전 카테고리 (허난 주력)</td><td>T-shirt ~40% · Sweater ~20% · Jacket ~20% · Polo ~10%</td></tr>
+          <tr><td>생산 규모</td><td>총 월 생산역량 / MLB 가용</td><td>총 <strong>2,500,000 pcs/월</strong> · MLB 니트 <strong>200,000 pcs</strong></td><td>총 <strong>2,000,000 pcs/월</strong> · MLB <strong>100,000 pcs</strong></td></tr>
+          <tr><td>생산 거점</td><td>국가 및 공장 수</td><td>CN 3지역(허난30·후난10·안후이10) + <strong>VN 8공장(300L)</strong> + KH 3공장 + Morocco 4(건설)</td><td><strong>중국 2공장</strong> — 장쑤Rugao/루안Anhui</td></tr>
+          <tr><td>소유 형태</td><td>자사 / 외주 비율</td><td><strong>Owned 100%</strong></td><td><strong>Owned 100%</strong></td></tr>
+          <tr><td>특수공정</td><td>Print·Embroidery·특수공정</td><td>Print·Embroidery·Digital Printing 가능 (Bonding/Seam sealing 없음)</td><td>Bonding·Seam sealing(일부)·Laser·Garment dye·Print·Embroidery</td></tr>
+          <tr class="comp-head"><td colspan="4">■ QUALITY &amp; AI — 품질 및 AI 기술</td></tr>
+          <tr><td>QC 체계</td><td>품질관리 구조</td><td>ISO9001:2015 기반 · 100% Self-inspection → 샘플승인 → AQL Sampling</td><td>원자재→편직→원단→재단→자수/프린트→인라인→최종 전 공정 QC</td></tr>
+          <tr><td>AI 활용</td><td>AI 도입 현황</td><td><span class="st st-ok">✅ Auto Cutting(구축완료) + AI Vision 실시간 교정 시스템</span></td><td><span class="st st-warn">⚠ Visual inspection AI만 · 자동재단 없음</span></td></tr>
+          <tr><td>자체 Lab</td><td>검사 항목</td><td>Yes — 원단폭·구조·치수안정·세탁견뢰·마찰견뢰·내광·pH·포름알데히드·Bursting·Pilling 전항목</td><td>Yes — 내광성·내광발한·독성 제외 전항목 (3rd party 별도)</td></tr>
+          <tr><td>인증</td><td>보유 인증</td><td>GRS 4.0 · ISO9001/14001/50001/45001 · ISC</td><td><strong>HiggVFEM · ISO9001 · ISO50001 · ISO45001 · Decathlon 인증</strong></td></tr>
+          <tr class="comp-head"><td colspan="4">■ SAMPLE &amp; LEAD TIME — 샘플 및 납기</td></tr>
+          <tr><td>샘플 역량</td><td>PROTO L/T</td><td><span style="color:var(--warn);font-weight:600">20~30일 (원사 LT 포함)</span></td><td><span class="st st-ok">✅ ~7일 (인하우스)</span></td></tr>
+          <tr><td>납기</td><td>SMS / Size Set L/T</td><td>SMS: <strong>1주일</strong> · Size Set 별도 협의</td><td>~7일 (인하우스)</td></tr>
+          <tr><td>생산 L/T</td><td>Order confirm → 출고</td><td>60~90일 (원사 포함)</td><td><strong style="color:var(--green)">60~70일 (양사 최단)</strong></td></tr>
+          <tr><td>납기준수</td><td>납기준수율 / 대응</td><td>생산계획 재조정·분할선적·최단물류 대응 프로세스</td><td><strong style="color:var(--green)">98%+ 납기준수 / 수주후 연장요청 없음</strong></td></tr>
+          <tr class="comp-head"><td colspan="4">■ BUSINESS OPERATION — 비즈니스 운영</td></tr>
+          <tr><td>원단 소싱</td><td>자체 vs 지정</td><td>Both (자체 소싱 + 고객 지정 모두)</td><td>자체 80% + 고객 지정 20%</td></tr>
+          <tr><td>원가 방식</td><td>Costing 방식</td><td><strong>Open Costing + Target Costing 모두 가능</strong></td><td>Target Costing · Open Costing 모두 가능</td></tr>
+          <tr><td>MOQ</td><td>Style MOQ / Fabric MOQ</td><td>Style: <strong>2,000 pcs</strong> / Fabric: 1,500m</td><td>Style: <strong>3,000 pcs</strong> / Fabric: 200kg/color</td></tr>
+          <tr class="comp-head"><td colspan="4">■ REFERENCES &amp; EVALUATION — 레퍼런스 및 평가</td></tr>
+          <tr><td>주요 거래처</td><td>글로벌 브랜드</td><td><strong>Lacoste · BOSS · Tommy · CK · POLO RL · FILA · Descente · H&amp;H · K-Swiss</strong><br>UQ/MUJI (Premium Supplier 2025)</td><td><strong>Decathlon(30%) · Semir(35%) · BananaIn(10%) · Anta(10%) · Quiksilver · Giordano</strong></td></tr>
+          <tr><td>ODM</td><td>ODM 서비스</td><td>소재·디자인·트렌드 제안 / 자체 특허 소재 (Liquid Cotton·EBB+)</td><td>R&amp;D 센터 보유 · MLB와 공동 소재 개발 희망</td></tr>
+          <tr class="comp-head"><td colspan="4">■ MLB INTERNAL EVALUATION — 내부 종합 평가</td></tr>
+          <tr>
+            <td>종합 레벨</td><td>MLB 커뮤니케이션 역량 평가</td>
+            <td style="text-align:center"><span class="st st-ok" style="background:#1B5E20;color:#fff">⭐ Strong</span><br><small>구조화된 대응 / 전략적 사고</small></td>
+            <td style="text-align:center"><span class="st st-warn" style="background:#FF8F00;color:#fff">📋 Solid</span><br><small>기본 대응 가능 / 납기 안정성 우위</small></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:11px;color:var(--muted);margin-top:10px">※ 출처: 신규 KNIT 공장 선정 BACK DATA_2026.03.23.xlsx — MLB Factory Information Sheet (SUNRISE / TIMES Q&A 26개항목)</p>
+  </div>
+</div>
+
+<!-- KINT 04 -->
+<div class="section" id="ks-factory">
+  <div class="stitle"><div class="stitle-icon">🏭</div>KINT 신규 후보 공장 현황</div>
+
+  <!-- SUNRISE -->
+  <div style="margin-bottom:24px">
+    <h3 style="font-size:14px;font-weight:700;color:var(--bosideng);margin-bottom:14px;padding:10px 16px;background:#E3F2FD;border-radius:8px">
+      SUNRISE — 공장 현황 (데이터 제출 완료 · MLB 평가: Strong)
+    </h3>
+    <div class="g3 mb16">
+      <div class="card" style="border-left:3px solid var(--bosideng)">
+        <div class="card-t">🌍 글로벌 공급망 (4개국)</div>
+        <p style="font-size:12.5px;line-height:1.9">
+          중국: 허난 30라인 + 후난 10라인 + 안후이 10라인<br>
+          베트남: 8개 공장 · 300라인<br>
+          캄보디아: 3개 공장<br>
+          모로코: 4개 공장 (건설 중 — 유럽 COO 대응)
+        </p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--bosideng)">
+        <div class="card-t">🏅 UNIQLO 프리미엄 레퍼런스</div>
+        <p style="font-size:12.5px;line-height:1.9">
+          글로벌 최대 SPA UNIQLO 프리미엄 협력사<br>
+          SPA 최고 품질·납기 기준 이미 충족<br>
+          MLB 기준 즉시 대응 가능성 높음<br>
+          글로벌 Top 브랜드 공급망 참여
+        </p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--bosideng)">
+        <div class="card-t">🤖 AI 혁신 역량 (이중 도입)</div>
+        <p style="font-size:12.5px;line-height:1.9">
+          AI 자동재단 시스템 도입 운영<br>
+          → 원단 로스 최소화 · 원가 경쟁력 직결<br>
+          AI 비전 품질검사 시스템 운영<br>
+          → 봉제불량 자동 감지 · 불량률 구조적 감소
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr><th>생산 거점</th><th>국가</th><th>공장 수</th><th>라인 수</th><th>특징</th><th>COO 활용</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>허난(河南)</strong></td><td>중국</td><td>자사</td><td>30라인</td><td>니트 전문 주력공장 · AI 자동재단·비전검사 완비</td><td><span class="st st-ok">China</span></td></tr>
+            <tr><td><strong>후난(湖南)</strong></td><td>중국</td><td>자사</td><td>10라인</td><td>니트 보조공장</td><td><span class="st st-ok">China</span></td></tr>
+            <tr><td><strong>안후이(安徽)</strong></td><td>중국</td><td>자사</td><td>10라인</td><td>니트 보조공장</td><td><span class="st st-ok">China</span></td></tr>
+            <tr><td><strong>베트남 (8공장)</strong></td><td>Vietnam</td><td>협력공장</td><td>300라인</td><td>대규모 VN 생산 거점 · MLB 납기 분산 대응</td><td><span class="st st-ok">Vietnam</span></td></tr>
+            <tr><td><strong>캄보디아 (3공장)</strong></td><td>Cambodia</td><td>협력공장</td><td>TBD</td><td>ASEAN COO 대응 추가 거점</td><td><span class="st st-ok">Cambodia</span></td></tr>
+            <tr style="background:#FFF8E1"><td><strong>모로코 (4공장)</strong></td><td>Morocco</td><td>건설 중</td><td>TBD</td><td>유럽 COO 대응 · 2026~2027 가동 예정</td><td><span class="st st-pend">예정</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMES -->
+  <div style="margin-bottom:8px">
+    <h3 style="font-size:14px;font-weight:700;color:#7B1FA2;margin-bottom:14px;padding:10px 16px;background:#F3E5F5;border-radius:8px">
+      TIMES — 공장 현황 (데이터 제출 완료 · MLB 평가: Solid)
+    </h3>
+    <div class="g3 mb16">
+      <div class="card" style="border-left:3px solid #7B1FA2">
+        <div class="card-t">🏗 중국 전문공장 (1992~)</div>
+        <p style="font-size:12.5px;line-height:1.9">
+          설립: 1992년 (30년+ 니트 전문)<br>
+          장쑤(江蘇) 12라인 + 루안(六安) 30라인<br>
+          총 42라인 중국 단일 거점<br>
+          MLB 월 100K pcs 배정 가능
+        </p>
+      </div>
+      <div class="card" style="border-left:3px solid #7B1FA2">
+        <div class="card-t">🤝 주요 거래처 레퍼런스</div>
+        <p style="font-size:12.5px;line-height:1.9">
+          Decathlon · SEMIR · ANTA<br>
+          볼륨 중심 글로벌 브랜드 협력<br>
+          HiggVFEM · ISO9001 · ISO50001<br>
+          ISO45001 인증 풀셋 보유
+        </p>
+      </div>
+      <div class="card" style="border-left:3px solid #7B1FA2">
+        <div class="card-t">🤖 AI 품질검사 도입</div>
+        <p style="font-size:12.5px;line-height:1.9">
+          AI 비전 품질검사 시스템 운영<br>
+          기본 봉제불량 자동 감지 가능<br>
+          자동재단은 미도입<br>
+          자동화 설비 추가 운영
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr><th>생산 거점</th><th>국가</th><th>라인 수</th><th>특징</th><th>COO 활용</th><th>MLB 가용</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>장쑤(江蘇)</strong></td><td>중국</td><td>12라인</td><td>니트 전문 보조공장</td><td><span class="st st-ok">China</span></td><td>-</td></tr>
+            <tr><td><strong>루안(六安)</strong></td><td>중국</td><td>30라인</td><td>니트 전문 주력공장 · MLB 전담 배정 가능</td><td><span class="st st-ok">China</span></td><td><span class="st st-ok">100K pcs/월</span></td></tr>
+            <tr style="background:#FFF3E0"><td colspan="3"><strong>COO 리스크 주의</strong></td><td colspan="3">중국 단일 거점 → 미중 무역 이슈 시 COO 대안 없음. MLB 신규 배정 시 관세 리스크 별도 검토 필요</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- KINT 05 -->
+<div class="section" id="ks-evaluation">
+  <div class="stitle"><div class="stitle-icon">⭐</div>KINT 역량 평가 &amp; 선정 권고</div>
+
+  <!-- ═══ 선정 권고 (TOP) ═══ -->
+  <div class="rec-card mb24">
+    <div style="font-size:11px;font-weight:700;letter-spacing:1px;opacity:.6;text-transform:uppercase;margin-bottom:14px">🧶 KINT 카테고리 신규 협력사 — 최종 선정 권고</div>
+    <div style="display:flex;align-items:flex-start;gap:28px;flex-wrap:wrap">
+      <div style="flex:1;min-width:280px">
+        <div style="font-size:22px;font-weight:800;color:#FFD700;margin-bottom:8px">
+          SUNRISE 선정 권고
+        </div>
+        <div style="font-size:13px;color:rgba(255,255,255,.85);line-height:1.9;margin-bottom:18px">
+          기존 KINT 협력사(OUTIN 29% 등) 고불량 구조적 해소를 위해 <strong style="color:#FFD700">SUNRISE</strong> 신규 선정을 권고합니다.<br><br>
+          UNIQLO 프리미엄 공급망 참여로 MLB 기준 품질 즉시 충족, AI 자동재단+비전검사 이중 도입으로 봉제불량 구조적 방어, 4개국 다거점(중국·베트남·캄보디아·모로코)으로 지정학 리스크 분산까지 MLB이 요구하는 전 조건 충족.
+        </div>
+        <div style="background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.35);border-radius:8px;padding:14px 16px">
+          <div style="font-size:12px;font-weight:700;color:#FFD700;margin-bottom:6px">🏆 최종 권고: SUNRISE</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.8);line-height:1.8">
+            UNIQLO급 품질기준·AI 자동재단·비전검사·다거점 COO 분산 모두 충족 — OUTIN(29%) 등 기존 협력사 반복 불량 해소 최적 대안. TIMES는 COO 리스크·AI재단 미도입·MLB전담 체계 미비로 보조 거점 검토 수준.
+          </div>
+        </div>
+      </div>
+      <div style="width:220px">
+        <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px">선정 핵심 근거</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="background:rgba(255,255,255,.08);border-radius:6px;padding:10px 12px">
+            <div style="font-size:11px;font-weight:700;color:#FFD700;margin-bottom:3px">① 품질 최상위</div>
+            <div style="font-size:11.5px;color:rgba(255,255,255,.7)">UNIQLO 프리미엄 공급망 — MLB 기준 즉시 충족</div>
+          </div>
+          <div style="background:rgba(255,255,255,.08);border-radius:6px;padding:10px 12px">
+            <div style="font-size:11px;font-weight:700;color:#FFD700;margin-bottom:3px">② AI 이중 도입</div>
+            <div style="font-size:11.5px;color:rgba(255,255,255,.7)">자동재단(원가) + 비전검사(불량) 동시 도입</div>
+          </div>
+          <div style="background:rgba(255,255,255,.08);border-radius:6px;padding:10px 12px">
+            <div style="font-size:11px;font-weight:700;color:#FFD700;margin-bottom:3px">③ 4개국 분산</div>
+            <div style="font-size:11.5px;color:rgba(255,255,255,.7)">COO 리스크 분산 — 대중 관세 이슈 즉시 대응</div>
+          </div>
+          <div style="background:rgba(255,255,255,.08);border-radius:6px;padding:10px 12px">
+            <div style="font-size:11px;font-weight:700;color:#FFD700;margin-bottom:3px">④ MLB 평가 Strong</div>
+            <div style="font-size:11.5px;color:rgba(255,255,255,.7)">구조화된 대응 · TIMES Solid 대비 차별화</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 역량 평가 (BOTTOM) ═══ -->
+  <div class="card mb16">
+    <div class="card-t">KINT 후보 역량 종합 평가 매트릭스</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>평가 항목</th>
+            <th style="width:80px;text-align:center">배점</th>
+            <th style="width:160px;text-align:center;background:#1A3C7A">SUNRISE</th>
+            <th style="width:160px;text-align:center;background:#6A1B9A">TIMES</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>① 품질관리 역량</strong> — AI 비전검사·QC 체계</td>
+            <td style="text-align:center">25점</td>
+            <td style="text-align:center;font-weight:700;color:var(--bosideng)">23점 ✅</td>
+            <td style="text-align:center;font-weight:700;color:#7B1FA2">19점</td>
+            <td>SUNRISE: AI 이중 도입 · UNIQLO기준 / TIMES: 비전검사만</td>
+          </tr>
+          <tr>
+            <td><strong>② 원가 경쟁력</strong> — AI재단·생산효율</td>
+            <td style="text-align:center">20점</td>
+            <td style="text-align:center;font-weight:700;color:var(--bosideng)">18점 ✅</td>
+            <td style="text-align:center;font-weight:700;color:#7B1FA2">14점</td>
+            <td>SUNRISE: AI 자동재단 도입 원가절감 / TIMES: 자동재단 미도입</td>
+          </tr>
+          <tr>
+            <td><strong>③ COO 리스크 분산</strong> — 다거점 대응</td>
+            <td style="text-align:center">20점</td>
+            <td style="text-align:center;font-weight:700;color:var(--bosideng)">19점 ✅</td>
+            <td style="text-align:center;font-weight:700;color:var(--red)">9점 ⚠</td>
+            <td>SUNRISE: 4개국 / TIMES: 중국 단일 — 관세 리스크 노출</td>
+          </tr>
+          <tr>
+            <td><strong>④ 생산 역량 및 납기</strong> — 월 가용·L/T</td>
+            <td style="text-align:center">15점</td>
+            <td style="text-align:center;font-weight:700;color:var(--bosideng)">14점 ✅</td>
+            <td style="text-align:center;font-weight:700;color:#7B1FA2">13점</td>
+            <td>양사 모두 MLB 물량 수용 가능 수준</td>
+          </tr>
+          <tr>
+            <td><strong>⑤ 브랜드 이해·커뮤니케이션</strong></td>
+            <td style="text-align:center">10점</td>
+            <td style="text-align:center;font-weight:700;color:var(--bosideng)">9점 ✅</td>
+            <td style="text-align:center;font-weight:700;color:#7B1FA2">7점</td>
+            <td>SUNRISE Strong · TIMES Solid — MLB 전담체계 격차</td>
+          </tr>
+          <tr>
+            <td><strong>⑥ 인증 및 ESG</strong> — 지속가능성</td>
+            <td style="text-align:center">10점</td>
+            <td style="text-align:center;font-weight:700;color:var(--bosideng)">9점</td>
+            <td style="text-align:center;font-weight:700;color:#7B1FA2">9점</td>
+            <td>양사 모두 주요 글로벌 인증 보유</td>
+          </tr>
+          <tr style="background:#E3F2FD;font-weight:700;font-size:14px">
+            <td><strong>종합 점수</strong></td>
+            <td style="text-align:center">100점</td>
+            <td style="text-align:center;color:var(--bosideng)">92점 ✅</td>
+            <td style="text-align:center;color:#7B1FA2">71점</td>
+            <td style="color:var(--bosideng);font-weight:700">SUNRISE 신규 선정 권고</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card" style="border-top:4px solid var(--bosideng)">
+      <div class="card-t" style="color:var(--bosideng)">SUNRISE — 선정 조건 및 협의 사항</div>
+      <div class="vc-row"><span class="vc-l">선정 형태</span><span class="vc-r" style="color:var(--green);font-weight:700">신규 KINT 협력사 선정 권고</span></div>
+      <div class="vc-row"><span class="vc-l">초도 배정</span><span class="vc-r">27SS TS·HD·SP 3품목 우선 배정 · MT·TR 추가 검토</span></div>
+      <div class="vc-row"><span class="vc-l">주요 협의 사항</span><span class="vc-r">MLB 전담 MD 지정 / MOQ 조건 / 소량 Surcharge</span></div>
+      <div class="vc-row"><span class="vc-l">VN/KH 공장 QC</span><span class="vc-r">온사이트 QA 상주 여부 사전 확인 필요</span></div>
+      <div class="vc-row"><span class="vc-l">목표 시즌</span><span class="vc-r" style="font-weight:700">27SS 적용</span></div>
+    </div>
+    <div class="card" style="border-top:4px solid #7B1FA2">
+      <div class="card-t" style="color:#7B1FA2">TIMES — 보조 거점 검토 조건</div>
+      <div class="vc-row"><span class="vc-l">검토 형태</span><span class="vc-r" style="color:var(--warn);font-weight:700">보조 거점 검토 (조건부)</span></div>
+      <div class="vc-row"><span class="vc-l">선결 조건</span><span class="vc-r">MLB 전담 MD 구성 + COO 대안 확보</span></div>
+      <div class="vc-row"><span class="vc-l">AI재단 도입</span><span class="vc-r">자동재단 도입 계획 확인 필요</span></div>
+      <div class="vc-row"><span class="vc-l">활용 시나리오</span><span class="vc-r">중국 COO 허용 볼륨 아이템 한정 검토</span></div>
+      <div class="vc-row"><span class="vc-l">결정 시점</span><span class="vc-r">SUNRISE 선정 후 물량 배분 검토</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- KINT 06 -->
+<div class="section" id="ks-backdata">
+  <div class="stitle"><div class="stitle-icon">📊</div>KINT Back Data 분석</div>
+
+  <div class="g4 mb20">
+    <div class="kpi" style="border-left-color:var(--red)">
+      <div class="kpi-v" style="color:var(--red)">17.0%</div>
+      <div class="kpi-l">최고 불량률 (노브랜드 PT)</div>
+      <div class="kpi-s">25FW 착우 바지통 Torquing — 기술 미흡</div>
+    </div>
+    <div class="kpi" style="border-left-color:var(--warn)">
+      <div class="kpi-v" style="color:var(--warn)">3.58%</div>
+      <div class="kpi-l">KNIT 전체 평균 불량률</div>
+      <div class="kpi-s">검사 4,863pcs 중 174pcs 불량</div>
+    </div>
+    <div class="kpi" style="border-left-color:var(--bosideng)">
+      <div class="kpi-v" style="color:var(--bosideng)">511건</div>
+      <div class="kpi-l">26SS/26FW Back Data</div>
+      <div class="kpi-s">총 5,742,948 pcs · 5개 협력사</div>
+    </div>
+    <div class="kpi" style="border-left-color:var(--green)">
+      <div class="kpi-v" style="color:var(--green)">23건</div>
+      <div class="kpi-l">매장실사 불량 개별 건수</div>
+      <div class="kpi-s">25FW·26SS 합산 · PT/MT/TR 집중</div>
+    </div>
+  </div>
+
+  <!-- 아이템별 불량률 + 신규배정 추천 -->
+  <div class="g2 mb20">
+    <div class="card">
+      <div class="card-t">아이템별 불량률 집계 — 신규 배정 우선순위 근거</div>
+      <div class="tbl-wrap" style="margin-top:8px">
+        <table>
+          <thead>
+            <tr><th>ITEM</th><th>검사건수</th><th>총 검사수량</th><th>불량수량</th><th>불량률</th><th>신규 배정 판단</th></tr>
+          </thead>
+          <tbody>
+            <tr style="background:#FFEBEE">
+              <td><strong>PT (하의)</strong></td><td>8건</td><td>2,196</td><td>90</td><td><span style="color:var(--red);font-weight:700">4.1% (최고17%)</span></td><td><span class="st st-warn">기존 협력사 개선 또는 신규 이관</span></td>
+            </tr>
+            <tr style="background:#FFEBEE">
+              <td><strong>MT (목폴라)</strong></td><td>3건</td><td>882</td><td>51</td><td><span style="color:var(--red);font-weight:700">5.8% (최고9.3%)</span></td><td><span class="st st-warn">⭐ SUNRISE 신규 배정 추가 제안</span></td>
+            </tr>
+            <tr style="background:#FFEBEE">
+              <td><strong>TR (집업/트랙탑)</strong></td><td>5건</td><td>76</td><td>14</td><td><span style="color:var(--red);font-weight:700">13.5% (팬코)</span></td><td><span class="st st-warn">⭐ SUNRISE 신규 배정 추가 제안</span></td>
+            </tr>
+            <tr style="background:#E3F2FD">
+              <td><strong>HD (후드)</strong></td><td>1건</td><td>668</td><td>13</td><td>1.9%</td><td><span class="st st-new">✅ 확정 신규 배정</span></td>
+            </tr>
+            <tr style="background:#E3F2FD">
+              <td><strong>TS (T-SHIRT)</strong></td><td>4건</td><td>691</td><td>1</td><td><span style="color:var(--green);font-weight:700">0.15% (양호)</span></td><td><span class="st st-new">✅ 확정 신규 배정</span></td>
+            </tr>
+            <tr style="background:#E3F2FD">
+              <td><strong>SP (스포츠팬츠)</strong></td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="st st-new">✅ 확정 신규 배정</span></td>
+            </tr>
+            <tr>
+              <td>SK / FD</td><td>각 1건</td><td>350 / 0</td><td>5 / 0</td><td>1.4% / 0%</td><td><span class="st st-na">소량 품목 모니터링</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-t">주요 결함 유형 분석 — 원인 및 해소 방안</div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
+        <div style="background:#FFEBEE;border-left:4px solid var(--red);padding:10px 14px;border-radius:0 6px 6px 0">
+          <div style="font-size:12.5px;font-weight:700;color:#B71C1C;margin-bottom:4px">① Torquing — PT 17.0% (노브랜드, 최고위험)</div>
+          <div style="font-size:12px;color:#555;line-height:1.7">니트 하의 바지통 비틀림 — 원단 장력 불균형·재단 기술 미흡.<br>→ SUNRISE AI 자동재단(원단 장력·방향 정밀 제어)으로 구조적 해소 가능.</div>
+        </div>
+        <div style="background:#FFEBEE;border-left:4px solid var(--red);padding:10px 14px;border-radius:0 6px 6px 0">
+          <div style="font-size:12.5px;font-weight:700;color:#B71C1C;margin-bottom:4px">② 지퍼 이새·웨이브 — TR 13.5% (팬코)</div>
+          <div style="font-size:12px;color:#555;line-height:1.7">지퍼 박음질 기술 미흡 — 집업/트랙탑 핵심 공정 불량.<br>→ 신규 협력사 지퍼 전용 QC 기준 설정 + AI 비전검사 항목 포함 필요.</div>
+        </div>
+        <div style="background:#FFF3E0;border-left:4px solid var(--warn);padding:10px 14px;border-radius:0 6px 6px 0">
+          <div style="font-size:12.5px;font-weight:700;color:#BF360C;margin-bottom:4px">③ 씸 꿀렁임·이새 — MT 9.3% (노브랜드)</div>
+          <div style="font-size:12px;color:#555;line-height:1.7">Mock-neck 밑단 솔기 공정 관리 부족.<br>→ 583K pcs 물량 대비 높은 불량 발생 — SUNRISE 신규 배정 효과 크게 기대 가능.</div>
+        </div>
+        <div style="background:#FFF8E1;border-left:4px solid #F9A825;padding:10px 14px;border-radius:0 6px 6px 0">
+          <div style="font-size:12.5px;font-weight:700;color:#BF360C;margin-bottom:4px">④ 삼봉 불량 — HD/TS (노브랜드·ESQUEL)</div>
+          <div style="font-size:12px;color:#555;line-height:1.7">HD 삼봉 Uneven 1.9% (노브랜드), TS 삼봉 꼬임 1.0% (ESQUEL).<br>→ 확정 신규 배정 품목으로 SUNRISE 이관 시 AI 비전검사로 방어.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 협력사별 실적 + 아이템 현황 -->
+  <div class="card mb20">
+    <div class="card-t">26SS/26FW 협력사별 아이템 규모 및 불량 현황 — Back Data 511건 (5,742,948 pcs)</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>협력사</th><th>총 QTY (pcs)</th><th>주력 아이템 (QTY 상위)</th><th>핵심 불량 아이템</th><th>최고 불량률</th><th>방향</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background:#FFEBEE">
+            <td><strong>㈜노브랜드</strong></td>
+            <td>1,996,492 pcs<br><small style="color:#888">(34.7%)</small></td>
+            <td>TS 1,538K · MT 267K · PT 160K · HD 73K · SP 76K</td>
+            <td>PT Torquing · MT 씸 꿀렁임 · HD 삼봉</td>
+            <td><span style="color:var(--red);font-weight:700">PT 17.0%</span></td>
+            <td><span class="st st-warn">PT·MT·HD 교체 검토</span></td>
+          </tr>
+          <tr style="background:#FFF3E0">
+            <td><strong>㈜팬코</strong></td>
+            <td>1,269,756 pcs<br><small style="color:#888">(22.1%)</small></td>
+            <td>TS 953K · MT 109K · PT 71K · TR 15K · SP 33K</td>
+            <td>TR 지퍼 이새 · MT 배색 찐빠</td>
+            <td><span style="color:var(--red);font-weight:700">TR 13.5%</span></td>
+            <td><span class="st st-warn">TR 교체 검토</span></td>
+          </tr>
+          <tr>
+            <td><strong>ESQUEL</strong></td>
+            <td>1,368,917 pcs<br><small style="color:#888">(23.8%)</small></td>
+            <td>TS 906K · MT 122K · PQ 115K · PT 75K · OP 55K</td>
+            <td>TS·PT 삼봉 꼬임 (경미)</td>
+            <td>PT 0.9%</td>
+            <td><span class="st st-na">유지</span></td>
+          </tr>
+          <tr>
+            <td><strong>㈜약진통상</strong></td>
+            <td>577,140 pcs<br><small style="color:#888">(10.0%)</small></td>
+            <td>TS 421K · TR 42K · MT 28K · PT 34K · SP 28K</td>
+            <td>불량 미보고</td>
+            <td>—</td>
+            <td><span class="st st-na">유지</span></td>
+          </tr>
+          <tr>
+            <td><strong>한솔섬유㈜</strong></td>
+            <td>160,274 pcs<br><small style="color:#888">(2.8%)</small></td>
+            <td>TS 88K · MT 37K · TR 21K · PT 9K · SP 4K</td>
+            <td>TR Wavy Zipper · MT 이새 · PT 꼬임</td>
+            <td>미검사</td>
+            <td><span class="st st-na">유지 (TR 모니터링)</span></td>
+          </tr>
+          <tr style="background:#E3F2FD;font-weight:600">
+            <td colspan="4">→ 노브랜드 PT·MT·HD, 팬코 TR 물량 SUNRISE 신규 이관 제안</td>
+            <td colspan="2"><span class="st st-new">SUNRISE 신규 배정 검토</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 원가 비교 분석 -->
+  <div class="card mb20">
+    <div class="card-t">신규 협력사 원가 비교 분석 — TS·HD·SP 3품목 (MLB 표준 대비)</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>품목</th><th>Style No.</th><th>소비자가</th><th>MLB 표준 사입가</th><th>SUNRISE FOB (KRW)</th><th>TIMES FOB (KRW)</th><th>SUNRISE 배수</th><th>TIMES 배수</th><th>원가 비고</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>TS (티셔츠)</strong></td>
+            <td style="font-size:11px;color:#888">3ATSB1053</td>
+            <td>79,000원</td>
+            <td>12,929원</td>
+            <td>12,280원<br><small style="color:#888">표준 대비 -5%</small></td>
+            <td style="background:#E8F5E9"><strong>10,180원</strong><br><small style="color:var(--green);font-weight:700">표준 대비 -21% ▼2,750원</small></td>
+            <td>5.79</td>
+            <td style="background:#E8F5E9;font-weight:700;color:var(--green)">6.97</td>
+            <td style="font-size:11.5px">TIMES 원단 단가 우위<br>($2.5 vs SUNRISE $3.2/pc)</td>
+          </tr>
+          <tr>
+            <td><strong>HD (후드)</strong></td>
+            <td style="font-size:11px;color:#888">3AHDB0654</td>
+            <td>129,000원</td>
+            <td>25,462원</td>
+            <td style="color:var(--red)">27,210원<br><small>표준 대비 +7%</small></td>
+            <td style="background:#E8F5E9"><strong>20,090원</strong><br><small style="color:var(--green);font-weight:700">표준 대비 -21% ▼5,370원</small></td>
+            <td style="color:var(--red)">4.29</td>
+            <td style="background:#E8F5E9;font-weight:700;color:var(--green)">5.80</td>
+            <td style="font-size:11.5px">TIMES SORONA 원단 자체조달<br>($6.6 vs SUNRISE $10.2/pc)</td>
+          </tr>
+          <tr>
+            <td><strong>SP (스포츠팬츠)</strong></td>
+            <td style="font-size:11px;color:#888">3ASPM0253</td>
+            <td>89,000원</td>
+            <td>16,031원</td>
+            <td style="color:#888">24,050원 †<br><small>별도스타일(99,000원)</small></td>
+            <td style="background:#E8F5E9"><strong>14,790원</strong><br><small style="color:var(--green);font-weight:700">표준 대비 -8% ▼1,240원</small></td>
+            <td style="color:#888">— †</td>
+            <td style="background:#E8F5E9;font-weight:700;color:var(--green)">5.42</td>
+            <td style="font-size:11.5px">TIMES = Standard 동일 스타일 기준<br>SUNRISE SP는 별도 협의 필요</td>
+          </tr>
+          <tr style="background:#E3F2FD;font-weight:600">
+            <td colspan="3">종합 평가</td>
+            <td colspan="3"><span style="color:var(--green)">TIMES 전 품목 원가 경쟁력 우위 — TS ▼17% · HD ▼26% (vs SUNRISE)</span></td>
+            <td colspan="3">주요 원인: 원단 자가생산(연 10,000톤) + 낮은 CM 효율</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:11px;color:var(--muted);margin-top:8px">※ SUNRISE: MLB COST SHEET_SUNRISE1.xlsx (CO=CN, QTY 미정 기준) · TIMES: MLB COST SHEET_TIMES1.xlsx (CO=CN, MOQ 5,000pcs 기준) · MLB 표준: MLB COST SHEET_MLB STANDARD_니트.xlsx<br>† SUNRISE SP는 3ASPB0653(소비자가 99,000원) 기준으로 MLB 표준 3ASPM0253과 스타일 상이 — 직접 비교 불가</p>
+  </div>
+
+  <!-- 원가 구성 상세 -->
+  <div class="g2 mb20">
+    <div class="card">
+      <div class="card-t">공임(CM) 비교 — 3품목</div>
+      <div class="tbl-wrap" style="margin-top:8px">
+        <table>
+          <thead><tr><th>품목</th><th>SUNRISE CM</th><th>TIMES CM</th><th>차이</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>TS</strong></td>
+              <td>₩2,545 ($1.78)</td>
+              <td style="background:#E8F5E9">₩2,488 ($1.74)</td>
+              <td style="color:var(--green)">TIMES -2%</td>
+            </tr>
+            <tr>
+              <td><strong>HD</strong></td>
+              <td style="background:#E8F5E9">₩4,290 ($3.00)</td>
+              <td>₩4,862 ($3.40)</td>
+              <td style="color:var(--red)">SUNRISE -12%</td>
+            </tr>
+            <tr>
+              <td><strong>SP</strong></td>
+              <td>₩5,019 ($3.51)</td>
+              <td style="background:#E8F5E9">₩5,005 ($3.50)</td>
+              <td style="color:#888">동등</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:11px;color:var(--muted);margin-top:8px">※ HD는 SUNRISE CM 우위 — 전반적 원가 차이는 원단 단가에서 발생</p>
+    </div>
+    <div class="card">
+      <div class="card-t">원단 단가 비교 — 3품목</div>
+      <div class="tbl-wrap" style="margin-top:8px">
+        <table>
+          <thead><tr><th>품목</th><th>SUNRISE 원단</th><th>TIMES 원단</th><th>차이</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>TS</strong></td>
+              <td>₩4,643 ($3.25)</td>
+              <td style="background:#E8F5E9">₩3,582 ($2.50)</td>
+              <td style="color:var(--green)">TIMES -23%</td>
+            </tr>
+            <tr>
+              <td><strong>HD</strong></td>
+              <td>₩14,542 ($10.17)</td>
+              <td style="background:#E8F5E9">₩10,726 ($7.50)</td>
+              <td style="color:var(--green)">TIMES -26%</td>
+            </tr>
+            <tr>
+              <td><strong>SP</strong></td>
+              <td>₩12,595 ($8.81)</td>
+              <td style="background:#E8F5E9">₩6,232 ($4.36)</td>
+              <td style="color:var(--green)">TIMES -51%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:11px;color:var(--muted);margin-top:8px">※ TIMES는 SORONA 혼방 원단 자가생산으로 원단 단가 절감 — 연 원단 자체생산 10,000톤</p>
+    </div>
+  </div>
+
+  <!-- AI 활용 현황 비교 -->
+  <div class="card">
+    <div class="card-t">신규 후보 vs 기존 협력사 AI 활용 현황 비교</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>구분</th><th>AI 비전검사</th><th>AI 자동재단</th><th>기타 자동화</th><th>불량 방어 수준</th></tr>
+        </thead>
+        <tbody>
+          <tr style="background:#E3F2FD">
+            <td><strong>SUNRISE (신규)</strong><br><small>HONGYING 벤치마크 유형</small></td>
+            <td><span class="st st-ok">✅ CN 운영 중 (VN 도입 중)</span></td>
+            <td><span class="st st-ok">✅ CN 구축 완료</span></td>
+            <td>AS/RS · APS · Smart Inspection · 연속생산라인</td>
+            <td><span class="st st-ok" style="background:#1B5E20;color:#fff">최고수준</span></td>
+          </tr>
+          <tr style="background:#F3E5F5">
+            <td><strong>TIMES (신규)</strong><br><small>KING TIDE 벤치마크 유형</small></td>
+            <td><span class="st st-ok">✅ 운영 중</span></td>
+            <td><span style="background:#FFCDD2;color:#B71C1C;padding:2px 6px;border-radius:4px;font-size:11px">❌ 미도입</span></td>
+            <td>Sample auto cutting · 자동원단풀링·재단 · 자동포켓봉제</td>
+            <td><span class="st st-warn">기본수준</span></td>
+          </tr>
+          <tr>
+            <td><strong>노브랜드 (기존)</strong></td>
+            <td><span class="st st-na">미도입</span></td>
+            <td><span class="st st-na">미도입</span></td>
+            <td>수동/반자동</td>
+            <td><span class="st" style="background:#FFCDD2;color:#B71C1C">PT 17% · MT 9.3% 발생</span></td>
+          </tr>
+          <tr>
+            <td><strong>팬코 (기존)</strong></td>
+            <td><span class="st st-na">미도입</span></td>
+            <td><span class="st st-na">미도입</span></td>
+            <td>수동/반자동</td>
+            <td><span class="st" style="background:#FFCDD2;color:#B71C1C">TR 13.5% 발생</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:11px;color:var(--muted);margin-top:10px">※ 출처: MLB_KNIT 매장 실사 불량 BACK DATA_2026.03.23.xlsx (23건 전수) · 신규 KNIT 공장 선정 BACK DATA_2026.03.23.xlsx (511건) · AI 활용 현황 Sheet</p>
+  </div>
+</div>
+
+<!-- KINT 07 -->
+<div class="section" id="ks-sample">
+  <div class="stitle"><div class="stitle-icon">🔬</div>KINT 실물 샘플 품질 평가</div>
+  <div style="background:#FFF3E0;border:1.5px solid #E65100;border-radius:8px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:12px">
+    <span style="font-size:22px">🧶</span>
+    <div>
+      <div style="font-size:14px;font-weight:700;color:#BF360C">KINT 샘플 평가 — 미접수 (대기 중)</div>
+      <div style="font-size:12px;color:#555;margin-top:3px">WOVEN과 동일 5점 척도 7개 항목(A–G) 평가 구조 적용 예정 · SUNRISE·TIMES 샘플 접수 후 QM &amp; SC 2인 평가 진행</div>
+    </div>
+    <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:11px;border:1px solid #E65100;margin-left:auto;white-space:nowrap">샘플 접수 대기</span>
+  </div>
+  <div class="g2 mb16">
+    <div class="card" style="padding:14px 16px;border-top:3px solid var(--bosideng)">
+      <div style="font-size:11px;font-weight:700;color:var(--bosideng);letter-spacing:.5px;margin-bottom:8px">SUNRISE 샘플</div>
+      <div style="font-size:12px;color:#aaa;font-style:italic">샘플 접수 후 A–G 7개 항목 평가 예정</div>
+      <div style="margin-top:8px;font-size:11px;color:#bbb">★핵심: C봉제 · F디자인 · G개발역량</div>
+    </div>
+    <div class="card" style="padding:14px 16px;border-top:3px solid #7B1FA2">
+      <div style="font-size:11px;font-weight:700;color:#7B1FA2;letter-spacing:.5px;margin-bottom:8px">TIMES 샘플</div>
+      <div style="font-size:12px;color:#aaa;font-style:italic">샘플 접수 후 A–G 7개 항목 평가 예정</div>
+      <div style="margin-top:8px;font-size:11px;color:#bbb">★핵심: C봉제 · F디자인 · G개발역량</div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="text-align:center;padding:32px 24px;color:#aaa">
+      <div style="font-size:36px;margin-bottom:12px">🧶</div>
+      <div style="font-size:14px;font-weight:700;color:#999;margin-bottom:6px">KINT 샘플 미접수 — 평가 대기</div>
+      <div style="font-size:12px">샘플 접수 후 WOVEN과 동일 기준으로 QM &amp; SC 2인 평가 진행 예정<br>평가 항목: A전반적인상 · B소재원단 · C봉제★ · D패턴핏△ · E기능부자재 · F디자인★ · G개발역량★</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /brand-kint-content -->
+
 </div><!-- /main -->
 
 <div class="footer">
-  MLB F&F Global Sourcing &nbsp;|&nbsp; WOVEN 카테고리 신규 협력사 선정 심사 보고서 &nbsp;|&nbsp; 작성기준일: 2026.03.11 &nbsp;|&nbsp; 문의: Sourcing Team &nbsp;|&nbsp; CONFIDENTIAL
+  MLB F&F Global Sourcing &nbsp;|&nbsp; WOVEN · KINT 카테고리 신규 협력사 선정 심사 보고서 &nbsp;|&nbsp; 작성기준일: 2026.03.24 &nbsp;|&nbsp; 문의: Sourcing Team &nbsp;|&nbsp; CONFIDENTIAL
 </div>
 
 <!-- CHART.JS -->
@@ -2205,27 +3388,56 @@ tr:hover td{background:#F8F9FF}
 
 </script>
 <script>
+// === Brand Switching (WOVEN / KINT) ===
+var currentBrand = 'woven';
+function switchBrand(brand) {
+  currentBrand = brand;
+  // Toggle brand content visibility
+  document.getElementById('brand-woven-content').classList.toggle('on', brand === 'woven');
+  document.getElementById('brand-kint-content').classList.toggle('on', brand === 'kint');
+  // Toggle brand buttons
+  document.getElementById('brand-btn-woven').classList.toggle('on', brand === 'woven');
+  document.getElementById('brand-btn-kint').classList.toggle('on', brand === 'kint');
+  // Activate first section in the selected brand
+  var prefix = brand === 'woven' ? 's-' : 'ks-';
+  var secs = brand === 'woven'
+    ? document.querySelectorAll('#brand-woven-content .section')
+    : document.querySelectorAll('#brand-kint-content .section');
+  secs.forEach(function(s) { s.classList.remove('on'); });
+  var firstSec = secs[0]; if (firstSec) firstSec.classList.add('on');
+  // Reset nav btn state
+  navBtns.forEach(function(b) { b.classList.remove('on'); });
+  var firstBtn = document.querySelector('.nav-btn[data-sec]');
+  if (firstBtn) firstBtn.classList.add('on');
+}
+
 // === Navigation ===
 const navBtns = document.querySelectorAll('.nav-btn');
-const sections = document.querySelectorAll('.section');
 const chartFlags = {};
 
 navBtns.forEach(btn => {
+  if (!btn.dataset.sec) return; // skip brand toggle buttons
   btn.addEventListener('click', () => {
     navBtns.forEach(b => b.classList.remove('on'));
-    sections.forEach(s => s.classList.remove('on'));
     btn.classList.add('on');
     const sec = btn.dataset.sec;
-    document.getElementById('s-' + sec).classList.add('on');
+    // Hide all sections in BOTH brands
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('on'));
+    // Show section in active brand
+    var prefix = currentBrand === 'woven' ? 's-' : 'ks-';
+    var target = document.getElementById(prefix + sec);
+    if (target) target.classList.add('on');
 
-    // Lazy chart init
-    if (sec === 'item' && !chartFlags.item) { initItemChart(); chartFlags.item = true; }
-    if (sec === 'evaluation' && !chartFlags.eval) { initRadarChart(); chartFlags.eval = true; }
-    if (sec === 'sample') {
-      ['radarDjDv','radarWj','radarJp'].forEach(function(id){
-        var ch = Chart.getChart(document.getElementById(id));
-        if(ch) ch.resize();
-      });
+    // Lazy chart init (WOVEN only)
+    if (currentBrand === 'woven') {
+      if (sec === 'item' && !chartFlags.item) { initItemChart(); chartFlags.item = true; }
+      if (sec === 'evaluation' && !chartFlags.eval) { initRadarChart(); chartFlags.eval = true; }
+      if (sec === 'sample') {
+        ['radarDjDv','radarWj','radarJp'].forEach(function(id){
+          var ch = Chart.getChart(document.getElementById(id));
+          if(ch) ch.resize();
+        });
+      }
     }
   });
 });
@@ -2303,7 +3515,7 @@ function initRadarChart() {
 </script>
 <script>
 (function(){
-  var labels=['A 브랜드\n이해도','B 소재·원단','C 봉제','D 부자재','E 패턴·핏감','F 마감','G 완성도'];
+  var labels=['A 전반적\n인상','B 소재·원단','C 봉제★','D 패턴·핏△','E 기능부자재','F 디자인★','G 개발역량★'];
   var cfgMlb={label:'MLB 기준',data:[],borderColor:'rgba(100,100,100,.7)',backgroundColor:'transparent',borderDash:[4,4],pointBackgroundColor:'rgba(100,100,100,.7)',pointRadius:3,borderWidth:1.5};
   var cfgBosi={label:'BOSIDENG',data:[],borderColor:'#C8102E',backgroundColor:'rgba(200,16,46,.12)',pointBackgroundColor:'#C8102E',pointRadius:3,borderWidth:2};
   var cfgTess={label:'TESSELLATION',data:[],borderColor:'#2979FF',backgroundColor:'rgba(41,121,255,.1)',pointBackgroundColor:'#2979FF',pointRadius:3,borderWidth:2};
@@ -2320,9 +3532,13 @@ function initRadarChart() {
   var dj=document.getElementById('radarDjDv');
   var wj=document.getElementById('radarWj');
   var jp=document.getElementById('radarJp');
-  if(dj) new Chart(dj,mkData([1.7,3.3,2.4,2.6,2.8,2.3,1.8],[1.3,3.7,1.1,3.1,1.0,2.5,1.3],[2.0,2.5,1.6,2.9,3.5,1.0,1.3]));
-  if(wj) new Chart(wj,mkData([3.5,3.5,3.2,3.8,4.5,3.0,2.8],[1.5,2.0,1.7,2.3,3.5,1.5,1.0],[1.3,1.3,1.5,1.9,1.8,1.0,1.0]));
-  if(jp) new Chart(jp,mkData([4.0,3.3,3.8,3.8,4.5,3.5,3.5],[2.8,3.0,3.1,3.3,4.0,2.5,3.0],[1.0,1.0,1.3,1.8,3.5,1.3,1.3]));
+  // 샘플 평가 2026.03.24 — QM & SC — Section A-G averages
+  // DJ/DV: MLB[A=2.0,B=3.0,C=2.75,D=2.25,E=2.75,F=3.0,G=3.17] BOSI[2.83,3.33,2.67,3.13,2.25,3.0,3.33] TESS[2.0,2.0,1.5,2.0,3.5,1.0,2.5]
+  // WJ:    MLB[A=3.5,B=3.17,C=3.67,D=3.75,E=4.5,F=3.0,G=3.5] BOSI[3.33,3.17,3.92,3.0,3.75,3.5,3.67] TESS[1.33,1.33,1.4,1.25,1.75,1.0,2.33]
+  // JP:    MLB[A=2.67,B=2.0,C=2.1,D=3.25,E=1.5,F=3.0,G=3.33] BOSI[3.0,2.5,3.1,2.25,4.0,3.5,3.67] TESS[1.33,1.33,1.8,1.25,3.25,1.0,2.33]
+  if(dj) new Chart(dj,mkData([2.0,3.0,2.75,2.25,2.75,3.0,3.17],[2.83,3.33,2.67,3.13,2.25,3.0,3.33],[2.0,2.0,1.5,2.0,3.5,1.0,2.5]));
+  if(wj) new Chart(wj,mkData([3.5,3.17,3.67,3.75,4.5,3.0,3.5],[3.33,3.17,3.92,3.0,3.75,3.5,3.67],[1.33,1.33,1.4,1.25,1.75,1.0,2.33]));
+  if(jp) new Chart(jp,mkData([2.67,2.0,2.1,3.25,1.5,3.0,3.33],[3.0,2.5,3.1,2.25,4.0,3.5,3.67],[1.33,1.33,1.8,1.25,3.25,1.0,2.33]));
 })();
 </script>
 <script>
@@ -2509,7 +3725,7 @@ function openRadarModal(canvasId,title){
     +'<button onclick="document.getElementById(\'radarModal\').style.display=\'none\'" style="background:none;border:none;font-size:20px;cursor:pointer;color:#888;line-height:1;padding:0 4px">✕</button>'
     +'</div>'
     +'<img src="'+dataUrl+'" style="width:100%;height:auto;display:block;border-radius:6px">'
-    +'<div style="margin-top:10px;font-size:11px;color:#999;text-align:center">A: 브랜드이해도 · B: 소재·원단 · C: 봉제 · D: 부자재 · E: 패턴·핏감 · F: 마감 · G: 완성도</div>'
+    +'<div style="margin-top:10px;font-size:11px;color:#999;text-align:center">A: 전반적인상 · B: 소재·원단 · C★: 봉제품질 · D△: 패턴·핏 · E: 기능부자재 · F★: 디자인완성도 · G★: 개발역량</div>'
     +'</div>';
   modal.onclick=function(){modal.style.display='none';};
   modal.style.display='flex';
