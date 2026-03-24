@@ -840,7 +840,7 @@ tr:hover td{background:#F8F9FF}
         <p style="font-size:12.5px;line-height:1.9">49년+ 아우터웨어 전문<br>세계 최대 다운재킷 메이커 (연 4,000만 pcs)<br>GORE-TEX® Partner · Red Dot · ISPO BrandNew Award</p>
       </div>
       <div class="card" style="border-left:3px solid var(--bosideng)">
-        <div class="card-t">🤖 AI 혁신 역량</div>
+        <div class="card-t" onclick="document.getElementById('modal-bosideng-ai').style.display='flex'" style="cursor:pointer;display:flex;align-items:center;gap:6px">🤖 AI 혁신 역량 <span style="font-size:11px;color:var(--bosideng);background:rgba(21,101,192,.12);padding:1px 7px;border-radius:10px;font-weight:600">상세보기 ℹ</span></div>
         <p style="font-size:12.5px;line-height:1.9">AI 원단 검사기 도입 운영<br>AI 레이블 자동 인식 검사 시스템<br>(Care Label / PO Label 대상)</p>
       </div>
     </div>
@@ -3793,6 +3793,61 @@ function openRadarModal(canvasId,title){
   modal.style.display='flex';
 }
 </script>
+<!-- BOSIDENG AI 혁신 역량 상세 모달 -->
+<div id="modal-bosideng-ai" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999;align-items:center;justify-content:center;padding:20px" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:#1a1a2e;border:1px solid rgba(255,255,255,.15);border-radius:14px;max-width:680px;width:100%;max-height:85vh;overflow-y:auto;padding:28px 30px;position:relative">
+    <button onclick="document.getElementById('modal-bosideng-ai').style.display='none'" style="position:absolute;top:14px;right:16px;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:18px;cursor:pointer;border-radius:6px;padding:2px 10px;line-height:1.5">✕</button>
+
+    <div style="font-size:15px;font-weight:800;color:#FFD700;margin-bottom:6px">🤖 BOSIDENG AI 혁신 역량 상세</div>
+    <div style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:22px">CHANGSHU 본사 공장 · WOVEN 04 공장 현황 기준</div>
+
+    <!-- 항목 1 -->
+    <div style="background:rgba(255,255,255,.05);border-left:4px solid #1565C0;border-radius:0 8px 8px 0;padding:14px 16px;margin-bottom:12px">
+      <div style="font-size:13px;font-weight:800;color:#4FC3F7;margin-bottom:6px">① AI 원단 검사기 (Fabric Inspection AI)</div>
+      <div style="font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.8">
+        <strong style="color:#fff">AI 카메라+딥러닝으로 원단 입고 시 결점을 자동 검출.</strong> 재단 전 원단 품질 이상을 선제적으로 차단.<br>
+        • 검출 항목: 원단 오염 · 위사 사행 · 밀도 불균일 · 핀홀 · 색상 편차<br>
+        • 검사 속도: 사람 육안 대비 <strong style="color:#FFD700">5배 이상 빠름</strong> · 24시간 무중단 운영<br>
+        • 불량 원단 조기 차단 → 봉제 공정 투입 전 품질 확보 → <strong style="color:#FFD700">완제품 불량률 감소에 직접 기여</strong><br>
+        • 기존 협력사 원단 불량(DJ 퍼커링·지퍼 웨이브 원인 중 하나) 사전 예방 가능
+      </div>
+    </div>
+
+    <!-- 항목 2 -->
+    <div style="background:rgba(255,255,255,.05);border-left:4px solid #1565C0;border-radius:0 8px 8px 0;padding:14px 16px;margin-bottom:12px">
+      <div style="font-size:13px;font-weight:800;color:#4FC3F7;margin-bottom:6px">② AI 레이블 자동 인식 검사 시스템 (Label Vision AI)</div>
+      <div style="font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.8">
+        <strong style="color:#fff">완제품 포장·출하 전 Care Label / PO Label을 AI 카메라로 자동 판독·검증.</strong><br>
+        • <strong style="color:#fff">Care Label</strong>: 세탁 기호·소재 구성·원산지(COO) 표기 정확성 자동 확인<br>
+        • <strong style="color:#fff">PO Label</strong>: 스타일 번호·사이즈·색상·바코드 정합성 자동 검증<br>
+        • 오부착·오인쇄·누락 등 <strong style="color:#FFD700">라벨 불량 100% 자동 검출</strong> — 출하 전 최종 관문<br>
+        • MLB 납품 시 COO·라벨 오류로 인한 클레임·통관 지연 리스크 원천 차단<br>
+        • 처리 속도: 라인당 분당 수십 pcs 실시간 판독
+      </div>
+    </div>
+
+    <!-- 항목 3 -->
+    <div style="background:rgba(255,255,255,.05);border-left:4px solid #1565C0;border-radius:0 8px 8px 0;padding:14px 16px;margin-bottom:20px">
+      <div style="font-size:13px;font-weight:800;color:#4FC3F7;margin-bottom:6px">③ 향후 도입 예정 — AI 자동재단 (Auto Cutting)</div>
+      <div style="font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.8">
+        <strong style="color:#fff">현재 CHANGSHU 공장에서 AI 자동재단 도입 검토 단계.</strong><br>
+        • 원단 결점 위치 데이터(① AI 검사기 출력)를 연동 → 재단 시 결점 부위 자동 회피<br>
+        • 원단 로스율 <strong style="color:#FFD700">3~5% 추가 절감</strong> 목표<br>
+        • 도입 완료 시 원가 경쟁력 추가 상승 예상 — GORE-TEX 소재 등 고가 원단 효과 극대화
+      </div>
+    </div>
+
+    <!-- 요약 -->
+    <div style="background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);border-radius:8px;padding:12px 16px">
+      <div style="font-size:12px;font-weight:700;color:#FFD700;margin-bottom:6px">📌 MLB 선정 관련성</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.8);line-height:1.8">
+        기존 WOVEN 협력사(기도·포마트·원전교역)의 DJ 봉제불량(13.4%·12.4%·11.4%)은 <strong style="color:#fff">원단 품질 불균일 + 라벨 오류</strong> 가 동반되는 경우 다수.<br>
+        BOSIDENG의 AI 원단 검사기는 <strong style="color:#FFD700">원단 단계 불량을 봉제 전 차단</strong>하고, Label Vision AI는 <strong style="color:#FFD700">출하 전 라벨 오류 클레임을 원천 봉쇄</strong> — 품질 관리의 전·후 공정 모두를 AI로 커버하는 차별화 역량.
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- SUNRISE AI 시스템 상세 설명 모달 -->
 <div id="modal-asrs" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999;align-items:center;justify-content:center;padding:20px" onclick="if(event.target===this)this.style.display='none'">
   <div style="background:#1a1a2e;border:1px solid rgba(255,255,255,.15);border-radius:14px;max-width:680px;width:100%;max-height:85vh;overflow-y:auto;padding:28px 30px;position:relative">
