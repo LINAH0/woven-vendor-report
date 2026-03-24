@@ -4087,159 +4087,202 @@ function openRadarModal(canvasId,title){
 
 <!-- ===================== 출장 가이드 모달 ===================== -->
 <div id="modal-trip" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9999;align-items:center;justify-content:center;padding:16px;overflow-y:auto" onclick="if(event.target===this)this.style.display='none'">
-  <div style="background:#fff;border-radius:16px;width:100%;max-width:860px;max-height:90vh;overflow-y:auto;position:relative">
+  <div style="background:#fff;border-radius:16px;width:100%;max-width:960px;max-height:92vh;overflow-y:auto;position:relative">
+
     <!-- 헤더 -->
-    <div style="background:linear-gradient(135deg,#0A1931 0%,#1a3060 100%);color:#fff;padding:22px 28px 18px;border-radius:16px 16px 0 0;position:sticky;top:0;z-index:1">
+    <div style="background:linear-gradient(135deg,#0A1931 0%,#1a3060 100%);color:#fff;padding:20px 28px 16px;border-radius:16px 16px 0 0;position:sticky;top:0;z-index:1">
       <button onclick="document.getElementById('modal-trip').style.display='none'" style="position:absolute;top:14px;right:16px;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:18px;cursor:pointer;border-radius:6px;padding:2px 10px;line-height:1.5">✕</button>
-      <div style="font-size:11px;font-weight:700;letter-spacing:1px;opacity:.6;text-transform:uppercase;margin-bottom:8px">✈️ 공장 방문 출장 가이드</div>
-      <div style="font-size:20px;font-weight:800">2박 3일 · WOVEN 4개 + KNIT 2개 공장 방문 노선</div>
-      <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:6px">인천(ICN) 출발 기준 · 중국 장수성·절강성·허난성 클러스터</div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:1px;opacity:.55;text-transform:uppercase;margin-bottom:6px">✈️ 공장 방문 출장 가이드</div>
+      <div style="font-size:18px;font-weight:800">2박 3일 · WOVEN 4개 + KNIT 2개 공장 방문 노선</div>
+      <div style="font-size:11.5px;color:rgba(255,255,255,.55);margin-top:4px">인천(ICN) 출발 기준 · 허난성 → 절강성 → 장수성 순환 노선</div>
     </div>
 
-    <div style="padding:24px 28px">
+    <div style="padding:22px 28px">
 
-      <!-- 노선 요약 흐름도 -->
-      <div style="display:flex;align-items:center;gap:0;margin-bottom:24px;overflow-x:auto;padding:4px 0">
-        <div style="background:#0A1931;color:#fff;border-radius:8px;padding:8px 12px;text-align:center;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0">✈️<br>인천</div>
-        <div style="color:#C8102E;font-weight:700;font-size:18px;padding:0 4px;flex-shrink:0">→</div>
-        <div style="background:#C8102E;color:#fff;border-radius:8px;padding:8px 12px;text-align:center;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0">Day1<br>정저우</div>
-        <div style="color:#888;font-size:14px;padding:0 4px;flex-shrink:0">→</div>
-        <div style="background:#1565C0;color:#fff;border-radius:8px;padding:8px 12px;text-align:center;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0">🧶 SUNRISE<br>허난 주커우</div>
-        <div style="color:#C8102E;font-weight:700;font-size:18px;padding:0 4px;flex-shrink:0">→</div>
-        <div style="background:#C8102E;color:#fff;border-radius:8px;padding:8px 12px;text-align:center;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0">Day2<br>상하이→장수</div>
-        <div style="color:#888;font-size:14px;padding:0 4px;flex-shrink:0">→</div>
-        <div style="background:#1B5E20;color:#fff;border-radius:8px;padding:8px 12px;text-align:center;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0">🏭 SANQI·QVE<br>·BOSIDENG</div>
-        <div style="color:#C8102E;font-weight:700;font-size:18px;padding:0 4px;flex-shrink:0">→</div>
-        <div style="background:#C8102E;color:#fff;border-radius:8px;padding:8px 12px;text-align:center;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0">Day3<br>장수→귀국</div>
-        <div style="color:#888;font-size:14px;padding:0 4px;flex-shrink:0">→</div>
-        <div style="background:#1B5E20;color:#fff;border-radius:8px;padding:8px 12px;text-align:center;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0">🏭 SUXING·TIMES<br>창저우·여고</div>
-        <div style="color:#C8102E;font-weight:700;font-size:18px;padding:0 4px;flex-shrink:0">→</div>
-        <div style="background:#0A1931;color:#fff;border-radius:8px;padding:8px 12px;text-align:center;font-size:11px;font-weight:700;white-space:nowrap;flex-shrink:0">✈️<br>인천</div>
-      </div>
+      <!-- 일정 종합표 -->
+      <div style="margin-bottom:22px;overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+          <thead>
+            <tr style="background:#0A1931;color:#fff">
+              <th style="padding:10px 12px;text-align:center;white-space:nowrap;width:70px">일정</th>
+              <th style="padding:10px 12px;text-align:center;white-space:nowrap;width:90px">시간</th>
+              <th style="padding:10px 12px;text-align:left;white-space:nowrap;width:130px">방문지</th>
+              <th style="padding:10px 12px;text-align:center;white-space:nowrap;width:80px">위치</th>
+              <th style="padding:10px 12px;text-align:center;white-space:nowrap;width:80px">이동수단</th>
+              <th style="padding:10px 12px;text-align:left">방문 목적 / 확인 사항</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- DAY 1 -->
+            <tr style="background:#FFF3F3">
+              <td rowspan="5" style="text-align:center;font-weight:800;font-size:13px;color:#C8102E;border:1px solid #f0d0d0;padding:10px 8px;vertical-align:middle">
+                DAY<br>1
+              </td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;color:#555;white-space:nowrap">07:00</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;font-weight:700">인천(ICN) 출발</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;text-align:center;color:#555">한국</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;text-align:center"><span style="background:#E3F2FD;color:#1565C0;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">✈️ 비행</span></td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;color:#555">인천 → 정저우(CGO) · 약 2.5hr</td>
+            </tr>
+            <tr style="background:#FFF3F3">
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;color:#555;white-space:nowrap">10:30~12:00</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;font-weight:700">정저우 도착 · 이동</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;text-align:center;color:#555">허난성</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;text-align:center"><span style="background:#F3E5F5;color:#7B1FA2;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">🚗 차량</span></td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;color:#555">정저우 → 주커우(周口) · 약 2.5hr · 155km · 고속도로</td>
+            </tr>
+            <tr style="background:#FFF3F3">
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;color:#1565C0;font-weight:700;white-space:nowrap">14:00~17:00</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0">
+                <span style="background:#1565C0;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:4px">🧶 KNIT</span>
+                <strong>SUNRISE</strong>
+              </td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;text-align:center;color:#555;font-size:11px">허난성<br>주커우시</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;text-align:center"><span style="background:#E8F5E9;color:#2E7D32;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">3hr</span></td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;color:#333;font-size:12px">생산라인 시찰 · AI 자동재단·비전검사 설비 · COO 다거점 전략 협의 · 소싱팀 미팅</td>
+            </tr>
+            <tr style="background:#FFF3F3">
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;color:#555;white-space:nowrap">17:30~20:00</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;font-weight:700">정저우 복귀</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;text-align:center;color:#555">허난성</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;text-align:center"><span style="background:#F3E5F5;color:#7B1FA2;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">🚗 차량</span></td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;color:#555">주커우 → 정저우 · 약 2.5hr</td>
+            </tr>
+            <tr style="background:#FFF3F3">
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;color:#555;white-space:nowrap">20:00</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;font-weight:700">🏨 숙박</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;text-align:center;color:#555">정저우</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;text-align:center">—</td>
+              <td style="padding:9px 12px;border:1px solid #f0d0d0;color:#555">정저우 · JW메리어트 / 힐튼 추천</td>
+            </tr>
 
-      <!-- Day 1 -->
-      <div style="border-left:4px solid #C8102E;padding-left:16px;margin-bottom:20px">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
-          <span style="background:#C8102E;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px">Day 1</span>
-          <span style="font-size:14px;font-weight:700;color:#0A1931">인천 출발 → 정저우 → 🧶 SUNRISE (허난성 주커우)</span>
-        </div>
-        <div style="display:grid;grid-template-columns:80px 1fr;gap:4px 12px;font-size:12.5px;line-height:2">
-          <div style="color:#888;font-weight:600">07:00</div><div>인천(ICN) 출발 → 정저우(CGO) <span style="color:#888;font-size:11px">비행 약 2.5hr</span></div>
-          <div style="color:#888;font-weight:600">10:30</div><div>정저우 도착 · 차량 수배</div>
-          <div style="color:#888;font-weight:600">11:30</div><div>정저우 → 주커우 이동 <span style="color:#888;font-size:11px">약 2.5hr · 155km · 고속도로</span></div>
-          <div style="color:#1565C0;font-weight:700">14:00~17:00</div>
-          <div>
-            <span style="background:#E3F2FD;color:#1565C0;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:6px">🧶 KNIT #1</span>
-            <strong>SUNRISE GROUP</strong> — 허난성 주커우시<br>
-            <span style="font-size:11.5px;color:#555">생산라인 시찰 · AI 자동재단·비전검사 설비 확인 · 소싱팀 미팅 · COO 거점 전략 협의</span>
-          </div>
-          <div style="color:#888;font-weight:600">17:30</div><div>주커우 → 정저우 복귀 <span style="color:#888;font-size:11px">약 2.5hr</span></div>
-          <div style="color:#888;font-weight:600">20:00</div><div>정저우 도착 · 저녁 · <strong>숙박: 정저우</strong> <span style="color:#888;font-size:11px">(JW메리어트 / 힐튼 추천)</span></div>
-        </div>
-      </div>
+            <!-- DAY 2 -->
+            <tr style="background:#F1F8E9">
+              <td rowspan="7" style="text-align:center;font-weight:800;font-size:13px;color:#2E7D32;border:1px solid #d0e8d0;padding:10px 8px;vertical-align:middle">
+                DAY<br>2
+              </td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#555;white-space:nowrap">07:30</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;font-weight:700">정저우 출발</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center;color:#555">허난성</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center"><span style="background:#E3F2FD;color:#1565C0;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">✈️ 비행</span></td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#555">정저우(CGO) → 상하이 푸동(PVG) · 약 1.5hr</td>
+            </tr>
+            <tr style="background:#F1F8E9">
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#2E7D32;font-weight:700;white-space:nowrap">10:00~11:00</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0">
+                <span style="background:#388E3C;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:4px">🏭 WOVEN</span>
+                <strong>SANQI</strong>
+              </td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center;color:#555;font-size:11px">상하이<br>오피스</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center"><span style="background:#E8F5E9;color:#2E7D32;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">1hr</span></td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#333;font-size:12px">무역법인 미팅 · 럭셔리 레퍼런스 확인 · Anhui 공장 브리핑 · 샘플 L/T 협의</td>
+            </tr>
+            <tr style="background:#F1F8E9">
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#555;white-space:nowrap">11:30~13:00</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;font-weight:700">상하이 → 가흥 이동</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center;color:#555">절강성</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center"><span style="background:#F3E5F5;color:#7B1FA2;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">🚗 차량</span></td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#555">상하이 → 가흥(嘉興) · 약 1.5hr · 100km</td>
+            </tr>
+            <tr style="background:#F1F8E9">
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#2E7D32;font-weight:700;white-space:nowrap">13:00~15:00</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0">
+                <span style="background:#388E3C;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:4px">🏭 WOVEN</span>
+                <strong>QVE</strong>
+              </td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center;color:#555;font-size:11px">절강성<br>가흥(嘉興)</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center"><span style="background:#E8F5E9;color:#2E7D32;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">2hr</span></td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#333;font-size:12px">생산라인 시찰 · 글로벌 브랜드 오더 현황 · GORE-TEX 대응 가능 여부 · MOQ 조건 협의</td>
+            </tr>
+            <tr style="background:#F1F8E9">
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#555;white-space:nowrap">15:30~17:30</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;font-weight:700">가흥 → 창수 이동</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center;color:#555">장수성</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center"><span style="background:#F3E5F5;color:#7B1FA2;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">🚗 차량</span></td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#555">가흥 → 창수(常熟) · 약 2hr · 140km</td>
+            </tr>
+            <tr style="background:#F1F8E9">
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#2E7D32;font-weight:700;white-space:nowrap">17:30~19:30</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0">
+                <span style="background:#388E3C;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:4px">🏭 WOVEN</span>
+                <strong>BOSIDENG</strong>
+              </td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center;color:#555;font-size:11px">장수성<br>창수(常熟)</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center"><span style="background:#E8F5E9;color:#2E7D32;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">2hr</span></td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#333;font-size:12px">다운재킷 생산라인 · AI 원단검사 설비 · GORE-TEX 인증 라인 · Open Costing 자료 수령</td>
+            </tr>
+            <tr style="background:#F1F8E9">
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#555;white-space:nowrap">20:30</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;font-weight:700">🏨 숙박</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center;color:#555">쑤저우</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;text-align:center">—</td>
+              <td style="padding:9px 12px;border:1px solid #d0e8d0;color:#555">창수 → 쑤저우 40min · 메리어트 / 쉐라톤 추천</td>
+            </tr>
 
-      <!-- Day 2 -->
-      <div style="border-left:4px solid #1B5E20;padding-left:16px;margin-bottom:20px">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
-          <span style="background:#1B5E20;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px">Day 2</span>
-          <span style="font-size:14px;font-weight:700;color:#0A1931">정저우 → 상하이 → SANQI · QVE · BOSIDENG (장수·절강)</span>
-        </div>
-        <div style="display:grid;grid-template-columns:80px 1fr;gap:4px 12px;font-size:12.5px;line-height:2">
-          <div style="color:#888;font-weight:600">07:30</div><div>정저우 공항 출발 → 상하이 푸동(PVG) <span style="color:#888;font-size:11px">비행 약 1.5hr</span></div>
-          <div style="color:#888;font-weight:600">09:30</div><div>상하이 도착 · 시내 이동</div>
-          <div style="color:#1B5E20;font-weight:700">10:00~11:00</div>
-          <div>
-            <span style="background:#E8F5E9;color:#1B5E20;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:6px">🏭 WOVEN #4</span>
-            <strong>SANQI</strong> — 상하이 무역법인 오피스 미팅<br>
-            <span style="font-size:11.5px;color:#555">럭셔리 레퍼런스 확인 · Anhui 공장 생산 현황 브리핑 · 샘플 L/T 협의</span>
-          </div>
-          <div style="color:#888;font-weight:600">11:30</div><div>상하이 → 가흥(嘉興) 이동 <span style="color:#888;font-size:11px">약 1.5hr · 100km</span></div>
-          <div style="color:#1B5E20;font-weight:700">13:00~15:00</div>
-          <div>
-            <span style="background:#E8F5E9;color:#1B5E20;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:6px">🏭 WOVEN #2</span>
-            <strong>QVE (Quang Viet)</strong> — 절강성 가흥<br>
-            <span style="font-size:11.5px;color:#555">생산라인 시찰 · 글로벌 브랜드 오더 현황 확인 · GORE-TEX 대응 가능 여부 협의</span>
-          </div>
-          <div style="color:#888;font-weight:600">15:30</div><div>가흥 → 창수(常熟) 이동 <span style="color:#888;font-size:11px">약 2hr · 140km</span></div>
-          <div style="color:#1B5E20;font-weight:700">17:30~19:30</div>
-          <div>
-            <span style="background:#E8F5E9;color:#1B5E20;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:6px">🏭 WOVEN #1</span>
-            <strong>BOSIDENG</strong> — 장수성 창수시<br>
-            <span style="font-size:11.5px;color:#555">다운재킷 생산라인 · AI 원단검사 설비 · GORE-TEX 인증 라인 · Open Costing 자료 수령</span>
-          </div>
-          <div style="color:#888;font-weight:600">20:30</div><div>창수 → 쑤저우 이동 <span style="color:#888;font-size:11px">약 40min</span> · <strong>숙박: 쑤저우</strong> <span style="color:#888;font-size:11px">(메리어트 / 쉐라톤 추천)</span></div>
-        </div>
-      </div>
-
-      <!-- Day 3 -->
-      <div style="border-left:4px solid #E65100;padding-left:16px;margin-bottom:24px">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
-          <span style="background:#E65100;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px">Day 3</span>
-          <span style="font-size:14px;font-weight:700;color:#0A1931">쑤저우 → SUXING(창저우) → TIMES(여고) → 상하이 귀국</span>
-        </div>
-        <div style="display:grid;grid-template-columns:80px 1fr;gap:4px 12px;font-size:12.5px;line-height:2">
-          <div style="color:#888;font-weight:600">08:00</div><div>쑤저우 출발 → 창저우(常州) <span style="color:#888;font-size:11px">약 1hr · 60km</span></div>
-          <div style="color:#1B5E20;font-weight:700">09:00~11:30</div>
-          <div>
-            <span style="background:#E8F5E9;color:#1B5E20;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:6px">🏭 WOVEN #3</span>
-            <strong>SUXING</strong> — 장수성 창저우<br>
-            <span style="font-size:11.5px;color:#555">멀티거점(창저우·후베이·캄보디아) 전략 협의 · Armani·Carhartt 레퍼런스 라인 시찰 · COO 분산 구조 확인</span>
-          </div>
-          <div style="color:#888;font-weight:600">12:00</div><div>창저우 → 여고(如皋, 남통) 이동 <span style="color:#888;font-size:11px">약 2hr · 120km</span></div>
-          <div style="color:#1565C0;font-weight:700">14:00~16:30</div>
-          <div>
-            <span style="background:#E3F2FD;color:#1565C0;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:6px">🧶 KNIT #2</span>
-            <strong>TIMES</strong> — 장수성 여고(남통시)<br>
-            <span style="font-size:11.5px;color:#555">직조·염색·봉제 일관 라인 시찰 · AI 비전검사 설비 · 신규 니트공장(Phase1) 확인 · MOQ 협의</span>
-          </div>
-          <div style="color:#888;font-weight:600">17:00</div><div>여고 → 상하이 홍차오(SHA) 이동 <span style="color:#888;font-size:11px">약 2hr · 130km</span></div>
-          <div style="color:#888;font-weight:600">19:00</div><div>상하이 홍차오 도착 · 저녁</div>
-          <div style="color:#C8102E;font-weight:700">21:00+</div><div>상하이 출발 → 인천(ICN) 귀국</div>
-        </div>
-      </div>
-
-      <!-- 공장별 요약 -->
-      <div style="background:#F5F7FA;border-radius:10px;padding:16px 20px;margin-bottom:16px">
-        <div style="font-size:12px;font-weight:700;color:#0A1931;margin-bottom:12px">📋 방문 공장 요약 (총 6개사)</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
-          <div style="background:#fff;border-radius:8px;padding:10px 12px;border-left:3px solid #1B5E20">
-            <div style="font-size:10px;font-weight:700;color:#1B5E20;margin-bottom:3px">🏭 WOVEN #1 · Day 2</div>
-            <div style="font-size:12px;font-weight:700">BOSIDENG</div>
-            <div style="font-size:11px;color:#666">창수(常熟) · 장수성</div>
-          </div>
-          <div style="background:#fff;border-radius:8px;padding:10px 12px;border-left:3px solid #1B5E20">
-            <div style="font-size:10px;font-weight:700;color:#1B5E20;margin-bottom:3px">🏭 WOVEN #2 · Day 2</div>
-            <div style="font-size:12px;font-weight:700">QVE</div>
-            <div style="font-size:11px;color:#666">가흥(嘉興) · 절강성</div>
-          </div>
-          <div style="background:#fff;border-radius:8px;padding:10px 12px;border-left:3px solid #1B5E20">
-            <div style="font-size:10px;font-weight:700;color:#1B5E20;margin-bottom:3px">🏭 WOVEN #3 · Day 3</div>
-            <div style="font-size:12px;font-weight:700">SUXING</div>
-            <div style="font-size:11px;color:#666">창저우(常州) · 장수성</div>
-          </div>
-          <div style="background:#fff;border-radius:8px;padding:10px 12px;border-left:3px solid #1B5E20">
-            <div style="font-size:10px;font-weight:700;color:#1B5E20;margin-bottom:3px">🏭 WOVEN #4 · Day 2</div>
-            <div style="font-size:12px;font-weight:700">SANQI</div>
-            <div style="font-size:11px;color:#666">상하이 오피스 미팅</div>
-          </div>
-          <div style="background:#fff;border-radius:8px;padding:10px 12px;border-left:3px solid #1565C0">
-            <div style="font-size:10px;font-weight:700;color:#1565C0;margin-bottom:3px">🧶 KNIT #1 · Day 1</div>
-            <div style="font-size:12px;font-weight:700">SUNRISE</div>
-            <div style="font-size:11px;color:#666">주커우(周口) · 허난성</div>
-          </div>
-          <div style="background:#fff;border-radius:8px;padding:10px 12px;border-left:3px solid #1565C0">
-            <div style="font-size:10px;font-weight:700;color:#1565C0;margin-bottom:3px">🧶 KNIT #2 · Day 3</div>
-            <div style="font-size:12px;font-weight:700">TIMES</div>
-            <div style="font-size:11px;color:#666">여고(如皋) · 장수성</div>
-          </div>
-        </div>
+            <!-- DAY 3 -->
+            <tr style="background:#FFF8E1">
+              <td rowspan="6" style="text-align:center;font-weight:800;font-size:13px;color:#E65100;border:1px solid #f0dea0;padding:10px 8px;vertical-align:middle">
+                DAY<br>3
+              </td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;color:#555;white-space:nowrap">08:00~09:00</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;font-weight:700">쑤저우 → 창저우</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;text-align:center;color:#555">장수성</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;text-align:center"><span style="background:#F3E5F5;color:#7B1FA2;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">🚗 차량</span></td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;color:#555">쑤저우 → 창저우(常州) · 약 1hr · 60km</td>
+            </tr>
+            <tr style="background:#FFF8E1">
+              <td style="padding:9px 12px;border:1px solid #f0dea0;color:#E65100;font-weight:700;white-space:nowrap">09:00~11:30</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0">
+                <span style="background:#388E3C;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:4px">🏭 WOVEN</span>
+                <strong>SUXING</strong>
+              </td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;text-align:center;color:#555;font-size:11px">장수성<br>창저우(常州)</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;text-align:center"><span style="background:#FFF3E0;color:#E65100;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">2.5hr</span></td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;color:#333;font-size:12px">멀티거점(창저우·후베이·캄보디아) 전략 협의 · Armani·Carhartt 레퍼런스 라인 · COO 분산 구조 확인</td>
+            </tr>
+            <tr style="background:#FFF8E1">
+              <td style="padding:9px 12px;border:1px solid #f0dea0;color:#555;white-space:nowrap">12:00~14:00</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;font-weight:700">창저우 → 여고 이동</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;text-align:center;color:#555">장수성</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;text-align:center"><span style="background:#F3E5F5;color:#7B1FA2;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">🚗 차량</span></td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;color:#555">창저우 → 여고(如皋, 남통시) · 약 2hr · 120km</td>
+            </tr>
+            <tr style="background:#FFF8E1">
+              <td style="padding:9px 12px;border:1px solid #f0dea0;color:#E65100;font-weight:700;white-space:nowrap">14:00~16:30</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0">
+                <span style="background:#1565C0;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:4px">🧶 KNIT</span>
+                <strong>TIMES</strong>
+              </td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;text-align:center;color:#555;font-size:11px">장수성<br>여고(如皋)</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;text-align:center"><span style="background:#FFF3E0;color:#E65100;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">2.5hr</span></td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;color:#333;font-size:12px">직조·염색·봉제 일관 라인 · AI 비전검사 설비 · 신규 니트공장(Phase1) 확인 · MOQ 조건 협의</td>
+            </tr>
+            <tr style="background:#FFF8E1">
+              <td style="padding:9px 12px;border:1px solid #f0dea0;color:#555;white-space:nowrap">17:00~19:00</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;font-weight:700">여고 → 상하이</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;text-align:center;color:#555">상하이</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;text-align:center"><span style="background:#F3E5F5;color:#7B1FA2;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">🚗 차량</span></td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;color:#555">여고 → 상하이 홍차오(SHA) · 약 2hr · 130km</td>
+            </tr>
+            <tr style="background:#FFF8E1">
+              <td style="padding:9px 12px;border:1px solid #f0dea0;color:#C8102E;font-weight:700;white-space:nowrap">21:00+</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;font-weight:700">✈️ 상하이 출발</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;text-align:center;color:#555">상하이</td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;text-align:center"><span style="background:#E3F2FD;color:#1565C0;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px">✈️ 비행</span></td>
+              <td style="padding:9px 12px;border:1px solid #f0dea0;color:#555">상하이 홍차오(SHA) → 인천(ICN) 귀국</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <!-- 준비 체크리스트 -->
       <div style="background:#FFF8E1;border-left:4px solid #F9A825;border-radius:0 8px 8px 0;padding:12px 16px;font-size:12px;color:#555;line-height:2">
-        <strong style="color:#E65100">⚠️ 출장 준비 체크리스트</strong><br>
-        ① 공장 방문 사전 약속 확인 (최소 2주 전) &nbsp;|&nbsp; ② 비자: 중국 단기 비자 또는 무비자 협정 확인 &nbsp;|&nbsp; ③ 현지 이동: WeChat / 디디추싱 앱 설치 &nbsp;|&nbsp;
-        ④ 공장별 Q&A 자료 · 샘플 체크리스트 출력 &nbsp;|&nbsp; ⑤ Day 3 귀국편: 상하이 홍차오(SHA) 21:00 이후 편 예약 권장
+        <strong style="color:#E65100">⚠️ 출장 준비 체크리스트</strong> &nbsp;|&nbsp;
+        ① 공장 방문 사전 약속 확인 (최소 2주 전) &nbsp;|&nbsp;
+        ② 중국 단기 비자 또는 무비자 협정 확인 &nbsp;|&nbsp;
+        ③ 현지 이동: WeChat · 디디추싱 앱 설치 &nbsp;|&nbsp;
+        ④ 공장별 Q&A 자료 · 샘플 체크리스트 출력 &nbsp;|&nbsp;
+        ⑤ 귀국편 상하이 홍차오(SHA) 21:00 이후 편 예약 권장
       </div>
 
     </div>
