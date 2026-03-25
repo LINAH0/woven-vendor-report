@@ -3468,7 +3468,7 @@ function openCostChart(key){
 /* ── KNIT 원가 구조 비교 팝업 (MLB 표준 기준 / SUNRISE vs TIMES) ── */
 var _kCostData={
   TS:{
-    n:'TS (티셟츠) — 3ATSB1053',
+    n:'TS (티셔츠) — 3ATSB1053',
     mlb:    {fob_krw:12930,fabric_krw:3920, cm_krw:null,mu:6.11,retail:79000, cons:'0.71M (63IN 폭)'},
     sunrise:{fob_krw:11962,fabric_krw:4548, cm_krw:2145,mu:6.00,retail:79000, cons:'1.38 YD (55IN 폭)'},
     times:  {fob_krw:9852, fabric_krw:3408, cm_krw:2202,mu:7.29,retail:79000, cons:'0.80 M'},
@@ -3484,7 +3484,7 @@ var _kCostData={
     note_tm:'원단: $7.22/pc(SORONA 자체조달) · CM: $3.40'
   },
   SP:{
-    n:'SP (스포츠팩츠) — TIMES: 3ASPM0253 / SUNRISE: 3ASPB0653†',
+    n:'SP (스포츠팬츠) — TIMES: 3ASPM0253 / SUNRISE: 3ASPB0653†',
     mlb:    {fob_krw:16030,fabric_krw:6139, cm_krw:null,mu:5.55,retail:89000, cons:'0.81M (57IN 폭)'},
     sunrise:{fob_krw:23292,fabric_krw:11715,cm_krw:4576,mu:3.47,retail:89000, cons:'1.66 YD (55IN 폭)†'},
     times:  {fob_krw:14242,fabric_krw:5985, cm_krw:4576,mu:5.68,retail:89000, cons:'0.84 M'},
@@ -3510,8 +3510,13 @@ function openKnitCostChart(key){
     parseFloat((tm_other/tm.fob_krw*100).toFixed(1)),
     parseFloat((1/tm.mu*100).toFixed(1))
   ];
-  var labels=['원단 비중(%)','\uacf5임 비중(%)','\uae30타 비중(%)','\uc6d0가율(%)\n(\ub099을수록 MLB유리)'];
-  function fmtKrw(v){return v!=null?'₩'+v.toLocaleString()+'<br><small style="color:#999">$'+(v/exr).toFixed(2)+'</small>':'<span style="color:#ccc">—</span>';}
+  var labels=['원단 비중(%)','공임 비중(%)','기타 비중(%)','원가율(%)\n(낮을수록 MLB유리)'];
+  function fmtKrw(v){
+    return v!=null?'₩'+v.toLocaleString()+'<br><small style="color:#999">$'+(v/exr).toFixed(2)+'</small>':'<span style="color:#ccc">—</span>';
+  }
+  function fmtUsd(v){
+    return v!=null?'<strong>$'+(v/exr).toFixed(2)+'</strong><br><small style="color:#999">₩'+v.toLocaleString()+'</small>':'<span style="color:#ccc">—</span>';
+  }
   function winCell(srV,tmV,lowerBetter){
     if(srV==null||tmV==null)return '<td style="padding:3px 6px;font-size:10px;color:#bbb">—</td>';
     var diff=srV-tmV;
@@ -3522,43 +3527,43 @@ function openKnitCostChart(key){
     return '<td style="padding:3px 6px;text-align:right;font-size:10px;font-weight:700;color:'+color+'">'+(timesWins?'T':'S')+' ▼'+pct+'%</td>';
   }
   var rows='';
+  /* FOB 합계 */
   rows+='<tr style="background:#E8EDF4;font-weight:700">'
     +'<td style="padding:4px 6px;font-size:11px">FOB 합계</td>'
     +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#555">'+fmtKrw(ml.fob_krw)+'</td>'
     +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#2E7D32">'+fmtKrw(sr.fob_krw)+'</td>'
     +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#1565C0">'+fmtKrw(tm.fob_krw)+'</td>'
     +winCell(sr.fob_krw,tm.fob_krw,true)+'</tr>';
+  /* 원단 단가 */
   rows+='<tr style="background:#FFF8E1">'
     +'<td style="padding:4px 6px;font-size:11px;font-weight:600">원단 단가</td>'
     +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#555">'+fmtKrw(ml.fabric_krw)+'</td>'
     +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#2E7D32">'+fmtKrw(sr.fabric_krw)+'</td>'
     +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#1565C0">'+fmtKrw(tm.fabric_krw)+'</td>'
     +winCell(sr.fabric_krw,tm.fabric_krw,true)+'</tr>';
+  /* 요척 */
   rows+='<tr style="background:#FFFDE7">'
-    +'<td style="padding:3px 6px 3px 14px;font-size:10.5px;color:#777">↳ 요첨 (본체원단)</td>'
+    +'<td style="padding:3px 6px 3px 14px;font-size:10.5px;color:#777">↳ 요척 (본체원단)</td>'
     +'<td style="padding:3px 6px;text-align:right;font-size:10.5px;color:#888">'+ml.cons+'</td>'
     +'<td style="padding:3px 6px;text-align:right;font-size:10.5px;color:#2E7D32">'+sr.cons+'</td>'
     +'<td style="padding:3px 6px;text-align:right;font-size:10.5px;color:#1565C0">'+tm.cons+'</td>'
     +'<td style="padding:3px 6px;font-size:9.5px;color:#aaa">단위상이</td></tr>';
+  /* 공임 CM (USD $ 표기) */
   rows+='<tr>'
     +'<td style="padding:4px 6px;font-size:11px;font-weight:600">공임 CM</td>'
     +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#ccc">—</td>'
-    +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#2E7D32">'+fmtKrw(sr.cm_krw)+'</td>'
-    +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#1565C0">'+fmtKrw(tm.cm_krw)+'</td>'
+    +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#2E7D32">'+fmtUsd(sr.cm_krw)+'</td>'
+    +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#1565C0">'+fmtUsd(tm.cm_krw)+'</td>'
     +winCell(sr.cm_krw,tm.cm_krw,true)+'</tr>';
-  rows+='<tr>'
-    +'<td style="padding:4px 6px;font-size:11px;font-weight:600">부자재·기타</td>'
-    +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#ccc">—</td>'
-    +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#2E7D32">'+fmtKrw(sr_other)+'</td>'
-    +'<td style="padding:4px 6px;text-align:right;font-size:11px;color:#1565C0">'+fmtKrw(tm_other)+'</td>'
-    +winCell(sr_other,tm_other,true)+'</tr>';
+  /* M/U 배수 */
   var dsr=parseFloat((sr.mu-ml.mu).toFixed(2)), dtm=parseFloat((tm.mu-ml.mu).toFixed(2));
   rows+='<tr style="background:#E8F5E9">'
     +'<td style="padding:4px 6px;font-size:11px;font-weight:700">M/U 배수</td>'
     +'<td style="padding:4px 6px;text-align:right;font-size:12px;font-weight:700;color:#555">'+ml.mu.toFixed(2)+'<br><small style="color:#999">기준</small></td>'
     +'<td style="padding:4px 6px;text-align:right;font-size:12px;font-weight:700;color:#2E7D32">'+sr.mu.toFixed(2)+'<br><small style="color:'+(dsr>=0?'#1B5E20':'#C8102E')+'">'+(dsr>=0?'▲+':'▼')+Math.abs(dsr).toFixed(2)+'</small></td>'
     +'<td style="padding:4px 6px;text-align:right;font-size:12px;font-weight:700;color:#1565C0">'+tm.mu.toFixed(2)+'<br><small style="color:'+(dtm>=0?'#1B5E20':'#C8102E')+'">'+(dtm>=0?'▲+':'▼')+Math.abs(dtm).toFixed(2)+'</small></td>'
-    +'<td style="padding:3px 6px;font-size:10px;font-weight:700;color:'+(tm.mu>sr.mu?'#1565C0':'#2E7D32')+'">'+(tm.mu>sr.mu?'T':'S')+' ▲+'+Math.abs(tm.mu-sr.mu).toFixed(2)+'</td></tr>';
+    +'<td style="padding:3px 6px;font-size:10px;font-weight:700;color:'+(tm.mu>sr.mu?'#1565C0':'#2E7D32')+'">T vs S: '+(tm.mu>sr.mu?'T':' S')+' ▲+'+Math.abs(tm.mu-sr.mu).toFixed(2)+'</td></tr>';
+  /* 소비자가 */
   rows+='<tr style="background:#E8EDF4;border-top:2px solid #aaa">'
     +'<td style="padding:4px 6px;font-size:11px;font-weight:700">소비자가</td>'
     +'<td style="padding:4px 6px;text-align:right;font-size:11px;font-weight:700;color:#555">₩'+ml.retail.toLocaleString()+'</td>'
@@ -3583,7 +3588,7 @@ function openKnitCostChart(key){
     +'<span style="background:#E8F5E9;color:#2E7D32;padding:2px 8px;border-radius:10px;font-weight:700">SUNRISE — '+d.note_sr+'</span>'
     +'<span style="background:#E3F2FD;color:#1565C0;padding:2px 8px;border-radius:10px;font-weight:700">TIMES — '+d.note_tm+'</span>'
     +'</div>'
-    +'<div style="display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start">'
+    +'<div style="display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:start">'
     +'<div>'
     +'<table style="width:100%;border-collapse:collapse"><thead><tr style="background:#0A1931;color:#fff">'
     +'<th style="padding:5px 6px;font-size:10.5px;text-align:left">항목</th>'
@@ -3594,14 +3599,14 @@ function openKnitCostChart(key){
     +'</tr></thead><tbody>'+rows+'</tbody></table>'
     +'<div style="margin-top:5px;font-size:9.5px;color:#aaa;line-height:1.8">'
     +'&#128204; 환율 1,430원/$ · MLB 기준: 공임·기타 미포함<br>'
-    +'요첨: SUNRISE=YD기준(55/64IN폭) · MLB·TIMES=M기준 — 단위 상이로 직접 비교 유의<br>'
-    +'원가율(%)=1÷M/U×100 — 낙을수록 MLB 유리'
+    +'요척: SUNRISE=YD 기준(55/64IN 폭) · MLB·TIMES=M 기준 — 단위 상이로 직접 비교 유의<br>'
+    +'원가율(%)=1÷M/U×100 — 낮을수록 MLB 유리'
     +'</div>'
     +'</div>'
     +'<div style="position:relative;height:330px"><canvas id="knitCostRdrCanvas"></canvas></div>'
     +'</div>'
     +'<div style="margin-top:10px;font-size:10.5px;color:#aaa;text-align:center">'
-    +'🟢 SUNRISE(녹색) vs 🔵 TIMES(청색) 원가 구조 비교 · 레이더: 낙을수록 원가 효율·M/U 우위 · MLB 표준 기준값은 좌측 표 확인 · 외부 클릭 닫기'
+    +'🟢 SUNRISE(녹색) vs 🔵 TIMES(청색) 원가 구조 비교 · 레이더: 낮을수록 원가 효율·M/U 우위 · MLB 표준 기준값은 좌측 표 확인 · 외부 클릭 닫기'
     +'</div>'
     +'</div>';
   modal.onclick=function(e){if(e.target===this){this.style.display='none';if(window._kChartInst){window._kChartInst.destroy();window._kChartInst=null;}}};
