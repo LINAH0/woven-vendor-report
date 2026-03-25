@@ -2956,32 +2956,135 @@ tr:hover td{background:#F8F9FF}
 
 <!-- KINT 07 -->
 <div class="section" id="ks-sample">
-  <div class="stitle"><div class="stitle-icon">🔬</div>실물 샘플 Q.C.D(미적용) 평가</div>
-  <div style="background:#FFF3E0;border:1.5px solid #E65100;border-radius:8px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:12px">
-    <span style="font-size:22px">🧶</span>
-    <div>
-      <div style="font-size:14px;font-weight:700;color:#BF360C">KINT 샘플 평가 — 미접수 (대기 중)</div>
-      <div style="font-size:12px;color:#555;margin-top:3px">WOVEN과 동일 5점 척도 7개 항목(A–G) 평가 구조 적용 예정 · SUNRISE·TIMES 샘플 접수 후 QM &amp; SC 2인 평가 진행</div>
-    </div>
-    <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:11px;border:1px solid #E65100;margin-left:auto;white-space:nowrap">샘플 접수 대기</span>
+  <div class="stitle"><div class="stitle-icon">🔬</div>실물 샘플 Q.C.D 평가</div>
+
+  <!-- 평가 우선순위 안내 -->
+  <div style="background:#F8F9FF;border:1px solid #C5CAE9;border-radius:8px;padding:12px 18px;margin-bottom:16px;display:flex;gap:20px;flex-wrap:wrap">
+    <div style="font-size:12px;font-weight:700;color:#3949AB">★ 핵심 평가 항목</div>
+    <div style="font-size:12px;color:#333">C. Construction &amp; Workmanship (봉제 품질)</div>
+    <div style="font-size:12px;color:#333">F. Design &amp; Aesthetic Execution (디자인 완성도)</div>
+    <div style="font-size:12px;color:#333">G. Development Capability (개발 역량)</div>
+    <div style="font-size:12px;font-weight:700;color:#E65100;margin-left:8px">△ 차순위</div>
+    <div style="font-size:12px;color:#333">D. Fit &amp; Pattern (MLB block 기준 조정 예정)</div>
   </div>
-  <div class="g2 mb16">
-    <div class="card" style="padding:14px 16px;border-top:3px solid var(--bosideng)">
-      <div style="font-size:11px;font-weight:700;color:var(--bosideng);letter-spacing:.5px;margin-bottom:8px">SUNRISE 샘플</div>
-      <div style="font-size:12px;color:#aaa;font-style:italic">샘플 접수 후 A–G 7개 항목 평가 예정</div>
-      <div style="margin-top:8px;font-size:11px;color:#bbb">★핵심: C봉제 · F디자인 · G개발역량</div>
+
+  <!-- KPI 요약 카드 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px">
+    <div class="card" style="padding:14px 16px;cursor:pointer;transition:box-shadow .2s" onclick="document.getElementById('modal-knit-pt').style.display='flex'" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,.18)'" onmouseout="this.style.boxShadow=''">
+      <div style="font-size:11px;font-weight:700;color:#777;letter-spacing:.5px;margin-bottom:10px">PT 스포츠팬츠 종합 (17문항)</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:12px;color:#555">MLB 기준</span>
+        <span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">4.6</span> / 5
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:12px;color:#2E7D32;font-weight:700">SUNRISE</span>
+        <span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">4.2</span> / 5
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;color:#7B1FA2;font-weight:700">TIMES</span>
+        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.5</span> / 5
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:#2E7D32;border-top:1px solid #eee;padding-top:8px;font-weight:700">✅ SUNRISE F★(디자인) 5.0 · TIMES G★ 1.7 핵심 미흡</div>
+      <div style="margin-top:6px;font-size:10px;color:#aaa;text-align:right">▶ 클릭하여 상세 보기</div>
     </div>
-    <div class="card" style="padding:14px 16px;border-top:3px solid #7B1FA2">
-      <div style="font-size:11px;font-weight:700;color:#7B1FA2;letter-spacing:.5px;margin-bottom:8px">TIMES 샘플</div>
-      <div style="font-size:12px;color:#aaa;font-style:italic">샘플 접수 후 A–G 7개 항목 평가 예정</div>
-      <div style="margin-top:8px;font-size:11px;color:#bbb">★핵심: C봉제 · F디자인 · G개발역량</div>
+    <div class="card" style="padding:14px 16px;cursor:pointer;transition:box-shadow .2s" onclick="document.getElementById('modal-knit-mt').style.display='flex'" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,.18)'" onmouseout="this.style.boxShadow=''">
+      <div style="font-size:11px;font-weight:700;color:#777;letter-spacing:.5px;margin-bottom:10px">MT 티셔츠 종합 (15문항)</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:12px;color:#555">MLB 기준</span>
+        <span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">4.4</span> / 5
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:12px;color:#2E7D32;font-weight:700">SUNRISE</span>
+        <span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">4.3</span> / 5
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;color:#7B1FA2;font-weight:700">TIMES</span>
+        <span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">3.2</span> / 5
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:#1565C0;border-top:1px solid #eee;padding-top:8px;font-weight:700">📈 SUNRISE MLB 기준 근접 · TIMES C★봉제 2.5 개선 필요</div>
+      <div style="margin-top:6px;font-size:10px;color:#aaa;text-align:right">▶ 클릭하여 상세 보기</div>
+    </div>
+    <div class="card" style="padding:14px 16px;cursor:pointer;transition:box-shadow .2s" onclick="document.getElementById('modal-knit-pq').style.display='flex'" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,.18)'" onmouseout="this.style.boxShadow=''">
+      <div style="font-size:11px;font-weight:700;color:#777;letter-spacing:.5px;margin-bottom:10px">PQ 폴로/피케 종합 (18문항)</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:12px;color:#555">MLB 기준</span>
+        <span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">4.5</span> / 5
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:12px;color:#2E7D32;font-weight:700">SUNRISE</span>
+        <span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">4.1</span> / 5
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:12px;color:#7B1FA2;font-weight:700">TIMES</span>
+        <span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.5</span> / 5
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:#2E7D32;border-top:1px solid #eee;padding-top:8px;font-weight:700">✅ SUNRISE B·G★ MLB 기준 도달 · TIMES 스냅·버튼 이슈</div>
+      <div style="margin-top:6px;font-size:10px;color:#aaa;text-align:right">▶ 클릭하여 상세 보기</div>
     </div>
   </div>
-  <div class="card">
-    <div style="text-align:center;padding:32px 24px;color:#aaa">
-      <div style="font-size:36px;margin-bottom:12px">🧶</div>
-      <div style="font-size:14px;font-weight:700;color:#999;margin-bottom:6px">KINT 샘플 미접수 — 평가 대기</div>
-      <div style="font-size:12px">샘플 접수 후 WOVEN과 동일 기준으로 QM &amp; SC 2인 평가 진행 예정<br>평가 항목: A전반적인상 · B소재원단 · C봉제★ · D패턴핏△ · E기능부자재 · F디자인★ · G개발역량★</div>
+
+  <!-- 레이더 차트 -->
+  <div class="card mb16">
+    <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #eee">
+      📡 카테고리별 항목 점수 — 레이더 차트 비교 (5점 척도)
+      <span style="font-size:11px;font-weight:400;color:#777;margin-left:8px">— MLB 기준(회색) · SUNRISE(녹색) · TIMES(보라)</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+      <div>
+        <div style="text-align:center;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px"><span style="background:#E8F5E9;color:#2E7D32;font-size:11px;font-weight:700;padding:2px 10px;border-radius:4px">PT 스포츠팬츠</span></div>
+        <div class="chart-wrap" style="height:220px"><canvas id="radarKnitPt"></canvas></div>
+      </div>
+      <div>
+        <div style="text-align:center;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px"><span style="background:#E3F2FD;color:#1565C0;font-size:11px;font-weight:700;padding:2px 10px;border-radius:4px">MT 티셔츠</span></div>
+        <div class="chart-wrap" style="height:220px"><canvas id="radarKnitMt"></canvas></div>
+      </div>
+      <div>
+        <div style="text-align:center;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px"><span style="background:#EDE7F6;color:#4A148C;font-size:11px;font-weight:700;padding:2px 10px;border-radius:4px">PQ 폴로/피케</span></div>
+        <div class="chart-wrap" style="height:220px"><canvas id="radarKnitPq"></canvas></div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:#777;text-align:center">A: 전반적인상 · B: 소재·원단 · <strong style="color:#1565C0">C★: 봉제품질</strong> · △D: 패턴·핏 · E: 기능부자재 · <strong style="color:#1565C0">F★: 디자인완성도</strong> · <strong style="color:#1565C0">G★: 개발역량</strong></div>
+  </div>
+
+  <div style="background:#FFF8E1;border-left:4px solid #F9A825;padding:10px 14px;font-size:12px;color:#555;margin-bottom:16px">
+    ※ 평가 기준일: 2026.03.25 · 평가자: Lucy/MJ · Julia 2인 · 5점 척도 7개 항목(A–G) · ★핵심: C봉제·F디자인·G개발역량 / △차순위: D패턴핏 &nbsp;|&nbsp; D항목 전 품목 MLB block 기준 조정 예정 → 평가 보류
+  </div>
+
+  <!-- QUALITY 종합 인사이트 -->
+  <div class="card mb16" style="background:linear-gradient(135deg,#0A1931 0%,#1a2f52 100%);color:#fff;margin-top:8px">
+    <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.15)">
+      QUALITY：샘플 평가 종합 인사이트
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+      <div style="padding:16px 20px;border-right:1px solid rgba(255,255,255,.1)">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px">
+          <span style="background:#2E7D32;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px">SUNRISE2</span>
+          <span style="font-size:12.5px;font-weight:700;color:#fff">종합 평가</span>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.85">
+          PT <strong style="color:#FFD700">4.2</strong> · MT <strong style="color:#FFD700">4.3</strong> · PQ <strong style="color:#FFD700">4.1</strong><br>
+          F★(디자인 완성도) 전 품목 5.0 달성 — MLB 기준 완전 상회<br>
+          B(원단·소재) 안정적 · G★(개발역량) PT·MT·PQ 4.0 이상
+        </p>
+      </div>
+      <div style="padding:16px 20px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px">
+          <span style="background:#7B1FA2;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px">TIMES 3.25</span>
+          <span style="font-size:12.5px;font-weight:700;color:#fff">종합 평가</span>
+        </div>
+        <p style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.85">
+          PT <strong style="color:#FFD700">2.5</strong> · MT <strong style="color:#FFD700">3.2</strong> · PQ <strong style="color:#FFD700">2.5</strong><br>
+          MT는 상대적 양호 — A(전반인상) 4.2 · 원단 조직 안정적<br>
+          <strong style="color:#FF6B6B">PT·PQ C★봉제·G★개발역량 2점대 미흡 · PQ 스냅·버튼 이슈</strong>
+        </p>
+      </div>
+    </div>
+    <div style="margin-top:14px;padding:12px 20px;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.35);border-radius:8px;display:flex;align-items:center;gap:10px">
+      <span style="font-size:16px">🏆</span>
+      <span style="font-size:13px;font-weight:700;color:#FFD700">최종 권고: <span style="color:#fff">SUNRISE2</span> — 전 품목 MLB 기준 4.1 이상 도달, F★디자인 완성도 전 품목 5.0 · 핵심 항목 일관된 우위. TIMES는 MT 봉제 기초 확인되나 PT·PQ 핵심 역량 추가 개선 후 재검증 필요</span>
+    </div>
+    <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;color:rgba(255,255,255,.6);text-align:center">
+      평가일: 2026.03.25 · 평가자: Lucy/MJ · Julia · 기준: 5점 척도 7개 항목 (A–G) · ★핵심: C·F·G / △차순위: D
     </div>
   </div>
 
@@ -3268,6 +3371,36 @@ function initRadarChart() {
   if(jp) new Chart(jp,mkData([2.67,2.0,2.1,3.25,1.5,3.0,3.33],[3.0,2.5,3.1,2.25,4.0,3.5,3.67],[1.33,1.33,1.8,1.25,3.25,1.0,2.33]));
 })();
 </script>
+
+<script>
+(function(){
+  var labels=['A 전반적\n인상','B 소재·원단','C 봉제★','D 패턴·핏△','E 기능부자재','F 디자인★','G 개발역량★'];
+  var cfgMlb={label:'MLB 기준',data:[],borderColor:'rgba(100,100,100,.7)',backgroundColor:'transparent',borderDash:[4,4],pointBackgroundColor:'rgba(100,100,100,.7)',pointRadius:3,borderWidth:1.5};
+  var cfgSr={label:'SUNRISE',data:[],borderColor:'#2E7D32',backgroundColor:'rgba(46,125,50,.12)',pointBackgroundColor:'#2E7D32',pointRadius:3,borderWidth:2};
+  var cfgTm={label:'TIMES',data:[],borderColor:'#7B1FA2',backgroundColor:'rgba(123,31,162,.1)',pointBackgroundColor:'#7B1FA2',pointRadius:3,borderWidth:2};
+  var radarOpts={type:'radar',options:{responsive:true,maintainAspectRatio:false,scales:{r:{min:0,max:5,ticks:{stepSize:1,font:{size:9},color:'#999',backdropColor:'transparent'},pointLabels:{font:{size:9.5},color:'#444'},grid:{color:'rgba(0,0,0,.1)'},angleLines:{color:'rgba(0,0,0,.1)'}}},plugins:{legend:{position:'bottom',labels:{font:{size:10},boxWidth:10,padding:8}}}}};
+  function mkKnitData(mlb,sr,tm){
+    var r=JSON.parse(JSON.stringify(radarOpts));
+    r.data={labels:labels,datasets:[
+      Object.assign({},cfgMlb,{data:mlb}),
+      Object.assign({},cfgSr, {data:sr}),
+      Object.assign({},cfgTm, {data:tm})
+    ]};
+    return r;
+  }
+  var pt=document.getElementById('radarKnitPt');
+  var mt=document.getElementById('radarKnitMt');
+  var pq=document.getElementById('radarKnitPq');
+  // KNIT 샘플 평가 2026.03.25 — Lucy/MJ + Julia 평균
+  // PT: MLB[A=4.83,B=4.83,C=4.38,D=0,E=5.00,F=4.00,G=4.33] SR[4.17,4.33,3.50,0,4.00,5.00,4.00] TM[2.67,3.00,2.88,0,2.00,2.67,1.67]
+  // MT: MLB[A=4.67,B=4.83,C=4.33,D=0,E=0,F=4.33,G=4.00]    SR[4.50,4.17,3.67,0,0,5.00,4.00]    TM[4.17,3.67,2.50,0,0,3.33,2.33]
+  // PQ: MLB[A=4.50,B=4.67,C=4.63,D=0,E=4.50,F=4.33,G=4.33] SR[4.50,4.67,3.63,0,3.00,4.67,4.33] TM[2.67,3.00,2.75,0,2.00,2.50,2.33]
+  if(pt) new Chart(pt,mkKnitData([4.83,4.83,4.38,0,5.00,4.00,4.33],[4.17,4.33,3.50,0,4.00,5.00,4.00],[2.67,3.00,2.88,0,2.00,2.67,1.67]));
+  if(mt) new Chart(mt,mkKnitData([4.67,4.83,4.33,0,0,4.33,4.00],[4.50,4.17,3.67,0,0,5.00,4.00],[4.17,3.67,2.50,0,0,3.33,2.33]));
+  if(pq) new Chart(pq,mkKnitData([4.50,4.67,4.63,0,4.50,4.33,4.33],[4.50,4.67,3.63,0,3.00,4.67,4.33],[2.67,3.00,2.75,0,2.00,2.50,2.33]));
+})();
+</script>
+
 <script>
 /* ── Q&A 섹션별 토글 ── */
 (function(){
@@ -4087,6 +4220,156 @@ function openRadarModal(canvasId,title){
   </div>
 </div>
 
+<!-- ===================== KNIT PT 샘플 평가 모달 ===================== -->
+<div id="modal-knit-pt" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9999;align-items:center;justify-content:center;padding:16px;overflow-y:auto" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:#fff;border-radius:16px;width:100%;max-width:900px;max-height:92vh;overflow-y:auto;position:relative">
+    <div style="background:linear-gradient(135deg,#0A1931 0%,#1a3060 100%);color:#fff;padding:20px 28px 16px;border-radius:16px 16px 0 0;position:sticky;top:0;z-index:1">
+      <button onclick="document.getElementById('modal-knit-pt').style.display='none'" style="position:absolute;top:14px;right:16px;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:18px;cursor:pointer;border-radius:6px;padding:2px 10px;line-height:1.5">✕</button>
+      <div style="font-size:11px;font-weight:700;letter-spacing:1px;opacity:.55;text-transform:uppercase;margin-bottom:6px">샘플 평가 상세</div>
+      <div style="font-size:18px;font-weight:800"><span style="background:#2E7D32;color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;margin-right:8px">KNIT PT</span>스포츠팬츠 — 평가 결과</div>
+    </div>
+    <div style="padding:22px 28px">
+      <div style="background:#F8FAFF;border-left:3px solid #90A4AE;padding:10px 14px;border-radius:0 4px 4px 0;margin-bottom:16px">
+        <div style="font-size:12px;font-weight:700;color:#0A1931;margin-bottom:8px">💡 PT 인사이트</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px 14px;font-size:11.5px;color:#444;line-height:1.75">
+          <div>✅ <strong>SUNRISE F★(디자인)</strong>: 5.00 — 패널밸런스·디자인비례 MLB 기준 대비 완전 상회</div>
+          <div>✅ <strong>SUNRISE C★(봉제)</strong>: 3.50 — SPI·립·허리밴드 안정적</div>
+          <div>⚠️ <strong>SUNRISE E(트림)</strong>: 4.00 — 드로코드·스토퍼 MLB 기준(5.0) 대비 일부 여지</div>
+          <div>🚫 <strong>TIMES G★(개발역량)</strong>: 1.67 — 기술역량·복합스타일 대응 1~2점대, 핵심 역량 미흡</div>
+          <div style="grid-column:1/-1">🚫 <strong>TIMES F★(디자인)</strong>: 2.67 · E(트림): 2.00 — 패널밸런스 1.0 / 트림 완성도 현저 낮음</div>
+</div>
+      </div>
+      <div style="overflow-x:auto;margin-bottom:16px">
+        <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+          <thead><tr style="background:#E8EDF4">
+            <th style="padding:9px 12px;text-align:left;width:110px">구분</th>
+            <th style="padding:9px 12px;text-align:left;min-width:180px">품명</th>
+            <th style="padding:9px 12px;text-align:center;width:80px">샘플 접수</th>
+            <th style="padding:9px 12px;text-align:center;width:90px">종합 점수</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#E8EDF4"><td><strong style="color:#0A1931">MLB 기준</strong></td><td><small>SP 현행 협력사 샘플</small></td><td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td><td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">4.6 / 5</span></td></tr>
+            <tr><td><strong style="color:#2E7D32">SUNRISE2</strong></td><td><small>SUNRISE PT 대응 샘플</small></td><td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td><td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">4.2 / 5</span></td></tr>
+            <tr><td><strong style="color:#7B1FA2">TIMES 3.25</strong></td><td><small>TIMES PT 대응 샘플</small></td><td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td><td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">2.5 / 5</span></td></tr>
+</tbody>
+        </table>
+      </div>
+      <div style="font-size:12px;font-weight:700;color:#0A1931;margin-bottom:8px">항목별 평가 세부 점수 (Lucy/MJ + Julia 평균, 5점 척도)</div>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+          <thead><tr style="background:#E8EDF4">
+            <th style="padding:9px 12px;text-align:center;width:50px">항목</th>
+            <th style="padding:9px 12px;text-align:left">평가 섹션</th>
+            <th style="padding:9px 12px;text-align:center;width:90px">MLB 기준</th>
+            <th style="padding:9px 12px;text-align:center;width:100px;color:#2E7D32">SUNRISE</th>
+            <th style="padding:9px 12px;text-align:center;width:110px;color:#7B1FA2">TIMES</th>
+          </tr></thead>
+          <tbody><tr><td style="font-weight:700;color:#666;text-align:center;font-size:11px;padding:9px 12px">A<br><span style="color:#aaa;font-weight:400">기본</span></td><td style="padding:9px 12px">전반적인상 (Overall Impression) <small style="color:#888">— 3문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.83</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.17</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.67</span></td></tr><tr><td style="font-weight:700;color:#666;text-align:center;font-size:11px;padding:9px 12px">B<br><span style="color:#aaa;font-weight:400">중요</span></td><td style="padding:9px 12px">소재·원단 품질 (Fabric &amp; Material) <small style="color:#888">— 3문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.83</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.33</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.00</span></td></tr><tr style="background:#FFF8F8"><td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px;padding:9px 12px">C★<br><span style="color:#aaa;font-weight:400">핵심</span></td><td style="padding:9px 12px"><strong style="color:#1565C0">봉제 품질★ (Construction &amp; Workmanship)</strong> <small style="color:#888">— 4문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.38</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.50</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.88</span></td></tr><tr><td style="font-weight:700;color:#E65100;text-align:center;font-size:11px;padding:9px 12px">D△<br><span style="color:#aaa;font-weight:400">차순위</span></td><td style="padding:9px 12px">패턴·핏감△ (Fit &amp; Pattern)</td><td colspan="3" style="text-align:center;padding:9px 12px;font-size:11px;color:#aaa">MLB block 기준 조정 예정 — 평가 보류</td></tr><tr><td style="font-weight:700;color:#666;text-align:center;font-size:11px;padding:9px 12px">E<br><span style="color:#aaa;font-weight:400">중요</span></td><td style="padding:9px 12px">기능부자재 (Functional Details) — 트림 품질 <small style="color:#888">— 1문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">5.00</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.00</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.00</span></td></tr><tr style="background:#FFF8F8"><td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px;padding:9px 12px">F★<br><span style="color:#aaa;font-weight:400">핵심</span></td><td style="padding:9px 12px"><strong style="color:#1565C0">디자인 완성도★ (Design &amp; Aesthetic)</strong> <small style="color:#888">— 3문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.00</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">5.00</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.67</span></td></tr><tr style="background:#FFF8F8"><td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px;padding:9px 12px">G★<br><span style="color:#aaa;font-weight:400">핵심</span></td><td style="padding:9px 12px"><strong style="color:#1565C0">개발역량★ (Development Capability)</strong> <small style="color:#888">— 3문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.33</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.00</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">1.67</span></td></tr><tr style="background:#E8EDF4;font-weight:700"><td colspan="2" style="text-align:right;font-size:12.5px;padding:9px 12px">종합 평균 (17문항)</td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">4.6</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">4.2</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.5</span></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================== KNIT MT 샘플 평가 모달 ===================== -->
+<div id="modal-knit-mt" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9999;align-items:center;justify-content:center;padding:16px;overflow-y:auto" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:#fff;border-radius:16px;width:100%;max-width:900px;max-height:92vh;overflow-y:auto;position:relative">
+    <div style="background:linear-gradient(135deg,#0A1931 0%,#1a3060 100%);color:#fff;padding:20px 28px 16px;border-radius:16px 16px 0 0;position:sticky;top:0;z-index:1">
+      <button onclick="document.getElementById('modal-knit-mt').style.display='none'" style="position:absolute;top:14px;right:16px;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:18px;cursor:pointer;border-radius:6px;padding:2px 10px;line-height:1.5">✕</button>
+      <div style="font-size:11px;font-weight:700;letter-spacing:1px;opacity:.55;text-transform:uppercase;margin-bottom:6px">샘플 평가 상세</div>
+      <div style="font-size:18px;font-weight:800"><span style="background:#1565C0;color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;margin-right:8px">KNIT MT</span>티셔츠 — 평가 결과</div>
+    </div>
+    <div style="padding:22px 28px">
+      <div style="background:#F8FAFF;border-left:3px solid #90A4AE;padding:10px 14px;border-radius:0 4px 4px 0;margin-bottom:16px">
+        <div style="font-size:12px;font-weight:700;color:#0A1931;margin-bottom:8px">💡 MT 인사이트</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px 14px;font-size:11.5px;color:#444;line-height:1.75">
+          <div>✅ <strong>SUNRISE F★(디자인)</strong>: 5.00 — 디자인비례·패널밸런스·아트웍 전항목 MLB 기준 상회</div>
+          <div>✅ <strong>SUNRISE A(전반인상)</strong>: 4.50 — 양산 적합성 우수, 브랜드 포지셔닝 부합</div>
+          <div>⚠️ <strong>SUNRISE C★(봉제)</strong>: 3.67 — SPI 일관성·립/커프 마감 개선 여지</div>
+          <div>⚠️ <strong>TIMES C★(봉제)</strong>: 2.50 — 립/커프 마감 1.5점, 봉제 완성도 미흡</div>
+          <div style="grid-column:1/-1">⚠️ <strong>TIMES G★(개발역량)</strong>: 2.33 — 복합스타일 대응·글로벌 브랜드 수준 2점대, 역량 개선 필요</div>
+</div>
+      </div>
+      <div style="overflow-x:auto;margin-bottom:16px">
+        <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+          <thead><tr style="background:#E8EDF4">
+            <th style="padding:9px 12px;text-align:left;width:110px">구분</th>
+            <th style="padding:9px 12px;text-align:left;min-width:180px">품명</th>
+            <th style="padding:9px 12px;text-align:center;width:80px">샘플 접수</th>
+            <th style="padding:9px 12px;text-align:center;width:90px">종합 점수</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#E8EDF4"><td><strong style="color:#0A1931">MLB 기준</strong></td><td><small>MT/TS 현행 협력사 샘플</small></td><td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td><td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">4.4 / 5</span></td></tr>
+            <tr><td><strong style="color:#2E7D32">SUNRISE2</strong></td><td><small>SUNRISE MT 대응 샘플</small></td><td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td><td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">4.3 / 5</span></td></tr>
+            <tr><td><strong style="color:#7B1FA2">TIMES 3.25</strong></td><td><small>TIMES MT 대응 샘플</small></td><td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td><td style="text-align:center"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">3.2 / 5</span></td></tr>
+</tbody>
+        </table>
+      </div>
+      <div style="font-size:12px;font-weight:700;color:#0A1931;margin-bottom:8px">항목별 평가 세부 점수 (Lucy/MJ + Julia 평균, 5점 척도)</div>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+          <thead><tr style="background:#E8EDF4">
+            <th style="padding:9px 12px;text-align:center;width:50px">항목</th>
+            <th style="padding:9px 12px;text-align:left">평가 섹션</th>
+            <th style="padding:9px 12px;text-align:center;width:90px">MLB 기준</th>
+            <th style="padding:9px 12px;text-align:center;width:100px;color:#2E7D32">SUNRISE</th>
+            <th style="padding:9px 12px;text-align:center;width:110px;color:#7B1FA2">TIMES</th>
+          </tr></thead>
+          <tbody><tr><td style="font-weight:700;color:#666;text-align:center;font-size:11px;padding:9px 12px">A<br><span style="color:#aaa;font-weight:400">기본</span></td><td style="padding:9px 12px">전반적인상 (Overall Impression) <small style="color:#888">— 3문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.67</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.50</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.17</span></td></tr><tr><td style="font-weight:700;color:#666;text-align:center;font-size:11px;padding:9px 12px">B<br><span style="color:#aaa;font-weight:400">중요</span></td><td style="padding:9px 12px">소재·원단 품질 (Fabric &amp; Material) <small style="color:#888">— 3문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.83</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.17</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.67</span></td></tr><tr style="background:#FFF8F8"><td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px;padding:9px 12px">C★<br><span style="color:#aaa;font-weight:400">핵심</span></td><td style="padding:9px 12px"><strong style="color:#1565C0">봉제 품질★ (Construction &amp; Workmanship)</strong> <small style="color:#888">— 3문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.33</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.67</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.50</span></td></tr><tr><td style="font-weight:700;color:#E65100;text-align:center;font-size:11px;padding:9px 12px">D△<br><span style="color:#aaa;font-weight:400">차순위</span></td><td style="padding:9px 12px">패턴·핏감△ (Fit &amp; Pattern)</td><td colspan="3" style="text-align:center;padding:9px 12px;font-size:11px;color:#aaa">MLB block 기준 조정 예정 — 평가 보류</td></tr><tr><td style="font-weight:700;color:#666;text-align:center;font-size:11px;padding:9px 12px">E<br><span style="color:#aaa;font-weight:400">중요</span></td><td style="padding:9px 12px;font-size:11px;color:#aaa">기능부자재 (Functional Details) — MT 평가 해당 없음</td><td colspan="3" style="text-align:center;padding:9px 12px;font-size:11px;color:#aaa">해당 없음</td></tr><tr style="background:#FFF8F8"><td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px;padding:9px 12px">F★<br><span style="color:#aaa;font-weight:400">핵심</span></td><td style="padding:9px 12px"><strong style="color:#1565C0">디자인 완성도★ (Design &amp; Aesthetic)</strong> <small style="color:#888">— 3문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.33</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">5.00</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.33</span></td></tr><tr style="background:#FFF8F8"><td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px;padding:9px 12px">G★<br><span style="color:#aaa;font-weight:400">핵심</span></td><td style="padding:9px 12px"><strong style="color:#1565C0">개발역량★ (Development Capability)</strong> <small style="color:#888">— 3문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.00</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.00</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.33</span></td></tr><tr style="background:#E8EDF4;font-weight:700"><td colspan="2" style="text-align:right;font-size:12.5px;padding:9px 12px">종합 평균 (15문항)</td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">4.4</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">4.3</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">3.2</span></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================== KNIT PQ 샘플 평가 모달 ===================== -->
+<div id="modal-knit-pq" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9999;align-items:center;justify-content:center;padding:16px;overflow-y:auto" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:#fff;border-radius:16px;width:100%;max-width:900px;max-height:92vh;overflow-y:auto;position:relative">
+    <div style="background:linear-gradient(135deg,#0A1931 0%,#1a3060 100%);color:#fff;padding:20px 28px 16px;border-radius:16px 16px 0 0;position:sticky;top:0;z-index:1">
+      <button onclick="document.getElementById('modal-knit-pq').style.display='none'" style="position:absolute;top:14px;right:16px;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:18px;cursor:pointer;border-radius:6px;padding:2px 10px;line-height:1.5">✕</button>
+      <div style="font-size:11px;font-weight:700;letter-spacing:1px;opacity:.55;text-transform:uppercase;margin-bottom:6px">샘플 평가 상세</div>
+      <div style="font-size:18px;font-weight:800"><span style="background:#7B1FA2;color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;margin-right:8px">KNIT PQ</span>폴로/피케 — 평가 결과</div>
+    </div>
+    <div style="padding:22px 28px">
+      <div style="background:#F8FAFF;border-left:3px solid #90A4AE;padding:10px 14px;border-radius:0 4px 4px 0;margin-bottom:16px">
+        <div style="font-size:12px;font-weight:700;color:#0A1931;margin-bottom:8px">💡 PQ 인사이트</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px 14px;font-size:11.5px;color:#444;line-height:1.75">
+          <div>✅ <strong>SUNRISE B(소재·원단)</strong>: 4.67 — MLB 기준 동등, 원단 품질 안정적</div>
+          <div>✅ <strong>SUNRISE G★(개발역량)</strong>: 4.33 — 글로벌 브랜드 생산 수준 MLB 기준 도달</div>
+          <div>⚠️ <strong>SUNRISE C★(봉제)</strong>: 3.63 — 플라켓 완성도 2.0 개선 필요</div>
+          <div>🚫 <strong>TIMES E(기능부자재)</strong>: 2.00 — 스냅·버튼 체결 신뢰성 1.0 — 품질 이슈</div>
+          <div style="grid-column:1/-1">🚫 <strong>TIMES C★(봉제)</strong>: 2.75 / <strong>TIMES G★(개발역량)</strong>: 2.33 — 핵심 항목 전반 미흡</div>
+</div>
+      </div>
+      <div style="overflow-x:auto;margin-bottom:16px">
+        <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+          <thead><tr style="background:#E8EDF4">
+            <th style="padding:9px 12px;text-align:left;width:110px">구분</th>
+            <th style="padding:9px 12px;text-align:left;min-width:180px">품명</th>
+            <th style="padding:9px 12px;text-align:center;width:80px">샘플 접수</th>
+            <th style="padding:9px 12px;text-align:center;width:90px">종합 점수</th>
+          </tr></thead>
+          <tbody>
+            <tr style="background:#E8EDF4"><td><strong style="color:#0A1931">MLB 기준</strong></td><td><small>PQ 현행 협력사 샘플</small></td><td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td><td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">4.5 / 5</span></td></tr>
+            <tr><td><strong style="color:#2E7D32">SUNRISE2</strong></td><td><small>SUNRISE PQ 대응 샘플</small></td><td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td><td style="text-align:center"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">4.1 / 5</span></td></tr>
+            <tr><td><strong style="color:#7B1FA2">TIMES 3.25</strong></td><td><small>TIMES PQ 대응 샘플</small></td><td style="text-align:center"><span style="color:#2E7D32;font-size:15px">✅</span></td><td style="text-align:center"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12.5px">2.5 / 5</span></td></tr>
+</tbody>
+        </table>
+      </div>
+      <div style="font-size:12px;font-weight:700;color:#0A1931;margin-bottom:8px">항목별 평가 세부 점수 (Lucy/MJ + Julia 평균, 5점 척도)</div>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+          <thead><tr style="background:#E8EDF4">
+            <th style="padding:9px 12px;text-align:center;width:50px">항목</th>
+            <th style="padding:9px 12px;text-align:left">평가 섹션</th>
+            <th style="padding:9px 12px;text-align:center;width:90px">MLB 기준</th>
+            <th style="padding:9px 12px;text-align:center;width:100px;color:#2E7D32">SUNRISE</th>
+            <th style="padding:9px 12px;text-align:center;width:110px;color:#7B1FA2">TIMES</th>
+          </tr></thead>
+          <tbody><tr><td style="font-weight:700;color:#666;text-align:center;font-size:11px;padding:9px 12px">A<br><span style="color:#aaa;font-weight:400">기본</span></td><td style="padding:9px 12px">전반적인상 (Overall Impression) <small style="color:#888">— 3문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.50</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.50</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.67</span></td></tr><tr><td style="font-weight:700;color:#666;text-align:center;font-size:11px;padding:9px 12px">B<br><span style="color:#aaa;font-weight:400">중요</span></td><td style="padding:9px 12px">소재·원단 품질 (Fabric &amp; Material) <small style="color:#888">— 3문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.67</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.67</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.00</span></td></tr><tr style="background:#FFF8F8"><td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px;padding:9px 12px">C★<br><span style="color:#aaa;font-weight:400">핵심</span></td><td style="padding:9px 12px"><strong style="color:#1565C0">봉제 품질★ (Construction &amp; Workmanship)</strong> <small style="color:#888">— 4문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.63</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.63</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.75</span></td></tr><tr><td style="font-weight:700;color:#E65100;text-align:center;font-size:11px;padding:9px 12px">D△<br><span style="color:#aaa;font-weight:400">차순위</span></td><td style="padding:9px 12px">패턴·핏감△ (Fit &amp; Pattern)</td><td colspan="3" style="text-align:center;padding:9px 12px;font-size:11px;color:#aaa">MLB block 기준 조정 예정 — 평가 보류</td></tr><tr><td style="font-weight:700;color:#666;text-align:center;font-size:11px;padding:9px 12px">E<br><span style="color:#aaa;font-weight:400">중요</span></td><td style="padding:9px 12px">기능부자재 — 스냅·버튼 신뢰성 / 트림 <small style="color:#888">— 2문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.50</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E3F2FD;color:#0277BD;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">3.00</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.00</span></td></tr><tr style="background:#FFF8F8"><td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px;padding:9px 12px">F★<br><span style="color:#aaa;font-weight:400">핵심</span></td><td style="padding:9px 12px"><strong style="color:#1565C0">디자인 완성도★ (Design &amp; Aesthetic)</strong> <small style="color:#888">— 3문항 / TM 2문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.33</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.67</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.50</span></td></tr><tr style="background:#FFF8F8"><td style="font-weight:700;color:#1565C0;text-align:center;font-size:11px;padding:9px 12px">G★<br><span style="color:#aaa;font-weight:400">핵심</span></td><td style="padding:9px 12px"><strong style="color:#1565C0">개발역량★ (Development Capability)</strong> <small style="color:#888">— 3문항</small></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.33</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">4.33</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFEBEE;color:#B71C1C;font-weight:700;padding:2px 9px;border-radius:10px;font-size:12px">2.33</span></td></tr><tr style="background:#E8EDF4;font-weight:700"><td colspan="2" style="text-align:right;font-size:12.5px;padding:9px 12px">종합 평균 (MLB·SR 18 / TM 17문항)</td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">4.5</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#E8F5E9;color:#1B5E20;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">4.1</span></td><td style="text-align:center;padding:9px 12px"><span style="background:#FFF3E0;color:#E65100;font-weight:700;padding:3px 10px;border-radius:10px;font-size:13px">2.5</span></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- ===================== 출장 가이드 모달 ===================== -->
 <div id="modal-trip" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9999;align-items:center;justify-content:center;padding:16px;overflow-y:auto" onclick="if(event.target===this)this.style.display='none'">
   <div style="background:#fff;border-radius:16px;width:100%;max-width:960px;max-height:92vh;overflow-y:auto;position:relative">
